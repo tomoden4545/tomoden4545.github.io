@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>My Site</title>
+
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #111;
+  color: #fff;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+</style>
+</head>
+
+<body>
+
+<h1>ようこそ</h1>
+
+<!-- クリックゲーム -->
+<h2>クリックゲーム</h2>
+<button onclick="clickGame()">クリック！</button>
+<p id="score">0</p>
+
+<!-- ランダムメッセージ -->
+<h2>今日の一言</h2>
+<button onclick="randomMsg()">表示</button>
+<p id="msg"></p>
+
+<!-- ダークモード -->
+<h2>モード切替</h2>
+<button onclick="toggleMode()">切り替え</button>
+
+<script>
+let score = 0;
+
+function clickGame() {
+  score++;
+  document.getElementById("score").textContent = score;
+}
+
+// ランダムメッセージ
+const messages = [
+  "今日は当たり日",
+  "寝ろ",
+  "神引き来るぞ",
+  "何か作れ",
+  "バグる予感"
+];
+
+function randomMsg() {
+  const rand = Math.floor(Math.random() * messages.length);
+  document.getElementById("msg").textContent = messages[rand];
+}
+
+// ダークモード切替
+let dark = true;
+function toggleMode() {
+  if (dark) {
+    document.body.style.background = "#fff";
+    document.body.style.color = "#000";
+  } else {
+    document.body.style.background = "#111";
+    document.body.style.color = "#fff";
+  }
+  dark = !dark;
+}
+</script>
+
+</body>
+</html>
