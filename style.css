@@ -86,3 +86,13 @@ body {
         background-position: 300%;
     }
 }
+
+#clock {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+
+    background: linear-gradient(90deg, #00c3ff, #7a00ff, #ff00c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
