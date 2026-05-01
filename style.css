@@ -60,5 +60,29 @@ body {
 .ramen p {
     margin-top: 15px;
     font-size: 16px;
-    opacity: 0.8;
+    font-weight: bold;
+
+    background: linear-gradient(
+        90deg,
+        #00c3ff,
+        #00f0ff,
+        #7a00ff,
+        #ff00c8,
+        #00c3ff
+    );
+
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: apexRainbow 5s linear infinite;
+}
+
+@keyframes apexRainbow {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 300%;
+    }
 }
