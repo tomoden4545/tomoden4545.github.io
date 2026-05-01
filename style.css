@@ -39,3 +39,20 @@ body {
     83%  { color: rgb(75, 0, 130); }
     100% { color: rgb(255, 0, 0); }
 }
+.ramen {
+    margin-top: 80px;
+    text-align: center;
+    color: white;
+}
+
+.ramen img {
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.ramen p {
+    margin-top: 15px;
+    font-size: 16px;
+    opacity: 0.8;
+}
