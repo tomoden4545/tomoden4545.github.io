@@ -382,3 +382,15 @@ body.light-theme .recruit-btn:hover {
 @media (min-width: 769px) {
     .layout {
         width: min(1120px, calc(100% - 96px));
+        .back-btn {
+    display: block;
+    margin: 60px auto;
+    text-align: center;
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
