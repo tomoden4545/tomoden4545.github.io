@@ -1,100 +1,141 @@
-* {
-    box-sizing: border-box;
+    color: currentColor;
+    font-size: 18px;
+    text-align: center;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: #f2f2f2;
-    color: #28220b;
-    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-}
-
-body.dark-theme {
-    background: #111;
-    color: #f5f1dc;
-}
-
-a {
-    color: inherit;
-}
-
-.theme-toggle {
-    position: fixed;
-    top: 74px;
-    right: 18px;
-    z-index: 10;
-    display: inline-flex;
-    gap: 6px;
-    align-items: center;
-    padding: 7px 11px;
-    border: 1px solid currentColor;
-    border-radius: 999px;
-    background: #fff;
-    color: #111;
-    font-size: 16px;
-    line-height: 1;
-    cursor: pointer;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
-}
-
-body.dark-theme .theme-toggle {
-    background: #161616;
-    color: #fff;
-}
-
-.page-shell {
-    width: min(760px, 100%);
-    margin: 0 auto;
-    background: #fff;
-    border-left: 1px solid #d8c66d;
-    border-right: 1px solid #d8c66d;
-    box-shadow: 0 0 0 1px rgba(140, 120, 0, 0.08);
-}
-
-body.dark-theme .page-shell {
-    background: #181818;
-    border-color: #66570c;
-}
-
-.site-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 10px 12px 8px;
-    background: linear-gradient(#fff, #f7f7f7);
-}
-
-body.dark-theme .site-header {
-    background: #181818;
-}
-
-.site-kana {
-    margin: 0 0 2px;
-    color: #6a6045;
-    font-size: 10px;
-}
-
-body.dark-theme .site-kana {
-    color: #c9bd82;
-}
-
-.site-logo {
-    color: #191919;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 0;
-    text-decoration: none;
-}
-
-body.dark-theme .site-logo {
-    color: #fff7c2;
-}
-
-.header-links {
-    display: flex;
-    gap: 8px;
-    color: #525252;
+.calendar {
+    min-width: 126px;
+    color: currentColor;
     font-size: 11px;
-    white-space: nowrap;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.calendar-title {
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 16px);
+    justify-content: center;
+    gap: 4px 2px;
+}
+
+.calendar-week {
+    color: #ff8c00;
+}
+
+.calendar-day.is-today {
+    color: #111;
+    background: linear-gradient(135deg, #fff200, #ff8c00);
+    border-radius: 4px;
+}
+
+.food-list {
+    display: grid;
+    gap: 0;
+}
+
+.food-card {
+    display: grid;
+    grid-template-columns: 118px 1fr;
+    gap: 12px;
+    padding: 10px;
+    border-bottom: 1px dotted #d6c676;
+}
+
+.food-card:last-child {
+    border-bottom: 0;
+}
+
+.food-card img {
+    width: 118px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid #d0b543;
+}
+
+.food-card h2 {
+    margin: 2px 0 7px;
+    color: #473700;
+    font-size: 17px;
+}
+
+body.dark-theme .food-card h2 {
+    color: #ffe66b;
+}
+
+.food-card p,
+.tour-box p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.tour-box p {
+    padding: 10px;
+}
+
+@media (max-width: 720px) {
+    .page-shell {
+        width: 100%;
+        border: 0;
+    }
+
+    .site-header {
+        display: grid;
+        gap: 8px;
+    }
+
+    .header-links {
+        flex-wrap: wrap;
+    }
+
+    .main-nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero img {
+        height: 190px;
+    }
+
+    .hero-copy {
+        inset: 22px 18px auto;
+    }
+
+    .hero-copy strong {
+        font-size: 25px;
+    }
+
+    .portal-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .side-menu {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .side-banner {
+        min-height: 86px;
+    }
+
+    .feature-banner strong {
+        font-size: 22px;
+    }
+
+    .clock-panel {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .food-card {
+        grid-template-columns: 92px 1fr;
+        gap: 10px;
+    }
+
+    .food-card img {
+        width: 92px;
+    }
+}
