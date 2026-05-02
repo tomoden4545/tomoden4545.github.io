@@ -2,8 +2,37 @@ body {
     margin: 0;
     padding: 0;
     background: #111;
+    color: #fff;
     min-height: 100vh;
     font-family: sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.light-theme {
+    background: #fff;
+    color: #111;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.theme-icon {
+    display: inline-block;
 }
 
 .layout {
@@ -117,21 +146,10 @@ body {
     margin-top: 15px;
     font-size: 16px;
     font-weight: bold;
-
-    background: linear-gradient(
-        90deg,
-        #00c3ff,
-        #00f0ff,
-        #7a00ff,
-        #ff00c8,
-        #00c3ff
-    );
-
-    background-size: 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: apexRainbow 5s linear infinite;
+    color: currentColor;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
 }
 
 @keyframes apexRainbow {
