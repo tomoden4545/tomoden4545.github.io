@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>友電 食品館</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="theme toggle">
+    <span class="theme-icon theme-sun">&#9728;</span>
+    <span class="theme-icon theme-moon">&#9790;</span>
+</button>
+
+<div class="layout">
+    <div class="main-visual">
+        <div class="title-row">
+            <a href="index.html" class="back-btn">← トップページに戻る</a>
+
+            <a href="shokuhinkan.html" class="title">
+                <span>S</span>
+                <span>H</span>
+                <span>O</span>
+                <span>K</span>
+                <span>U</span>
+                <span>H</span>
+                <span>I</span>
+                <span>N</span>
+            </a>
+
+            <h1 class="food-title">友電 食品館</h1>
+        </div>
+    </div>
+
+    <div class="content food-list">
+        <section class="ramen">
+            <h2>友電のトモメン ザーメン味</h2>
+
+            <a href="https://tomoden4545.booth.pm/items/8296054" target="_blank">
+                <img src="ramen.jpg" alt="自作カップラーメン">
+            </a>
+
+            <p>
+                2026年1月、急遽落ちてきた<br>
+                伝説のカップ麺、トモメン。
+            </p>
+        </section>
+
+        <section class="ramen jakamen">
+            <h2>香原のジャカメン 潮味</h2>
+
+            <a href="https://tomoden4545.booth.pm/items/8296565" target="_blank">
+                <img src="jakamen.png" alt="自作カップラーメン ジャカメン">
+            </a>
+
+            <p>
+                さっぱりなのに馬鹿うまい！？<br>
+                2026年2月, ジャカメン爆誕
+            </p>
+        </section>
+    </div>
+</div>
+
+<script>
+function setupThemeToggle() {
+    const button = document.getElementById("theme-toggle");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
+
+    function applyTheme(theme) {
+        document.body.classList.toggle("light-theme", theme === "light");
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    applyTheme(savedTheme || (mediaQuery.matches ? "light" : "dark"));
+
+    button.addEventListener("click", () => {
+        const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
+        applyTheme(nextTheme);
+        localStorage.setItem("theme", nextTheme);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", setupThemeToggle);
+</script>
+
+</body>
+</html>
