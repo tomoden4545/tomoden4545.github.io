@@ -1,3 +1,414 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f2f2f2;
+    color: #28220b;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+}
+
+body.dark-theme {
+    background: #111;
+    color: #f5f1dc;
+}
+
+a {
+    color: inherit;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 74px;
+    right: 18px;
+    z-index: 10;
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    padding: 7px 11px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: #fff;
+    color: #111;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+}
+
+body.dark-theme .theme-toggle {
+    background: #161616;
+    color: #fff;
+}
+
+.page-shell {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    background: #fff;
+    border-left: 1px solid #d8c66d;
+    border-right: 1px solid #d8c66d;
+    box-shadow: 0 0 0 1px rgba(140, 120, 0, 0.08);
+}
+
+body.dark-theme .page-shell {
+    background: #181818;
+    border-color: #66570c;
+}
+
+.site-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 12px 8px;
+    background: linear-gradient(#fff, #f7f7f7);
+}
+
+body.dark-theme .site-header {
+    background: #181818;
+}
+
+.site-kana {
+    margin: 0 0 2px;
+    color: #6a6045;
+    font-size: 10px;
+}
+
+body.dark-theme .site-kana {
+    color: #c9bd82;
+}
+
+.site-logo {
+    color: #191919;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+
+body.dark-theme .site-logo {
+    color: #fff7c2;
+}
+
+.header-links {
+    display: flex;
+    gap: 8px;
+    color: #525252;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.header-links a {
+    text-decoration: none;
+}
+
+.header-links a:hover {
+    text-decoration: underline;
+}
+
+body.dark-theme .header-links {
+    color: #ddd;
+}
+
+.main-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 5px 6px;
+    background: #ffce00;
+    border-top: 1px solid #c59b00;
+    border-bottom: 3px solid #a57c00;
+}
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 4px 6px;
+    background: #fff5b5;
+    border: 1px solid #a67b00;
+    color: #2d2500;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    background: #fff;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 112px;
+    align-items: center;
+    gap: 14px;
+    min-height: 0;
+    padding: 14px 16px;
+    background: linear-gradient(90deg, #fff7c4, #fffdf0);
+    border-bottom: 4px solid #ffce00;
+}
+
+.hero img {
+    width: 104px;
+    height: 104px;
+    display: block;
+    justify-self: end;
+    object-fit: cover;
+    border: 2px solid #d2bd42;
+}
+
+.hero::after {
+    content: none;
+}
+
+.hero-copy {
+    position: static;
+    display: grid;
+    gap: 8px;
+    color: #2d2500;
+    text-shadow: none;
+}
+
+.hero-copy span {
+    width: fit-content;
+    padding: 3px 8px;
+    background: #ffce00;
+    color: #201900;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+.hero-copy strong {
+    max-width: none;
+    font-size: 25px;
+    line-height: 1.15;
+}
+
+.hero-copy em {
+    color: #6a5200;
+    font-size: 15px;
+    font-style: normal;
+}
+
+body.dark-theme .hero {
+    background: linear-gradient(90deg, #2b2405, #181818);
+}
+
+body.dark-theme .hero-copy {
+    color: #fff7c2;
+}
+
+body.dark-theme .hero-copy em {
+    color: #e7d57b;
+}
+
+.portal-layout {
+    display: grid;
+    grid-template-columns: 168px 1fr;
+    gap: 8px;
+    padding: 8px;
+}
+
+.side-menu {
+    display: grid;
+    gap: 7px;
+    align-content: start;
+}
+
+.side-banner {
+    position: relative;
+    min-height: 54px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 8px;
+    align-items: center;
+    padding: 6px;
+    border: 2px solid #ffce00;
+    background: #fffef2;
+    color: #2d2500;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.25;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.side-banner img {
+    position: static;
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border: 1px solid #c6ad31;
+}
+
+.side-banner::after {
+    content: none;
+}
+
+.side-banner span,
+.side-banner small {
+    position: static;
+}
+
+.side-banner:hover img {
+    transform: none;
+}
+
+body.dark-theme .side-banner {
+    background: #22200e;
+    color: #fff7c2;
+}
+
+.plain-banner {
+    min-height: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-items: start;
+    background: #eff8df;
+    color: #178315;
+    text-shadow: none;
+}
+
+.plain-banner::after {
+    content: none;
+}
+
+.plain-banner small {
+    color: #555;
+    font-size: 11px;
+}
+
+.twitter-banner {
+    min-height: 50px;
+    justify-content: center;
+    align-items: center;
+    background: #e4f6ff;
+    color: #1597d8;
+    text-align: center;
+    text-shadow: none;
+}
+
+.twitter-banner img {
+    position: static;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.twitter-banner::after {
+    content: none;
+}
+
+.portal-main {
+    min-width: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.feature-banner {
+    min-height: 76px;
+    overflow: hidden;
+    border: 2px solid #d2bd42;
+}
+
+.feature-banner a {
+    min-height: inherit;
+    display: grid;
+    align-content: center;
+    gap: 6px;
+    padding: 13px 15px;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.feature-banner span {
+    color: #ffe66b;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.feature-banner strong {
+    font-size: 20px;
+    line-height: 1.25;
+}
+
+.recruit-feature {
+    background: linear-gradient(90deg, #18456a, #27719b);
+}
+
+.food-feature {
+    background: linear-gradient(90deg, #406314, #789a1f);
+}
+
+.notice-box,
+.clock-panel,
+.food-list,
+.tour-box {
+    border: 1px solid #e1c54d;
+    background: #fffdf0;
+}
+
+body.dark-theme .notice-box,
+body.dark-theme .clock-panel,
+body.dark-theme .food-list,
+body.dark-theme .tour-box {
+    background: #20200f;
+    border-color: #807227;
+}
+
+.notice-box h2,
+.tour-box h2 {
+    margin: 0;
+    padding: 5px 10px;
+    background: #ffce00;
+    color: #3b3000;
+    font-size: 14px;
+}
+
+.notice-box ul {
+    margin: 0;
+    padding: 6px 10px 9px;
+    list-style: none;
+}
+
+.notice-box li {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 8px;
+    padding: 5px 0;
+    border-bottom: 1px dotted #d6c676;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.notice-box li:last-child {
+    border-bottom: 0;
+}
+
+.notice-box time {
+    color: #9a6500;
+    font-weight: bold;
+}
+
+.clock-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 12px;
+}
+
+#clock {
+    margin: 0;
+    min-width: 170px;
     color: currentColor;
     font-size: 18px;
     text-align: center;
@@ -40,7 +451,7 @@
 
 .food-card {
     display: grid;
-    grid-template-columns: 118px 1fr;
+    grid-template-columns: 76px 1fr;
     gap: 12px;
     padding: 10px;
     border-bottom: 1px dotted #d6c676;
@@ -51,7 +462,7 @@
 }
 
 .food-card img {
-    width: 118px;
+    width: 76px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border: 1px solid #d0b543;
@@ -97,16 +508,23 @@ body.dark-theme .food-card h2 {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .hero {
+        grid-template-columns: 1fr 74px;
+        gap: 10px;
+        padding: 12px;
+    }
+
     .hero img {
-        height: 190px;
+        width: 70px;
+        height: 70px;
     }
 
     .hero-copy {
-        inset: 22px 18px auto;
+        position: static;
     }
 
     .hero-copy strong {
-        font-size: 25px;
+        font-size: 21px;
     }
 
     .portal-layout {
@@ -118,7 +536,7 @@ body.dark-theme .food-card h2 {
     }
 
     .side-banner {
-        min-height: 86px;
+        min-height: 54px;
     }
 
     .feature-banner strong {
@@ -131,11 +549,11 @@ body.dark-theme .food-card h2 {
     }
 
     .food-card {
-        grid-template-columns: 92px 1fr;
+        grid-template-columns: 68px 1fr;
         gap: 10px;
     }
 
     .food-card img {
-        width: 92px;
+        width: 68px;
     }
 }
