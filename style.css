@@ -15,7 +15,7 @@ body.light-theme {
 
 .theme-toggle {
     position: fixed;
-    top: 18px;
+    top: 72px;
     right: 18px;
     z-index: 999;
     display: inline-flex;
@@ -41,6 +41,10 @@ body.light-theme .theme-toggle {
     color: #111;
 }
 
+body.light-theme .time-calendar {
+    background: rgba(0, 0, 0, 0.04);
+}
+
 .layout {
     box-sizing: border-box;
     width: 100%;
@@ -56,6 +60,37 @@ body.light-theme .theme-toggle {
     flex-direction: column;
     align-items: center;
     width: 100%;
+}
+
+.title-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.recruit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: 2px solid currentColor;
+    border-radius: 999px;
+    color: currentColor;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.recruit-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.light-theme .recruit-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .title {
@@ -189,22 +224,25 @@ body.light-theme .theme-toggle {
     margin: 0;
     font-size: 18px;
     text-align: center;
-
-    background: linear-gradient(90deg, #00c3ff, #7a00ff, #ff00c8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: currentColor;
 }
 
 .time-calendar {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 18px;
     margin-top: 18px;
+    padding: 10px 14px;
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    color: currentColor;
 }
 
 .calendar {
-    color: #ffd45c;
+    color: currentColor;
     font-size: 11px;
     font-weight: bold;
     line-height: 1;
@@ -214,7 +252,7 @@ body.light-theme .theme-toggle {
 .calendar-title {
     margin-bottom: 6px;
     text-align: center;
-    color: #ffb300;
+    color: currentColor;
 }
 
 .calendar-grid {
@@ -229,7 +267,7 @@ body.light-theme .theme-toggle {
 }
 
 .calendar-day {
-    color: #ffe27a;
+    color: currentColor;
 }
 
 .calendar-day.is-today {
@@ -303,12 +341,21 @@ body.light-theme .theme-toggle {
     }
 
     .time-calendar {
-        gap: 10px;
+        box-sizing: border-box;
+        width: min(320px, 100%);
+        display: flex;
+        gap: 12px;
         margin-top: 16px;
+        padding: 10px 12px;
+        border: 1px solid currentColor;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.06);
     }
 
     #clock {
         font-size: 14px;
+        min-width: 118px;
+        text-align: right;
     }
 
     .calendar {
@@ -335,50 +382,13 @@ body.light-theme .theme-toggle {
 @media (min-width: 769px) {
     .layout {
         width: min(1120px, calc(100% - 96px));
-        margin: 0 auto;
-        padding: 40px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main-visual {
-        width: 100%;
-        align-items: center;
-    }
-
-    .title {
-        display: block;
-        width: max-content;
-        margin-top: 0;
-        font-size: 60px;
-        letter-spacing: 8px;
-    }
-
-    .twitter-btn {
-        margin-top: 30px;
-    }
-
-    .content {
-        width: 100%;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 42px;
-    }
-
-    .ramen {
-        width: max-content;
-        margin: 72px 0 0 34%;
-    }
-
-    .ramen + .ramen {
-        margin: 72px 0 0;
-    }
-
-    .ramen img {
-        width: 280px;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-    }
+.recruit-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 24px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
 }
