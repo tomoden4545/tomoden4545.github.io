@@ -41,10 +41,27 @@ body {
     83%  { color: rgb(75, 0, 130); }
     100% { color: rgb(255, 0, 0); }
 }
+
+.content {
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    width: 100%;
+}
+
 .ramen {
-    margin-top: 400px;
+    margin-top: 100px;
+    margin-right: 80px; /* 右に余白 */
     text-align: center;
-    color: white;
+}
+
+@media (max-width: 768px) {
+    .content {
+        display: block; /* 横並びやめる */
+    }
+
+    .ramen {
+        margin: 80px auto;
+    }
 }
 
 .ramen img {
