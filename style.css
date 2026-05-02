@@ -60,6 +60,10 @@ body {
 
 .content {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
 }
 
 .ramen {
@@ -80,6 +84,21 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: ramenTitleChroma 4s linear infinite;
+}
+
+.jakamen h2 {
+    background: linear-gradient(
+        90deg,
+        #ff1a1a,
+        #8b0000,
+        #111,
+        #b30000,
+        #ff1a1a
+    );
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: jakamenTitleChroma 4s linear infinite;
 }
 
 .ramen img {
@@ -124,6 +143,15 @@ body {
 }
 
 @keyframes ramenTitleChroma {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 300%;
+    }
+}
+
+@keyframes jakamenTitleChroma {
     0% {
         background-position: 0%;
     }
@@ -244,6 +272,41 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .content {
+        align-items: flex-start;
+    }
+
+    .time-calendar {
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    #clock {
+        font-size: 14px;
+    }
+
+    .calendar {
+        min-width: 112px;
+        font-size: 10px;
+    }
+
+    .calendar-grid {
+        grid-template-columns: repeat(7, 14px);
+        gap: 4px 1px;
+    }
+
+    .ramen {
+        width: fit-content;
+        max-width: calc(100% - 24px);
+        margin: 0 auto 0 6%;
+    }
+
+    .ramen:first-child {
+        margin-top: 72px;
+    }
+}
+
 @media (min-width: 769px) {
     .layout {
         width: min(1120px, calc(100% - 96px));
@@ -273,11 +336,19 @@ body {
 
     .content {
         width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 42px;
     }
 
     .ramen {
         width: max-content;
         margin: 72px 0 0 34%;
+    }
+
+    .ramen + .ramen {
+        margin: 72px 0 0;
     }
 
     .ramen img {
