@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>友電 公式ホームページ</title>
+    <title>TOMODEN</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+    <span class="theme-icon theme-sun">☀</span>
+    <span class="theme-icon theme-moon">☾</span>
+</button>
 
 <div class="layout">
     <div class="main-visual">
@@ -48,15 +53,15 @@
         </section>
 
         <section class="ramen jakamen">
-            <h2>香原のジャカメン サク潮味</h2>
+            <h2>友電のジャカメン 極上うま辛味</h2>
 
-            <a href="https://tomoden4545.booth.pm/items/8296565" target="_blank">
+            <a href="jakamen.png" target="_blank">
                 <img src="jakamen.png" alt="自作カップラーメン ジャカメン">
             </a>
 
             <p>
-                すっきりした潮の味。<br>
-                史上最高のジャカメン。
+                新たなる激辛の衝撃。<br>
+                ジャカメン、ここに爆誕。
             </p>
         </section>
     </div>
@@ -108,10 +113,5 @@ function updateCalendar() {
     calendar.innerHTML = html;
 }
 
-setInterval(updateClock, 1000);
-updateClock();
-updateCalendar();
-</script>
-
-</body>
-</html>
+function setupThemeToggle() {
+    const button = document.getElementById("theme-toggle");
