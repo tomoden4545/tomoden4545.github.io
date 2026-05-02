@@ -88,6 +88,37 @@ body.light-theme .time-calendar {
     transform: translateY(-2px);
     background: rgba(255, 255, 255, 0.08);
 }
+.recruit-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.president-link {
+    display: block;
+    text-decoration: none;
+}
+
+.president-photo {
+    display: block;
+    width: min(180px, 36vw);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 2px solid currentColor;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .recruit-row {
+        flex-direction: column;
+    }
+
+    .president-photo {
+        width: min(220px, 64vw);
+    }
+}
+
 
 body.light-theme .recruit-btn:hover {
     background: rgba(0, 0, 0, 0.06);
