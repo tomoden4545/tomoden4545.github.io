@@ -11,8 +11,6 @@
 
 <div class="layout">
     <div class="main-visual">
-        <p id="clock"></p>
-
         <a href="https://tomoden4545.github.io/" class="title">
             <span>T</span>
             <span>O</span>
@@ -22,6 +20,11 @@
             <span>E</span>
             <span>N</span>
         </a>
+
+        <div class="time-calendar">
+            <p id="clock"></p>
+            <div id="calendar" class="calendar"></div>
+        </div>
 
         <a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="twitter-btn">
             <span class="finger">👉</span>
@@ -63,8 +66,38 @@ function updateClock() {
         `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
 }
 
+function updateCalendar() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+    const today = now.getDate();
+    const weeks = ["日", "月", "火", "水", "木", "金", "土"];
+    const calendar = document.getElementById("calendar");
+
+    let html = `<div class="calendar-title">${year}/${String(month + 1).padStart(2, "0")}</div>`;
+    html += `<div class="calendar-grid">`;
+    weeks.forEach((week) => {
+        html += `<span class="calendar-week">${week}</span>`;
+    });
+
+    for (let i = 0; i < firstDay; i++) {
+        html += `<span></span>`;
+    }
+
+    for (let date = 1; date <= lastDate; date++) {
+        const activeClass = date === today ? " is-today" : "";
+        html += `<span class="calendar-day${activeClass}">${date}</span>`;
+    }
+
+    html += `</div>`;
+    calendar.innerHTML = html;
+}
+
 setInterval(updateClock, 1000);
 updateClock();
+updateCalendar();
 </script>
 
 </body>
