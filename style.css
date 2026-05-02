@@ -98,3 +98,15 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.twitter {
+    display: inline-block;
+    margin-top: 20px;
+    color: #1DA1F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.twitter:hover {
+    text-decoration: underline;
+}
