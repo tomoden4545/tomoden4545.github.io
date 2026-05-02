@@ -17,8 +17,8 @@
 <div class="page-shell">
     <header class="site-header">
         <div>
-            <p class="site-kana">契約単価を走る高効率パワー系発電所</p>
-            <a href="index.html" class="site-logo">友電株式会社</a>
+            <p class="site-kana">常に最高速度で発射するパワー発電所</p>
+            <a href="index.html" class="site-logo">大友発電所</a>
         </div>
 
         <div class="header-links">
@@ -98,109 +98,3 @@
             </section>
 
             <section class="clock-panel" id="clock-area">
-                <p id="clock"></p>
-                <div id="calendar" class="calendar"></div>
-            </section>
-
-            <section class="food-list">
-                <article class="food-card">
-                    <a href="https://tomoden4545.booth.pm/items/8296054" target="_blank">
-                        <img src="ramen.jpg" alt="友電のトモメン ザーメン味">
-                    </a>
-                    <div>
-                        <h2>友電のトモメン ザーメン味</h2>
-                        <p>2026年1月、急遽落ちてきた伝説のカップ麺、トモメン。</p>
-                    </div>
-                </article>
-
-                <article class="food-card">
-                    <a href="https://tomoden4545.booth.pm/items/8296565" target="_blank">
-                        <img src="jakamen.png" alt="香原のジャカメン 潮味">
-                    </a>
-                    <div>
-                        <h2>香原のジャカメン 潮味</h2>
-                        <p>さっぱりなのに馬鹿うまい！？ 2026年2月、ジャカメン爆誕。</p>
-                    </div>
-                </article>
-            </section>
-
-            <section class="tour-box" id="tour">
-                <h2>発電所見学</h2>
-                <p>申し込みページは準備中です。受付フォームの設置後、こちらから案内します。</p>
-            </section>
-        </main>
-    </div>
-</div>
-
-<script>
-function updateClock() {
-    const now = new Date();
-
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, "0");
-    const day = String(now.getDate()).padStart(2, "0");
-    const hours = String(now.getHours()).padStart(2, "0");
-    const minutes = String(now.getMinutes()).padStart(2, "0");
-    const seconds = String(now.getSeconds()).padStart(2, "0");
-
-    document.getElementById("clock").textContent =
-        `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
-}
-
-function updateCalendar() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth();
-    const firstDay = new Date(year, month, 1).getDay();
-    const lastDate = new Date(year, month + 1, 0).getDate();
-    const today = now.getDate();
-    const weeks = ["日", "月", "火", "水", "木", "金", "土"];
-    const calendar = document.getElementById("calendar");
-
-    let html = `<div class="calendar-title">${year}/${String(month + 1).padStart(2, "0")}</div>`;
-    html += `<div class="calendar-grid">`;
-
-    weeks.forEach((week) => {
-        html += `<span class="calendar-week">${week}</span>`;
-    });
-
-    for (let i = 0; i < firstDay; i++) {
-        html += `<span></span>`;
-    }
-
-    for (let date = 1; date <= lastDate; date++) {
-        const activeClass = date === today ? " is-today" : "";
-        html += `<span class="calendar-day${activeClass}">${date}</span>`;
-    }
-
-    html += `</div>`;
-    calendar.innerHTML = html;
-}
-
-function setupThemeToggle() {
-    const button = document.getElementById("theme-toggle");
-
-    function applyTheme(theme) {
-        document.body.classList.toggle("dark-theme", theme === "dark");
-    }
-
-    const savedTheme = localStorage.getItem("theme") || "light";
-    applyTheme(savedTheme);
-
-    button.addEventListener("click", () => {
-        const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
-        applyTheme(nextTheme);
-        localStorage.setItem("theme", nextTheme);
-    });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    setInterval(updateClock, 1000);
-    updateClock();
-    updateCalendar();
-    setupThemeToggle();
-});
-</script>
-
-</body>
-</html>
