@@ -14,52 +14,121 @@
     <span class="theme-icon theme-moon">&#9790;</span>
 </button>
 
-<div class="layout">
-    <div class="main-visual">
-        <a href="https://tomoden4545.github.io/" class="title">
-            <span>T</span>
-            <span>O</span>
-            <span>M</span>
-            <span>O</span>
-            <span>D</span>
-            <span>E</span>
-            <span>N</span>
-        </a>
-
-        <div class="menu-grid">
-            <a href="recruit.html" class="menu-card">
-                <span class="menu-icon">
-                    <img src="shacho.png" alt="">
-                </span>
-                <strong>新卒採用</strong>
-                <em>社長からのご案内 ↗</em>
-            </a>
-
-            <a href="shokuhinkan.html" class="menu-card">
-                <span class="menu-icon">
-                    <img src="ramen.jpg" alt="">
-                </span>
-                <strong>食品館</strong>
-                <em>ラーメン一覧 ↗</em>
-            </a>
-
-            <a href="takarabako.html" class="menu-card">
-                <span class="menu-icon menu-icon-text">宝</span>
-                <strong>宝箱</strong>
-                <em>令和８年度 ↗</em>
-            </a>
+<div class="page-shell">
+    <header class="site-header">
+        <div>
+            <p class="site-kana">契約単価を走る高効率パワー系発電所</p>
+            <a href="index.html" class="site-logo">友電株式会社</a>
         </div>
 
-        <div class="time-calendar">
-            <p id="clock"></p>
-            <div id="calendar" class="calendar"></div>
+        <div class="header-links">
+            <a href="index.html">ホーム</a>
+            <a href="#news">お知らせ</a>
+            <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">お問い合わせ</a>
         </div>
+    </header>
 
-        <a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="twitter-btn">
-            <span class="finger">&#128073;</span>
-            <img src="twitter.png" alt="Twitter">
-            公式Twitterはこちら
-        </a>
+    <nav class="main-nav" aria-label="主要メニュー">
+        <a href="#clock-area">時刻表</a>
+        <a href="#food">食品館</a>
+        <a href="recruit.html">新卒採用</a>
+        <a href="#tour">発電所見学</a>
+    </nav>
+
+    <section class="hero">
+        <img src="ramen.jpg" alt="友電食品館のトモメン">
+        <div class="hero-copy">
+            <span>友電公式ホームページ</span>
+            <strong>発電、採用、食品館まで。</strong>
+            <em>大友発電所からのお知らせ</em>
+        </div>
+    </section>
+
+    <div class="portal-layout">
+        <aside class="side-menu" aria-label="サイドメニュー">
+            <a href="recruit.html" class="side-banner">
+                <img src="shacho.png" alt="">
+                <span>新卒採用</span>
+            </a>
+
+            <a href="#food" class="side-banner">
+                <img src="ramen.jpg" alt="">
+                <span>友電 食品館</span>
+            </a>
+
+            <a href="#food" class="side-banner">
+                <img src="jakamen.png" alt="">
+                <span>ジャカメン情報</span>
+            </a>
+
+            <a href="#tour" class="side-banner plain-banner">
+                <span>発電所見学</span>
+                <small>受付準備中</small>
+            </a>
+
+            <a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="side-banner twitter-banner">
+                <img src="twitter.png" alt="">
+                <span>公式Twitter</span>
+            </a>
+        </aside>
+
+        <main class="portal-main">
+            <section class="feature-banner recruit-feature">
+                <a href="recruit.html">
+                    <span>大友発電所</span>
+                    <strong>新卒採用ページはこちら</strong>
+                </a>
+            </section>
+
+            <section class="feature-banner food-feature" id="food">
+                <a href="https://tomoden4545.booth.pm/items/8296054" target="_blank">
+                    <span>友電 食品館</span>
+                    <strong>トモメン・ジャカメン販売中</strong>
+                </a>
+            </section>
+
+            <section class="notice-box" id="news">
+                <h2>お知らせ</h2>
+                <ul>
+                    <li><time>5月2日</time> 公式ホームページを鉄道会社風レイアウトに更新しました。</li>
+                    <li><time>4月24日</time> 友電のトモメン ザーメン味を掲載しました。</li>
+                    <li><time>4月17日</time> 香原のジャカメン 潮味を掲載しました。</li>
+                    <li><time>4月13日</time> 新卒採用情報を公開しました。</li>
+                </ul>
+            </section>
+
+            <section class="clock-panel" id="clock-area">
+                <p id="clock"></p>
+                <div id="calendar" class="calendar"></div>
+            </section>
+
+            <section class="food-list">
+                <article class="food-card">
+                    <a href="https://tomoden4545.booth.pm/items/8296054" target="_blank">
+                        <img src="ramen.jpg" alt="友電のトモメン ザーメン味">
+                    </a>
+                    <div>
+                        <h2>友電のトモメン ザーメン味</h2>
+                        <p>2026年1月、急遽落ちてきた伝説のカップ麺、トモメン。</p>
+                    </div>
+                </article>
+
+                <article class="food-card">
+                    <a href="https://tomoden4545.booth.pm/items/8296565" target="_blank">
+                        <img src="jakamen.png" alt="香原のジャカメン 潮味">
+                    </a>
+                    <div>
+                        <h2>香原のジャカメン 潮味</h2>
+                        <p>さっぱりなのに馬鹿うまい！？ 2026年2月、ジャカメン爆誕。</p>
+                    </div>
+                </article>
+            </section>
+
+            <section class="tour-box" id="tour">
+                <h2>発電所見学</h2>
+                <p>申し込みページは準備中です。受付フォームの設置後、こちらから案内します。</p>
+            </section>
+        </main>
     </div>
 </div>
 
@@ -70,7 +139,6 @@ function updateClock() {
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, "0");
     const day = String(now.getDate()).padStart(2, "0");
-
     const hours = String(now.getHours()).padStart(2, "0");
     const minutes = String(now.getMinutes()).padStart(2, "0");
     const seconds = String(now.getSeconds()).padStart(2, "0");
@@ -111,17 +179,16 @@ function updateCalendar() {
 
 function setupThemeToggle() {
     const button = document.getElementById("theme-toggle");
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
 
     function applyTheme(theme) {
-        document.body.classList.toggle("light-theme", theme === "light");
+        document.body.classList.toggle("dark-theme", theme === "dark");
     }
 
-    const savedTheme = localStorage.getItem("theme");
-    applyTheme(savedTheme || (mediaQuery.matches ? "light" : "dark"));
+    const savedTheme = localStorage.getItem("theme") || "light";
+    applyTheme(savedTheme);
 
     button.addEventListener("click", () => {
-        const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
+        const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
         applyTheme(nextTheme);
         localStorage.setItem("theme", nextTheme);
     });
