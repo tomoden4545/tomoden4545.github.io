@@ -103,6 +103,7 @@ body {
 
 .ramen img {
     width: min(400px, 70vw);
+     aspect-ratio: 1 / 1;
     height: auto;
     border-radius: 10px;
     transition: 0.3s;
@@ -352,6 +353,10 @@ body {
     }
 
     .ramen img {
-        width: 280px;
+     width: min(400px, 70vw);
+     aspect-ratio: 1 / 1;
+    height: auto;
+    border-radius: 10px;
+    transition: 0.3s;
     }
 }
