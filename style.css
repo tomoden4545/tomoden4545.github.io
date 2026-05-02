@@ -103,8 +103,8 @@ body {
 
 .ramen img {
     width: min(400px, 70vw);
-     aspect-ratio: 1 / 1;
-    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 10px;
     transition: 0.3s;
 }
@@ -353,10 +353,8 @@ body {
     }
 
     .ramen img {
-     width: min(400px, 70vw);
-     aspect-ratio: 1 / 1;
-    height: auto;
-    border-radius: 10px;
-    transition: 0.3s;
+        width: 280px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
     }
 }
