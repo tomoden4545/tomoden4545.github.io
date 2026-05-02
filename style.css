@@ -382,13 +382,3 @@ body.light-theme .recruit-btn:hover {
 @media (min-width: 769px) {
     .layout {
         width: min(1120px, calc(100% - 96px));
-.recruit-btn {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 12px 24px;
-    background: white;
-    color: black;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
