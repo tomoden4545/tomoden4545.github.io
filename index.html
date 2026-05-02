@@ -14,20 +14,40 @@
     <span class="theme-icon theme-moon">&#9790;</span>
 </button>
 
-            <a href="https://tomoden4545.github.io/" class="title">
-                <span>T</span>
-                <span>O</span>
-                <span>M</span>
-                <span>O</span>
-                <span>D</span>
-                <span>E</span>
-                <span>N</span>
-            </a>
-    <a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="twitter-btn">
-            <span class="finger">&#128073;</span>
-            <img src="twitter.png" alt="Twitter">
-            公式Twitterはこちら
+<div class="layout">
+    <div class="main-visual">
+        <a href="https://tomoden4545.github.io/" class="title">
+            <span>T</span>
+            <span>O</span>
+            <span>M</span>
+            <span>O</span>
+            <span>D</span>
+            <span>E</span>
+            <span>N</span>
         </a>
+
+        <div class="menu-grid">
+            <a href="recruit.html" class="menu-card">
+                <span class="menu-icon">
+                    <img src="shacho.png" alt="">
+                </span>
+                <strong>新卒採用</strong>
+                <em>社長からのご案内 ↗</em>
+            </a>
+
+            <a href="shokuhinkan.html" class="menu-card">
+                <span class="menu-icon">
+                    <img src="ramen.jpg" alt="">
+                </span>
+                <strong>食品館</strong>
+                <em>ラーメン一覧 ↗</em>
+            </a>
+
+            <a href="takarabako.html" class="menu-card">
+                <span class="menu-icon menu-icon-text">宝</span>
+                <strong>宝箱</strong>
+                <em>令和８年度 ↗</em>
+            </a>
         </div>
 
         <div class="time-calendar">
@@ -35,17 +55,10 @@
             <div id="calendar" class="calendar"></div>
         </div>
 
-        <a href="shokuhinkan.html" class="menu-card">
-            <span class="menu-icon">
-                <img src="ramen.jpg" alt="">
-            </span>
-            <strong>食品館</strong>
-            <em>ラーメン一覧 ↗</em>
-        </a>
-      <a href="takarabako.html" class="menu-card">
-            <span class="menu-icon menu-icon-text">宝</span>
-            <strong>宝箱</strong>
-            <em>令和８年度 ↗</em>
+        <a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="twitter-btn">
+            <span class="finger">&#128073;</span>
+            <img src="twitter.png" alt="Twitter">
+            公式Twitterはこちら
         </a>
     </div>
 </div>
@@ -73,11 +86,12 @@ function updateCalendar() {
     const firstDay = new Date(year, month, 1).getDay();
     const lastDate = new Date(year, month + 1, 0).getDate();
     const today = now.getDate();
-    const weeks = ["\u65e5", "\u6708", "\u706b", "\u6c34", "\u6728", "\u91d1", "\u571f"];
+    const weeks = ["日", "月", "火", "水", "木", "金", "土"];
     const calendar = document.getElementById("calendar");
 
     let html = `<div class="calendar-title">${year}/${String(month + 1).padStart(2, "0")}</div>`;
     html += `<div class="calendar-grid">`;
+
     weeks.forEach((week) => {
         html += `<span class="calendar-week">${week}</span>`;
     });
@@ -105,18 +119,6 @@ function setupThemeToggle() {
 
     const savedTheme = localStorage.getItem("theme");
     applyTheme(savedTheme || (mediaQuery.matches ? "light" : "dark"));
-
-    const onThemeChange = (event) => {
-        if (!localStorage.getItem("theme")) {
-            applyTheme(event.matches ? "light" : "dark");
-        }
-    };
-
-    if (mediaQuery.addEventListener) {
-        mediaQuery.addEventListener("change", onThemeChange);
-    } else {
-        mediaQuery.addListener(onThemeChange);
-    }
 
     button.addEventListener("click", () => {
         const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
