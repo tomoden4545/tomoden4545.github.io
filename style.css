@@ -2,20 +2,36 @@ body {
     margin: 0;
     padding: 0;
     background: #111;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
+    min-height: 100vh;
     font-family: sans-serif;
 }
 
+.layout {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    padding: 28px 18px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .title {
-    margin-top: 40px;
-    font-size: 60px;
+    margin-top: 18px;
+    font-size: 42px;
     font-weight: bold;
-    letter-spacing: 8px;
+    letter-spacing: 5px;
     text-decoration: none;
     color: inherit;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .title span {
@@ -43,30 +59,16 @@ body {
 }
 
 .content {
-    display: flex;
-    justify-content: flex-end; /* 右寄せ */
     width: 100%;
 }
 
 .ramen {
-    margin-top: 100px;
-    margin-right: 80px; /* 右に余白 */
+    margin: 72px auto 0;
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .content {
-        display: block; /* 横並びやめる */
-    }
-
-    .ramen {
-        margin: 80px auto;
-    }
-}
-
 .ramen img {
-    max-width: 70%;
-    width: 400px;
+    width: min(400px, 70vw);
     height: auto;
     border-radius: 10px;
     transition: 0.3s;
@@ -107,7 +109,7 @@ body {
 }
 
 #clock {
-    margin-top: 20px;
+    margin: 0;
     font-size: 18px;
     text-align: center;
 
@@ -127,9 +129,11 @@ body {
 .twitter:hover {
     text-decoration: underline;
 }
+
 .twitter-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 
     margin-top: 30px;
@@ -170,5 +174,45 @@ body {
     }
     to {
         transform: translateX(8px);
+    }
+}
+
+@media (min-width: 769px) {
+    .layout {
+        width: min(1120px, calc(100% - 96px));
+        margin: 0 auto;
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-visual {
+        width: 100%;
+        align-items: center;
+    }
+
+    .title {
+        display: block;
+        width: max-content;
+        margin-top: 0;
+        font-size: 60px;
+        letter-spacing: 8px;
+    }
+
+    .twitter-btn {
+        margin-top: 30px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .ramen {
+        margin: 72px auto 0;
+    }
+
+    .ramen img {
+        width: 280px;
     }
 }
