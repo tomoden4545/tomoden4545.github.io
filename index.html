@@ -2,12 +2,14 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOMODEN</title>
     <link rel="stylesheet" href="style.css">
 </head>
-    <p id="clock"></p>
 
 <body>
+
+<p id="clock"></p>
 
 <a href="https://tomoden4545.github.io/" class="title">
     <span>T</span>
@@ -18,22 +20,48 @@
     <span>E</span>
     <span>N</span>
 </a>
-</div>
-    <div class="content">
-    <section class="ramen">
-    <h2>友電のトモメン ザーメン味</h2>
-    <a href="https://tomoden4545.booth.pm/items/8296054" target="_blank">
-    <img src="ramen.jpg" alt="自作カップラーメン">
 
-    <p>
-        2025年11月、みんなが待ち望んでいた<br>
-        世界初のトモメンが遂に発売された。
-    </p>
-</section>
-<a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="twitter-btn">
-    <span class="finger">👉</span>
-    <img src="twitter.png" alt="Twitter">
-    公式Twitterはこちら
-</a>
+<div class="content">
+    <section class="ramen">
+        <h2>友電のトモメン ザーメン味</h2>
+
+        <a href="https://tomoden4545.booth.pm/items/8296054" target="_blank">
+            <img src="ramen.jpg" alt="自作カップラーメン">
+        </a>
+
+        <p>
+            2025年11月、みんなが待ち望んでいた<br>
+            世界初のトモメンが遂に発売された。
+        </p>
+    </section>
+
+    <a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="twitter-btn">
+        <span class="finger">👉</span>
+        <img src="twitter.png" alt="Twitter">
+        公式Twitterはこちら
+    </a>
+</div>
+
+<!-- 👇これも忘れずに -->
+<script>
+function updateClock() {
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    document.getElementById("clock").textContent =
+        `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
 </body>
 </html>
