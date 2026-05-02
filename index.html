@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>友電 公式ホームーページ</title>
+    <title>TOMODEN</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,15 +16,21 @@
 
 <div class="layout">
     <div class="main-visual">
-        <a href="https://tomoden4545.github.io/" class="title">
-            <span>T</span>
-            <span>O</span>
-            <span>M</span>
-            <span>O</span>
-            <span>D</span>
-            <span>E</span>
-            <span>N</span>
-        </a>
+        <div class="title-row">
+            <a href="recruit.html" class="recruit-btn">
+                新卒採用はこちら
+            </a>
+
+            <a href="https://tomoden4545.github.io/" class="title">
+                <span>T</span>
+                <span>O</span>
+                <span>M</span>
+                <span>O</span>
+                <span>D</span>
+                <span>E</span>
+                <span>N</span>
+            </a>
+        </div>
 
         <div class="time-calendar">
             <p id="clock"></p>
@@ -115,3 +121,40 @@ function updateCalendar() {
 function setupThemeToggle() {
     const button = document.getElementById("theme-toggle");
     const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
+
+    function applyTheme(theme) {
+        document.body.classList.toggle("light-theme", theme === "light");
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    applyTheme(savedTheme || (mediaQuery.matches ? "light" : "dark"));
+
+    const onThemeChange = (event) => {
+        if (!localStorage.getItem("theme")) {
+            applyTheme(event.matches ? "light" : "dark");
+        }
+    };
+
+    if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener("change", onThemeChange);
+    } else {
+        mediaQuery.addListener(onThemeChange);
+    }
+
+    button.addEventListener("click", () => {
+        const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
+        applyTheme(nextTheme);
+        localStorage.setItem("theme", nextTheme);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    setInterval(updateClock, 1000);
+    updateClock();
+    updateCalendar();
+    setupThemeToggle();
+});
+</script>
+
+</body>
+</html>
