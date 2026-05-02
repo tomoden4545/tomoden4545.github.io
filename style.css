@@ -110,3 +110,48 @@ body {
 .twitter:hover {
     text-decoration: underline;
 }
+.twitter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 30px;
+    padding: 15px 25px;
+
+    background: #1DA1F2;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 10px;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+/* ホバーでちょいデカく */
+.twitter-btn:hover {
+    transform: scale(1.08);
+}
+
+/* アイコン */
+.twitter-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* 指アニメーション */
+.finger {
+    display: inline-block;
+    animation: point 0.6s infinite alternate;
+}
+
+/* 指が左右に動く */
+@keyframes point {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(8px);
+    }
+}
