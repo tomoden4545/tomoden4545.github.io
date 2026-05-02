@@ -422,6 +422,18 @@ body.light-theme .recruit-btn:hover {
     font-size: 16px;
 }
 
+        .food-title {
+    margin: 8px 0 0;
+    color: #ffcc00;
+    font-size: 26px;
+    text-align: center;
+}
+
+.food-list {
+    margin-top: 24px;
+}
+
+
 .back-btn:hover {
     text-decoration: underline;
 }
