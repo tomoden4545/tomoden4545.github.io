@@ -9,9 +9,9 @@
 
 <body>
 
-<button type="button" id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
-    <span class="theme-icon theme-sun">☀</span>
-    <span class="theme-icon theme-moon">☾</span>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="theme toggle">
+    <span class="theme-icon theme-sun">&#9728;</span>
+    <span class="theme-icon theme-moon">&#9790;</span>
 </button>
 
 <div class="layout">
@@ -32,7 +32,7 @@
         </div>
 
         <a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="twitter-btn">
-            <span class="finger">👉</span>
+            <span class="finger">&#128073;</span>
             <img src="twitter.png" alt="Twitter">
             公式Twitterはこちら
         </a>
@@ -67,18 +67,17 @@
     </div>
 </div>
 
-<!-- 🕒これを忘れずに -->
 <script>
 function updateClock() {
     const now = new Date();
 
     const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
 
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
 
     document.getElementById("clock").textContent =
         `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
@@ -91,7 +90,7 @@ function updateCalendar() {
     const firstDay = new Date(year, month, 1).getDay();
     const lastDate = new Date(year, month + 1, 0).getDate();
     const today = now.getDate();
-    const weeks = ["日", "月", "火", "水", "木", "金", "土"];
+    const weeks = ["\u65e5", "\u6708", "\u706b", "\u6c34", "\u6728", "\u91d1", "\u571f"];
     const calendar = document.getElementById("calendar");
 
     let html = `<div class="calendar-title">${year}/${String(month + 1).padStart(2, "0")}</div>`;
@@ -115,3 +114,4 @@ function updateCalendar() {
 
 function setupThemeToggle() {
     const button = document.getElementById("theme-toggle");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
