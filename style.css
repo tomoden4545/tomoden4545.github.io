@@ -9,12 +9,14 @@ body {
     color: #28220b;
     font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
 }
-/* 初期状態（ライトモード） */
+
+
+/* ライト時 */
 .theme-moon {
     display: none;
 }
 
-/* ダークモード時 */
+/* ダーク時 */
 body.dark-theme .theme-sun {
     display: none;
 }
