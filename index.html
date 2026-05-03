@@ -44,10 +44,21 @@
         </div>
     </section>
 
-<audio controls>
-    <source src="発電が俺の人生.mp3" type="audio/mpeg">
-    お使いのブラウザはaudio要素をサポートしていません。
-</audio>
+   <!-- ミュージックプレイヤーの塊 -->
+<div class="music-card">
+    <!-- サムネイル画像 -->
+    <div class="music-thumbnail">
+        <img src="your-thumbnail.jpg" alt="ジャケット画像">
+    </div>
+    
+    <div class="music-info">
+        <p class="music-title">曲名：友電のテーマ</p>
+        <!-- MP3再生コード -->
+        <audio controls src="audio.mp3" class="custom-audio">
+            お使いのブラウザは再生に対応していません。
+        </audio>
+    </div>
+</div>
 
     
     <div class="portal-layout">
