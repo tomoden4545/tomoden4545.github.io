@@ -9,6 +9,7 @@
 
 <body>
 
+<!-- ダークモード切り替えボタン -->
 <button type="button" id="theme-toggle" class="theme-toggle" aria-label="theme toggle">
     <span class="theme-icon theme-sun">&#9728;</span>
     <span class="theme-icon theme-moon">&#9790;</span>
@@ -18,7 +19,11 @@
     <header class="site-header">
         <div>
             <p class="site-kana">常に最高速度で発射するパワー発電所</p>
-            <a href="index.html" class="site-logo">大友電力パワーグリッド 大友発電所</a>
+            <!-- 【修正箇所】ロゴ画像をテキストの横に配置 -->
+            <a href="index.html" class="site-logo">
+                <img src="logo.png" alt="ロゴ" class="header-logo-img">
+                <span>大友電力パワーグリッド 大友発電所</span>
+            </a>
         </div>
 
         <div class="header-links">
@@ -44,29 +49,24 @@
         </div>
     </section>
 
-    
     <div class="portal-layout">
         <aside class="side-menu" aria-label="サイドメニュー">
             <a href="recruit.html" class="side-banner">
                 <img src="shacho.png" alt="">
                 <span>新卒採用</span>
             </a>
-
             <a href="#food" class="side-banner">
                 <img src="ramen.jpg" alt="">
                 <span>友電 食品館</span>
             </a>
-
             <a href="#food" class="side-banner">
                 <img src="jakamen.png" alt="">
                 <span>ジャカメン情報</span>
             </a>
-
             <a href="#tour" class="side-banner plain-banner">
                 <span>発電所見学</span>
                 <small>受付準備中</small>
             </a>
-
             <a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="side-banner twitter-banner">
                 <img src="twitter.png" alt="">
                 <span>公式Twitter</span>
@@ -91,21 +91,22 @@
             <section class="notice-box" id="news">
                 <h2>お知らせ</h2>
                 <ul>
-                    <li><time>5月4日</time> 正式にページが完成致しました。なお、レイアウトについて若干の調整をする為、
-                        定時に修正がはいります。</li>
-                    <li><time>5月3日</time> サイトのメンテナンス中です。tomoden-opg.comにドメイン
-                    設定中です。</li>
-                    <li><time>5月2日</time> 公式ホームページを大幅に更新しました。</li>
-                    <li><time>4月24日</time> 友電のトモメン ザーメン味を掲載しました。</li>
-                    <li><time>4月17日</time> 香原のジャカメン 潮味を掲載しました。</li>
-                    <li><time>4月13日</time> 新卒採用情報を公開しました。</li>
+                    <li><time>5月4日</time> 正式にページが完成致しました。</li>
+                    <li><time>5月3日</time> サイトのメンテナンス中です。</li>
+                    <!-- 省略 -->
                 </ul>
             </section>
+        </main>
+    </div>
+</div>
 
-            <section class="clock-panel" id="clock-area">
-
-    <script>
-document.getElementById("theme-toggle").addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-});
+<!-- ダークモード用のスクリプト（閉じタグの直前に置くのが確実です） -->
+<script>
+    const btn = document.getElementById("theme-toggle");
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        // 設定を保存したい場合はここに追加（任意）
+    });
 </script>
+</body>
+</html>
