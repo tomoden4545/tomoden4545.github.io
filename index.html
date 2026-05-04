@@ -100,13 +100,11 @@
     </div>
 </div>
 
-<!-- ダークモード用のスクリプト（閉じタグの直前に置くのが確実です） -->
 <script>
-    const btn = document.getElementById("theme-toggle");
-    btn.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        // 設定を保存したい場合はここに追加（任意）
-    });
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    // CSSと合わせて "dark-theme" にしました
+    document.body.classList.toggle("dark-theme");
+});
 </script>
 </body>
 </html>
