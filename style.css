@@ -130,26 +130,28 @@ body.dark-theme .food-card h2 {
     font-size: 10px;
 }
 
-/* ロゴ全体のリンクエリアの調整 */
+/* ロゴと社長画像を横に並べる */
 .site-logo {
-    display: inline-block;
+    display: flex;       /* 横並びにする */
+    align-items: center; /* 上下の中心を揃える */
+    gap: 15px;           /* ロゴと社長の間の隙間 */
     text-decoration: none;
-    vertical-align: middle;
 }
 
-/* ロゴ画像自体のサイズ調整 */
+/* ロゴのサイズ（さきほどの調整） */
 .header-logo-img {
-    height: 80px;    /* ここでロゴの高さを調整（好みの大きさに変えてください） */
-    width: auto;     /* 横幅は自動で比率を維持 */
-    display: block;
-    margin-top: 10px; /* 上に少し隙間を作る場合 */
+    height: 70px; 
+    width: auto;
 }
 
-/* もしヘッダーの高さが足りない場合はここを調整 */
-.site-header {
-    padding: 10px 20px;
-    /* 必要に応じて背景色などを調整 */
-}k;
+/* 社長の顔画像の調整 */
+.header-shacho-img {
+    height: 80px;      /* ロゴより少し大きくすると目立ちます */
+    width: auto;
+    border: 2px solid #FFD700; /* 黄色の枠線（サイトの色に合わせる） */
+    border-radius: 50%;       /* 画像を丸く切り抜く（四角のままなら不要） */
+    background-color: #fff;   /* 背景を白にする（透過画像の場合） */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* 軽く影をつける */
 }
 
 /* --- ナビゲーション・パーツ --- */
