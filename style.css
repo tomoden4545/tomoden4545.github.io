@@ -154,6 +154,14 @@ body.dark-theme .food-card h2 {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* 軽く影をつける */
 }
 
+@media screen and (max-width: 768px) {
+  .header-shacho-img {
+    right: 5px !important; /* 右端からの距離を縮める */
+    width: 60px !important;  /* 必要に応じてサイズも少し小さくする */
+    height: auto;
+  }
+}
+
 /* --- ナビゲーション・パーツ --- */
 .header-links {
     display: flex; gap: 8px; color: #525252; font-size: 11px; white-space: nowrap;
