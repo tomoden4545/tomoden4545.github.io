@@ -142,11 +142,10 @@ body.dark-theme .food-card h2 {
     text-decoration: none;
 }
 
-/* ロゴ画像自体の設定 */
 .site-logo-img {
-    height: 1.1em;         /* 文字サイズより少しだけ大きく */
-    width: auto;
-    display: block;
+  height: 80px;   /* 一旦 80px くらいにして様子見 */
+  width: auto;
+  display: block;
 }
 
 /* --- ナビゲーション・パーツ --- */
