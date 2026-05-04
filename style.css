@@ -130,28 +130,26 @@ body.dark-theme .food-card h2 {
     font-size: 10px;
 }
 
-.site-logo-img {
-  width: 150px !important;  /* 幅を150pxに固定 */
-  height: auto !important;   /* 高さは自動で比率維持 */
-  display: block;
-}
-
-/* 【修正】ロゴの横並び設定 */
+/* ロゴ全体のリンクエリアの調整 */
 .site-logo {
-    display: inline-flex;  /* 横並びにする */
-    align-items: center;   /* 上下中央を揃える */
-    gap: 10px;             /* ロゴと文字の間隔 */
-    color: #191919;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 0;
+    display: inline-block;
     text-decoration: none;
+    vertical-align: middle;
 }
 
-.site-logo-img {
-  height: 80px;   /* 一旦 80px くらいにして様子見 */
-  width: auto;
-  display: block;
+/* ロゴ画像自体のサイズ調整 */
+.header-logo-img {
+    height: 80px;    /* ここでロゴの高さを調整（好みの大きさに変えてください） */
+    width: auto;     /* 横幅は自動で比率を維持 */
+    display: block;
+    margin-top: 10px; /* 上に少し隙間を作る場合 */
+}
+
+/* もしヘッダーの高さが足りない場合はここを調整 */
+.site-header {
+    padding: 10px 20px;
+    /* 必要に応じて背景色などを調整 */
+}k;
 }
 
 /* --- ナビゲーション・パーツ --- */
