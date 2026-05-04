@@ -130,6 +130,12 @@ body.dark-theme .food-card h2 {
     font-size: 10px;
 }
 
+.site-logo-img {
+  width: 150px !important;  /* 幅を150pxに固定 */
+  height: auto !important;   /* 高さは自動で比率維持 */
+  display: block;
+}
+
 /* 【修正】ロゴの横並び設定 */
 .site-logo {
     display: inline-flex;  /* 横並びにする */
