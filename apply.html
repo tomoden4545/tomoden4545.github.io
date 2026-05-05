@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>発電所見学 お申し込みフォーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>発電所見学 お申し込みフォーム</h1>
+        <p class="description">以下の項目を入力し、「送信」ボタンを押してください。後ほど担当者よりご連絡いたします。</p>
+        
+        <form action="ここに送信先のURLを入れる" method="POST">
+            <!-- 団体・個人 -->
+            <div class="form-group">
+                <label>区分 <span class="required">必須</span></label>
+                <div class="radio-group">
+                    <input type="radio" id="individual" name="type" value="個人" required>
+                    <label for="individual">個人</label>
+                    <input type="radio" id="group" name="type" value="団体">
+                    <label for="group">団体</label>
+                </div>
+            </div>
+
+            <!-- 団体名（任意） -->
+            <div class="form-group">
+                <label for="org-name">団体名・学校名</label>
+                <input type="text" id="org-name" name="organization" placeholder="例：〇〇株式会社 / △△小学校">
+            </div>
+
+            <!-- 代表者名 -->
+            <div class="form-group">
+                <label for="name">代表者氏名 <span class="required">必須</span></label>
+                <input type="text" id="name" name="name" required placeholder="例：発電 太郎">
+            </div>
+
+            <!-- 連絡先 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="required">必須</span></label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.com">
+                </div>
+                <div class="form-group">
+                    <label for="tel">電話番号 <span class="required">必須</span></label>
+                    <input type="tel" id="tel" name="tel" required placeholder="090-0000-0000">
+                </div>
+            </div>
+
+            <!-- 見学希望日時 -->
+            <div class="form-group">
+                <label for="date">見学希望日 <span class="required">必須</span></label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <!-- 人数 -->
+            <div class="form-group">
+                <label for="participants">参加人数 <span class="required">必須</span></label>
+                <input type="number" id="participants" name="participants" min="1" required placeholder="例：5">
+            </div>
+
+            <!-- 来所方法 -->
+            <div class="form-group">
+                <label for="transport">来所方法</label>
+                <select id="transport" name="transport">
+                    <option value="自家用車">自家用車</option>
+                    <option value="貸切バス">貸切バス（大型）</option>
+                    <option value="公共交通機関">公共交通機関</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+
+            <!-- 見学目的 -->
+            <div class="form-group">
+                <label for="purpose">見学の目的</label>
+                <textarea id="purpose" name="purpose" rows="4" placeholder="例：社会科見学、再生可能エネルギーについて学びたい等"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">見学を申し込む</button>
+        </form>
+    </div>
+</body>
+</html>
