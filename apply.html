@@ -79,5 +79,42 @@
             <button type="submit" class="submit-btn">見学を申し込む</button>
         </form>
     </div>
+    <!-- 2. 送信処理をするJS -->
+    <script>
+        const form = document.getElementById('my-form');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // 本来の「ページ遷移」を一旦止める
+
+            // --- ここにGASのURLを貼り付けます ---
+            const GAS_URL = "https://script.google.com/macros/s/AKfycbzDN7ENgHqAp_E1ZF3wz9WwVUx1Wm5JzkSJbrYQpHn6jfb43o3Q1NGVOfyOTDNU8kjizA/exec";
+
+            // フォームの入力内容を取得
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
+
+            // GASにデータを飛ばす
+            fetch(GAS_URL, {
+                method: "POST",
+                mode: "no-cors", // これが必要な場合が多いです
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                // 送信に成功したら thanks.html に移動させる
+                window.location.href = 'thanks.html';
+            })
+            .catch(error => {
+                alert("送信に失敗しました。");
+                console.error(error);
+            });
+        });
+    </script>
 </body>
 </html>
