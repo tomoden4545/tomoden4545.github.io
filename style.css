@@ -412,4 +412,58 @@ textarea {
     }
 }
 
+.cafeteria-menu{
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+
+    background: #fffdf5;
+    border: 4px solid #d8b400;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.cafeteria-menu h2{
+    margin-top: 0;
+    font-size: 30px;
+    color: #8b0000;
+}
+
+.menu-sub{
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.menu-item{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 14px 10px;
+
+    border-bottom: 1px dashed #bbb;
+
+    font-size: 20px;
+}
+
+.food-name{
+    font-weight: bold;
+}
+
+.food-price{
+    color: #c40000;
+    font-weight: bold;
+}
+
+@media screen and (max-width:768px){
+
+    .cafeteria-menu h2{
+        font-size: 24px;
+    }
+
+    .menu-item{
+        font-size: 17px;
+    }
+
+}
 
