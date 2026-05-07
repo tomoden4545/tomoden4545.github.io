@@ -354,3 +354,62 @@ textarea {
         gap: 0;
     }
 }
+/* 社員食堂ポップ */
+.cafeteria-popup{
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    padding: 18px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+
+    /* 赤系グラデ */
+    background: linear-gradient(90deg, #8b0000, #c40000, #ff2a2a);
+
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+
+    transition: 0.2s;
+}
+
+.cafeteria-popup:hover{
+    transform: scale(1.01);
+    opacity: 0.95;
+}
+
+.cafeteria-popup .small{
+    font-size: 14px;
+    opacity: 0.9;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.cafeteria-popup h2{
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.cafeteria-popup p{
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* スマホ用 */
+@media screen and (max-width: 768px){
+
+    .cafeteria-popup{
+        width: 92%;
+        padding: 15px;
+    }
+
+    .cafeteria-popup h2{
+        font-size: 24px;
+    }
+
+    .cafeteria-popup p{
+        font-size: 14px;
+    }
+}
+
+
