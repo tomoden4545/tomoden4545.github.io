@@ -354,116 +354,113 @@ textarea {
         gap: 0;
     }
 }
-/* 社員食堂ポップ */
-.cafeteria-popup{
-    display: block;
-    width: 90%;
-    margin: 20px auto;
-    padding: 18px 20px;
-    text-decoration: none;
-    border-radius: 6px;
-
-    /* 赤系グラデ */
-    background: linear-gradient(90deg, #8b0000, #c40000, #ff2a2a);
-
-    color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-
-    transition: 0.2s;
+:root {
+    --primary-bg: #f4f7f6;
+    --accent-color: #2c3e50;
+    --card-bg: #ffffff;
+    --text-main: #333;
+    --price-color: #e67e22;
+    --cost-color: #7f8c8d;
 }
 
-.cafeteria-popup:hover{
-    transform: scale(1.01);
-    opacity: 0.95;
-}
-
-.cafeteria-popup .small{
-    font-size: 14px;
-    opacity: 0.9;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.cafeteria-popup h2{
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-main);
     margin: 0;
-    font-size: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border-top: 8px solid var(--accent-color);
+}
+
+header {
+    background-color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
-.cafeteria-popup p{
-    margin-top: 10px;
-    font-size: 16px;
+h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--accent-color);
 }
 
-/* スマホ用 */
-@media screen and (max-width: 768px){
-
-    .cafeteria-popup{
-        width: 92%;
-        padding: 15px;
-    }
-
-    .cafeteria-popup h2{
-        font-size: 24px;
-    }
-
-    .cafeteria-popup p{
-        font-size: 14px;
-    }
-}
-
-.cafeteria-menu{
-    width: 90%;
-    margin: 30px auto;
+.menu-section {
     padding: 20px;
-
-    background: #fffdf5;
-    border: 4px solid #d8b400;
-    border-radius: 8px;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.cafeteria-menu h2{
-    margin-top: 0;
-    font-size: 30px;
-    color: #8b0000;
+.category-title {
+    font-size: 0.9rem;
+    color: #fff;
+    background: var(--accent-color);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
 }
 
-.menu-sub{
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.menu-item{
+.menu-item {
     display: flex;
     justify-content: space-between;
-
-    padding: 14px 10px;
-
-    border-bottom: 1px dashed #bbb;
-
-    font-size: 20px;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dashed #ddd;
 }
 
-.food-name{
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-name {
+    font-size: 1.2rem;
     font-weight: bold;
+    display: block;
 }
 
-.food-price{
-    color: #c40000;
-    font-weight: bold;
+.item-cost {
+    font-size: 0.85rem;
+    color: var(--cost-color);
 }
 
-@media screen and (max-width:768px){
-
-    .cafeteria-menu h2{
-        font-size: 24px;
-    }
-
-    .menu-item{
-        font-size: 17px;
-    }
-
+.item-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--price-color);
+    white-space: nowrap;
 }
 
+.price-unit {
+    font-size: 0.9rem;
+    margin-left: 2px;
+}
+
+footer {
+    background: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+}
