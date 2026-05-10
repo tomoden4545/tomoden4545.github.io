@@ -206,3 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const countdown = document.getElementById("year-countdown");
         const now = new Date();
         const end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
+        const diff = Math.max(0, end - now);
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        countdown.textContent = `あと${days}日${hours}時間`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+});
+</script>
+</body>
+</html>
