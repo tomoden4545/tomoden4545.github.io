@@ -3,26 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大友電力パワーグリッド 大友発電所</title>
+    <title>発電所見学申込 - 大友発電所</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
+<body class="sub-page">
 <button type="button" id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
     <span class="theme-sun" aria-hidden="true">☀</span>
     <span class="theme-moon" aria-hidden="true">☾</span>
 </button>
-
-<header class="top-strip">
-    <div class="top-strip-inner">
-        <a href="#fortune">今日の運勢</a>
-        <a href="#food">食品館ニュース</a>
-        <a href="#faq">よくあるご質問</a>
-        <a href="#press">プレスリリース・お知らせ</a>
-        <a href="#language">LANGUAGE</a>
-        <a class="quick-link" href="#quick">クイックリンク</a>
-    </div>
-</header>
 
 <div class="site-shell">
     <header class="site-header">
@@ -31,143 +19,81 @@
         </a>
 
         <nav class="primary-nav" aria-label="主要メニュー">
-            <a href="#company">企業情報</a>
-            <a href="#personal">一般のお客さま</a>
-            <a href="#business">発電事業者さま・小売電気事業者さま</a>
-            <a href="#contractor">電気工事店さま・電気主任技術者さま</a>
-            <a href="#guide">その他お手続き・ご案内</a>
+            <a href="index.html">ホーム</a>
+            <a href="index.html#food">食品館</a>
+            <a href="recruit.html">発電所見学</a>
+            <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">お問い合わせ</a>
         </nav>
     </header>
 
-    <section class="notice-bar">
-        <strong>■ 大友発電所における食品館販売について ■</strong>
-        <p>大友発電所の見学、採用、食品館に関する最新情報はこちらの特設ページをご確認ください。</p>
-    </section>
-
-    <main>
-        <section class="hero-grid" aria-label="注目情報">
-            <div class="carousel" aria-roledescription="carousel">
-                <div class="slide is-active">
-                    <img src="ramen.jpg" alt="友電食品館のトモメン">
-                    <div class="slide-caption">
-                        <span>【ブランドメッセージ】</span>
-                        <strong>発電、採用、食品館まで。大友発電所からのお知らせ</strong>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="jakamen.png" alt="ジャカメン情報">
-                    <div class="slide-caption">
-                        <span>【食品館】</span>
-                        <strong>トモメン・ジャカメン販売中！</strong>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="shacho.png" alt="新卒採用">
-                    <div class="slide-caption">
-                        <span>【採用情報】</span>
-                        <strong>大友発電所の新卒採用ページはこちら</strong>
-                    </div>
-                </div>
-
-                <div class="carousel-controls" aria-hidden="true">
-                    <span class="dot is-active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="pause-mark">||</span>
-                    <span class="arrow">‹</span>
-                    <span class="arrow">›</span>
-                </div>
-            </div>
-
-            <aside class="quick-panel" id="quick">
-                <div class="fortune-row" id="fortune">
-                    <a href="#fortune">
-                        <span class="icon">★</span>
-                        <strong>今日の運勢</strong>
-                        <small>大吉</small>
-                    </a>
-                    <a href="#food">
-                        <span class="icon">◎</span>
-                        <strong>ラッキー麺</strong>
-                        <small>ジャカメン</small>
-                    </a>
-                </div>
-                <div class="link-row">
-                    <a href="#tour">事業所一覧</a>
-                    <a href="#contractor">電気工事店のみなさま</a>
-                </div>
-                <a class="wide-link" href="#food">再生可能エネルギー固定価格買取制度の手続き</a>
-
-                <section class="side-news fortune-card">
-                    <h2>今日のひとこと <a href="#fortune">更新</a></h2>
-                    <p><time>2026年05月10日</time> 黄色いものを食べると発電効率が上がる気がします。</p>
-                </section>
-
-                <section class="side-news countdown-card">
-                    <h2>年末まで</h2>
-                    <p><strong id="year-countdown">計算中...</strong></p>
-                </section>
-
-                <section class="side-news" id="press">
-                    <h2>お知らせ <a href="#news">一覧</a></h2>
-                    <p><time>2026年04月28日</time> 友電食品館・発電所見学の受付状況を更新しました。</p>
-                </section>
-            </aside>
+    <main class="form-page">
+        <section class="form-hero">
+            <p class="eyebrow">大友発電所</p>
+            <h1>発電所見学のお申し込み</h1>
+            <p>個人・団体問わず、随時受け付けております。</p>
+            <div class="countdown-inline">年末まで <strong id="year-countdown"></strong></div>
         </section>
 
-        <section class="customer-tabs" id="personal">
-            <div class="tabs">
-                <a class="tab is-active" href="#personal">個人のお客さま向け</a>
-                <a class="tab" href="recruit.html">見学申込</a>
-            </div>
-            <div class="customer-grid">
-                <a href="#outage">
-                    <span>●</span>
-                    <strong>急に電気が消えたとき</strong>
-                </a>
-                <a href="#safety">
-                    <span>◆</span>
-                    <strong>電気の防災情報</strong>
-                </a>
-                <a href="#saving">
-                    <span>■</span>
-                    <strong>電気の省エネ情報</strong>
-                </a>
-            </div>
+        <section class="orientation-message">
+            <div class="message-label">見学オリエンテーション</div>
+            <h2>大友発電所福島本部からのごあいさつ</h2>
+            <p>
+                みなさんこんにちは。大友電力パワーグリッド、大友発電所福島本部の大友です。
+                本日はお忙しい中、この企業見学にお集まりいただき、誠にありがとうございます。
+            </p>
+            <p>
+                弊社では、社員一人ひとりを尊重し、それぞれのプレイスタイルに合わせた最適な電力供給をコーチングしています。
+                わたくし自らが10年かけて作った発電データベースをもとに、快適な電力を供給するため、24時間365日、常に発電のことを考えています。
+            </p>
+            <blockquote>
+                昨年度、弊社がどのようにして日本一の発電量を誇る発電所になったのか。
+                その答えは、独自開発の「*手コキ発電機*」にあります。
+            </blockquote>
+            <p>
+                この発電機は、開発に約3年、実運用までにさらに1年を要した大友発電所だけの設備です。
+                今回の見学では、その仕組みとボルテージ上昇の秘密を、現地でじっくりご案内します。
+            </p>
+            <p class="message-closing">それでは今日1日、よろしくお願いします。準備ができましたら、見学ルートへ移動しましょう。</p>
         </section>
 
-        <section class="content-grid">
-            <article id="tour">
-                <h2>見学のお申し込み</h2>
-                <p>個人・団体問わず、随時受け付けております。以下のボタンよりお申し込みください。</p>
-                <a class="button" href="recruit.html">見学を申し込む</a>
-            </article>
-            <article id="food">
-                <h2>友電 社員食堂はこちら</h2>
-                <p>定食・ラーメン・ジャカメン販売中！ 食品館の最新情報をお届けします。</p>
-                <a class="button ghost" href="https://tomoden4545.booth.pm/items/8296054" target="_blank">食品館を見る</a>
-            </article>
+        <section class="visit-form-panel">
+            <form class="visit-form" action="https://formspree.io/f/mqengyaq" method="POST">
+                <label>
+                    お名前
+                    <input type="text" name="name" autocomplete="name" required>
+                </label>
+
+                <label>
+                    メールアドレス
+                    <input type="email" name="email" autocomplete="email" required>
+                </label>
+
+                <label>
+                    希望日
+                    <input type="text" name="date" inputmode="text" autocomplete="off" placeholder="例: 2026/05/10" required>
+                </label>
+
+                <label>
+                    人数
+                    <input type="number" name="party_size" min="1" max="50" value="1" required>
+                </label>
+
+                <label class="full-field">
+                    備考
+                    <textarea name="message" rows="5" placeholder="見学したい内容、到着予定時間など"></textarea>
+                </label>
+
+                <input type="hidden" name="_subject" value="大友発電所 見学申込">
+                <button class="button" type="submit">申込内容を送信</button>
+            </form>
         </section>
     </main>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const slides = [...document.querySelectorAll(".slide")];
-    const dots = [...document.querySelectorAll(".dot")];
-    let current = 0;
-
-    function showSlide(index) {
-        slides[current].classList.remove("is-active");
-        dots[current].classList.remove("is-active");
-        current = (index + slides.length) % slides.length;
-        slides[current].classList.add("is-active");
-        dots[current].classList.add("is-active");
-    }
-
-    setInterval(() => showSlide(current + 1), 4500);
-
     const themeToggle = document.getElementById("theme-toggle");
+    const form = document.querySelector(".visit-form");
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     let manualTheme = null;
 
@@ -199,9 +125,21 @@ document.addEventListener("DOMContentLoaded", () => {
         applyTheme(nextTheme);
     });
 
+    form.addEventListener("submit", (event) => {
+        const requiredFields = [...form.querySelectorAll("[required]")];
+        const emptyField = requiredFields.find((field) => !field.value.trim());
+
+        if (emptyField) {
+            event.preventDefault();
+            emptyField.focus();
+            alert("未入力の必須項目があります。お名前、メールアドレス、希望日、人数をご確認ください。");
+            return;
+        }
+
+        if (form.action.includes("FORM_ID_HERE")) {
+            event.preventDefault();
+        }
+    });
+
     function updateCountdown() {
         const countdown = document.getElementById("year-countdown");
-        const now = new Date();
-        const end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
-        const diff = Math.max(0, end - now);
-        const days = Math.floor(diff / 86400000);
