@@ -744,6 +744,10 @@ body.dark-theme .visit-form textarea {
     cursor: pointer;
 }
 
+.hidden-iframe {
+    display: none;
+}
+
 .form-note {
     align-self: start;
     padding: 20px;
@@ -819,7 +823,3 @@ body.dark-theme .visit-form textarea {
     .customer-grid,
     .content-grid,
     .visit-form-panel,
-    .visit-form {
-        grid-template-columns: 1fr;
-    }
-
