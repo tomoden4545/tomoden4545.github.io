@@ -15,6 +15,76 @@ body.dark-theme {
     color: #f7f1df;
 }
 
+@media (prefers-color-scheme: dark) {
+    body:not(.light-theme) {
+        background: #111;
+        color: #f7f1df;
+    }
+
+    body:not(.light-theme) .theme-toggle {
+        background: #1b1b1b;
+        color: #fff6d8;
+    }
+
+    body:not(.light-theme) .theme-toggle .theme-sun {
+        opacity: 0.35;
+    }
+
+    body:not(.light-theme) .theme-toggle .theme-moon {
+        opacity: 1;
+    }
+
+    body:not(.light-theme) .top-strip,
+    body:not(.light-theme) .site-shell,
+    body:not(.light-theme) .quick-panel,
+    body:not(.light-theme) .customer-grid,
+    body:not(.light-theme) .content-grid article,
+    body:not(.light-theme) .visit-form-panel,
+    body:not(.light-theme) .form-note {
+        background: #1a1a1a;
+    }
+
+    body:not(.light-theme) .primary-nav a,
+    body:not(.light-theme) .link-row a,
+    body:not(.light-theme) .wide-link,
+    body:not(.light-theme) .customer-grid a {
+        color: #f7f1df;
+    }
+
+    body:not(.light-theme) .notice-bar {
+        background: linear-gradient(90deg, #322208, #231b0d);
+    }
+
+    body:not(.light-theme) .slide-caption,
+    body:not(.light-theme) .link-row a,
+    body:not(.light-theme) .wide-link {
+        background: #202020;
+    }
+
+    body:not(.light-theme) .countdown-inline {
+        background: #251c0b;
+    }
+
+    body:not(.light-theme) .orientation-message {
+        background:
+            linear-gradient(135deg, rgba(255, 211, 77, 0.14), rgba(240, 138, 0, 0.1)),
+            #1a1a1a;
+        box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
+    }
+
+    body:not(.light-theme) .orientation-message blockquote {
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff1bf;
+    }
+
+    body:not(.light-theme) .visit-form input,
+    body:not(.light-theme) .visit-form textarea {
+        border-color: #474747;
+        background: #111;
+        color: #f7f1df;
+    }
+}
+
 a {
     color: inherit;
 }
@@ -753,73 +823,3 @@ body.dark-theme .visit-form textarea {
         grid-template-columns: 1fr;
     }
 
-    .visit-form-panel {
-        padding: 20px;
-    }
-
-    .full-field {
-        grid-column: auto;
-    }
-}
-
-@media (max-width: 560px) {
-    .site-header {
-        grid-template-columns: 1fr;
-    }
-
-    .brand {
-        max-width: 320px;
-    }
-
-    .primary-nav {
-        grid-template-columns: 1fr;
-        gap: 0;
-        border-top: 1px solid #eee;
-    }
-
-    .primary-nav a {
-        min-height: 42px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .carousel {
-        min-height: 438px;
-    }
-
-    .slide img {
-        height: 260px;
-    }
-
-    .slide-caption strong {
-        font-size: 17px;
-    }
-
-    .fortune-row,
-    .link-row,
-    .tabs {
-        grid-template-columns: 1fr;
-    }
-
-    .link-row a + a,
-    .fortune-row a + a {
-        border-left: 0;
-        border-top: 1px solid #e5e5e5;
-    }
-
-    .customer-grid {
-        gap: 12px;
-        padding: 16px;
-    }
-
-    .form-page {
-        width: calc(100% - 20px);
-        padding-top: 28px;
-    }
-
-    .visit-form-panel {
-        padding: 14px;
-    }
-
-    .visit-form input,
-    .visit-form textarea {
-        font-size: 16px;
