@@ -1274,3 +1274,35 @@ body {
     cursor: pointer;
     z-index: 10001;
 }
+/* 1. ロゴが巨大化して画面を突き抜けるのを防ぐ */
+.mobile-top, .site-header {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow: hidden;
+}
+
+.mobile-logo img, .brand img {
+    height: 55px !important; 
+    width: auto !important;
+    flex-shrink: 0; /* 圧縮されないように固定 */
+}
+
+/* 2. コンテンツが左に寄るのを防ぐ（横幅を100%に戻す） */
+.site-shell, main, .hero-grid, .notice-bar {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    display: block !important;
+}
+
+/* 3. 消えたメニューボタンを強制的に「見える位置」へ */
+#mobile-menu-btn {
+    display: block !important;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #d4a017 !important;
+    z-index: 10002;
+}
