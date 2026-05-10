@@ -18,7 +18,7 @@
         <a href="#fortune">今日の運勢</a>
         <a href="#food">食品館ニュース</a>
         <a href="#faq">よくあるご質問</a>
-        <a href="#press">プレスリリース・お知らせ</a>
+        <a href="#news">ニュース</a>
         <a href="#language">LANGUAGE</a>
         <a class="quick-link" href="#quick">クイックリンク</a>
     </div>
@@ -31,17 +31,17 @@
         </a>
 
         <nav class="primary-nav" aria-label="主要メニュー">
-            <a href="#company">企業情報</a>
+            <a href="about.html">企業情報</a>
             <a href="#personal">一般のお客さま</a>
-            <a href="#business">発電事業者さま・小売電気事業者さま</a>
-            <a href="#contractor">電気工事店さま・電気主任技術者さま</a>
-            <a href="#guide">その他お手続き・ご案内</a>
+            <a href="#business">発電事業者さま</a>
+            <a href="#contractor">電気工事店さま</a>
+            <a href="#guide">お手続き・ご案内</a>
         </nav>
     </header>
 
     <section class="notice-bar">
-        <strong>■ 大友発電所における食品館販売について ■</strong>
-        <p>大友発電所の見学、採用、食品館に関する最新情報はこちらの特設ページをご確認ください。</p>
+        <strong>■ 大友発電所における見学受付と食品館販売について ■</strong>
+        <p>見学申込、採用、食品館、ニュース、よくある質問をこのページから確認できます。最新情報はお知らせ欄をご覧ください。</p>
     </section>
 
     <main>
@@ -64,8 +64,8 @@
                 <div class="slide">
                     <img src="shacho.png" alt="新卒採用">
                     <div class="slide-caption">
-                        <span>【採用情報】</span>
-                        <strong>大友発電所の新卒採用ページはこちら</strong>
+                        <span>【見学情報】</span>
+                        <strong>大友発電所の見学申込ページはこちら</strong>
                     </div>
                 </div>
 
@@ -81,27 +81,23 @@
 
             <aside class="quick-panel" id="quick">
                 <div class="fortune-row" id="fortune">
-                    <a href="#fortune">
+                    <button type="button" id="fortune-button" class="fortune-action">
                         <span class="icon">★</span>
                         <strong>今日の運勢</strong>
-                        <small>大吉</small>
-                    </a>
+                        <small id="fortune-rank">大吉</small>
+                    </button>
                     <a href="#food">
                         <span class="icon">◎</span>
                         <strong>ラッキー麺</strong>
-                        <small>ジャカメン</small>
+                        <small id="lucky-noodle">ジャカメン</small>
                     </a>
                 </div>
+                <p class="fortune-result" id="fortune-result">ボタンを押すと、今日の発電運を占います。</p>
                 <div class="link-row">
-                    <a href="#tour">事業所一覧</a>
-                    <a href="#contractor">電気工事店のみなさま</a>
+                    <a href="about.html">会社情報</a>
+                    <a href="recruit.html">発電所見学</a>
                 </div>
-                <a class="wide-link" href="#food">再生可能エネルギー固定価格買取制度の手続き</a>
-
-                <section class="side-news fortune-card">
-                    <h2>今日のひとこと <a href="#fortune">更新</a></h2>
-                    <p><time>2026年05月10日</time> 黄色いものを食べると発電効率が上がる気がします。</p>
-                </section>
+                <a class="wide-link" href="https://x.com/pqUBnTUdVJ48094" target="_blank">公式X（Twitter）を見る</a>
 
                 <section class="side-news countdown-card">
                     <h2>年末まで</h2>
@@ -110,7 +106,7 @@
 
                 <section class="side-news" id="press">
                     <h2>お知らせ <a href="#news">一覧</a></h2>
-                    <p><time>2026年04月28日</time> 友電食品館・発電所見学の受付状況を更新しました。</p>
+                    <p><time>2026年05月10日</time> 見学申込フォームをGoogleフォーム連携に更新しました。</p>
                 </section>
             </aside>
         </section>
@@ -121,17 +117,17 @@
                 <a class="tab" href="recruit.html">見学申込</a>
             </div>
             <div class="customer-grid">
-                <a href="#outage">
-                    <span>●</span>
-                    <strong>急に電気が消えたとき</strong>
+                <a href="#fortune">
+                    <span>★</span>
+                    <strong>今日の運勢を占う</strong>
                 </a>
-                <a href="#safety">
-                    <span>◆</span>
-                    <strong>電気の防災情報</strong>
+                <a href="#faq">
+                    <span>?</span>
+                    <strong>よくあるご質問</strong>
                 </a>
-                <a href="#saving">
-                    <span>■</span>
-                    <strong>電気の省エネ情報</strong>
+                <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">
+                    <span>X</span>
+                    <strong>公式Xを見る</strong>
                 </a>
             </div>
         </section>
@@ -147,6 +143,92 @@
                 <p>定食・ラーメン・ジャカメン販売中！ 食品館の最新情報をお届けします。</p>
                 <a class="button ghost" href="https://tomoden4545.booth.pm/items/8296054" target="_blank">食品館を見る</a>
             </article>
+        </section>
+
+        <section class="info-section" id="news">
+            <div class="section-heading">
+                <p>News</p>
+                <h2>ニュース・お知らせ</h2>
+            </div>
+            <div class="news-list">
+                <article>
+                    <time>2026年05月10日</time>
+                    <h3>見学申込ページを更新しました</h3>
+                    <p>Googleフォーム連携により、申込内容をスプレッドシートで管理できるようになりました。</p>
+                </article>
+                <article>
+                    <time>2026年05月08日</time>
+                    <h3>今日の運勢サービスを試験公開</h3>
+                    <p>発電所のボルテージ、麺運、見学運を総合して表示します。</p>
+                </article>
+                <article>
+                    <time>2026年04月28日</time>
+                    <h3>食品館の販売情報を更新</h3>
+                    <p>トモメン、ジャカメンの案内を掲載しました。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-section" id="faq">
+            <div class="section-heading">
+                <p>FAQ</p>
+                <h2>よくあるご質問</h2>
+            </div>
+            <div class="faq-list">
+                <details>
+                    <summary>見学は誰でも申し込めますか？</summary>
+                    <p>個人・団体問わず申し込めます。希望日と人数を入力して送信してください。</p>
+                </details>
+                <details>
+                    <summary>返信メールは届きますか？</summary>
+                    <p>Googleフォーム側で「回答者に回答のコピーを送信」を有効にしている場合、入力したメールアドレスに回答コピーが届きます。</p>
+                </details>
+                <details>
+                    <summary>食品館の商品はどこで見られますか？</summary>
+                    <p>食品館リンクからBOOTHの商品ページを確認できます。</p>
+                </details>
+                <details>
+                    <summary>この会社は実在しますか？</summary>
+                    <p>この会社はフィクションです。実在の団体・企業とは関係ありません。</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="info-section language-section" id="language">
+            <div class="section-heading">
+                <p>Language</p>
+                <h2>LANGUAGE</h2>
+            </div>
+            <div class="language-buttons" role="tablist" aria-label="言語切替">
+                <button type="button" class="language-button is-active" data-lang="ja">日本語</button>
+                <button type="button" class="language-button" data-lang="en">English</button>
+                <button type="button" class="language-button" data-lang="tm">友電語</button>
+            </div>
+            <div class="language-panel" id="language-panel">
+                <h3>大友発電所へようこそ</h3>
+                <p>見学、食品館、ニュース、よくある質問をこのページから確認できます。</p>
+            </div>
+        </section>
+
+        <section class="info-section" id="business">
+            <div class="section-heading">
+                <p>Guide</p>
+                <h2>お手続き・ご案内</h2>
+            </div>
+            <div class="guide-grid" id="contractor">
+                <a href="about.html">
+                    <strong>企業情報</strong>
+                    <span>大友発電所の概要を見る</span>
+                </a>
+                <a href="recruit.html">
+                    <strong>見学申込</strong>
+                    <span>企業見学の申込フォームへ</span>
+                </a>
+                <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">
+                    <strong>お問い合わせ</strong>
+                    <span>公式Xで最新情報を見る</span>
+                </a>
+            </div>
         </section>
     </main>
 
@@ -218,6 +300,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCountdown();
     setInterval(updateCountdown, 60000);
+
+    const fortunes = [
+        { rank: "大吉", noodle: "ジャカメン", text: "発電効率が高め。早めの申し込みと黄色い食べ物が吉。" },
+        { rank: "中吉", noodle: "トモメン", text: "ボルテージ安定。見学前にFAQを読むとさらに運気上昇。" },
+        { rank: "小吉", noodle: "ラーメン", text: "配線確認の日。落ち着いてフォームを送れば問題なし。" },
+        { rank: "発電吉", noodle: "替え玉", text: "ひらめきが強い日。ニュース欄にヒントがあります。" }
+    ];
+
+    document.getElementById("fortune-button").addEventListener("click", () => {
+        const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+        document.getElementById("fortune-rank").textContent = fortune.rank;
+        document.getElementById("lucky-noodle").textContent = fortune.noodle;
+        document.getElementById("fortune-result").textContent = fortune.text;
+    });
+
+    const languageCopy = {
+        ja: {
+            title: "大友発電所へようこそ",
+            text: "見学、食品館、ニュース、よくある質問をこのページから確認できます。"
+        },
+        en: {
+            title: "Welcome to Otomo Power Station",
+            text: "Tour requests, cafeteria news, updates, and FAQ are available on this page."
+        },
+        tm: {
+            title: "友電ボルテージ案内",
+            text: "見学ヨシ、麺ヨシ、発電ヨシ。必要な情報はこのページでチャージできます。"
+        }
+    };
+
+    document.querySelectorAll(".language-button").forEach((button) => {
+        button.addEventListener("click", () => {
+            document.querySelectorAll(".language-button").forEach((item) => item.classList.remove("is-active"));
+            button.classList.add("is-active");
+            const copy = languageCopy[button.dataset.lang];
+            document.getElementById("language-panel").innerHTML = `<h3>${copy.title}</h3><p>${copy.text}</p>`;
+        });
+    });
 });
 </script>
 </body>
