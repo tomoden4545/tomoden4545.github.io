@@ -926,7 +926,6 @@ body.dark-theme .visit-form textarea {
     }
 
     .mobile-top{
-        display:flex;
 
         position:fixed;
         top:0;
@@ -952,7 +951,6 @@ body.dark-theme .visit-form textarea {
     }
 
     .mobile-actions{
-        display:flex;
         align-items:center;
         gap:10px;
     }
@@ -1038,7 +1036,6 @@ body.dark-theme .visit-form textarea {
 .menu-bottom{
     margin-top:12px;
 
-    display:flex;
     justify-content:space-between;
     align-items:center;
 }
