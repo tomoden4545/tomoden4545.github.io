@@ -1262,18 +1262,6 @@ body {
     align-items: center;
     gap: 15px;
 }
-
-#mobile-menu-btn {
-    display: block !important; /* 強制表示 */
-    background: #d4a017;      /* ボタンを以前のゴールド系に */
-    color: #000;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 8px 12px;
-    cursor: pointer;
-    z-index: 10001;
-}
 /* 1. ロゴが巨大化して画面を突き抜けるのを防ぐ */
 .mobile-top, .site-header {
     display: flex !important;
@@ -1296,13 +1284,45 @@ body {
     display: block !important;
 }
 
-/* 3. 消えたメニューボタンを強制的に「見える位置」へ */
+/* 1. 画面の右ズレを強制リセット */
+.site-shell, main, .hero-grid, .notice-bar, .emergency-alert {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    display: block !important;
+    transform: none !important;
+}
+
+/* 2. ロゴのサイズを以前の適正サイズに強制固定 */
+.mobile-logo img, .brand img {
+    height: 50px !important;
+    width: auto !important;
+    max-width: 70% !important;
+}
+
+/* 3. ヘッダーを「黒背景・金枠」の以前のデザインに統一 */
+.mobile-top {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    background: #111 !important;
+    border-bottom: 2px solid #d4a017 !important;
+    height: 70px !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+/* 4. メニューボタン（三本線）を復活させる */
 #mobile-menu-btn {
     display: block !important;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
     background: #d4a017 !important;
-    z-index: 10002;
+    color: #000 !important;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
