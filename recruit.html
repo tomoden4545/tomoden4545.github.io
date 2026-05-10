@@ -57,36 +57,40 @@
         </section>
 
         <section class="visit-form-panel">
-            <form class="visit-form" action="https://formspree.io/f/mqengyaq" method="POST">
+            <form class="visit-form" action="https://docs.google.com/forms/d/e/1FAIpQLScWaQQ33ocr3qrIljNfjqxpG-L54DfVAvewxtklyg5QQdGl0g/formResponse" method="POST" target="hidden_iframe">
                 <label>
                     お名前
-                    <input type="text" name="name" autocomplete="name" required>
+                    <input type="text" name="entry.2026677511" autocomplete="name" required>
                 </label>
 
                 <label>
                     メールアドレス
-                    <input type="email" name="email" autocomplete="email" required>
+                    <input type="email" name="entry.886856694" autocomplete="email" required>
                 </label>
 
                 <label>
                     希望日
-                    <input type="text" name="date" inputmode="text" autocomplete="off" placeholder="例: 2026/05/10" required>
+                    <input type="text" name="visit_date" inputmode="text" autocomplete="off" placeholder="例: 2026/05/10" required>
                 </label>
 
                 <label>
                     人数
-                    <input type="number" name="party_size" min="1" max="50" value="1" required>
+                    <input type="number" name="party_size_visible" min="1" max="50" value="1" required>
                 </label>
 
                 <label class="full-field">
                     備考
-                    <textarea name="message" rows="5" placeholder="見学したい内容、到着予定時間など"></textarea>
+                    <textarea name="entry.334944157" rows="5" placeholder="見学したい内容、到着予定時間など"></textarea>
                 </label>
 
-                <input type="hidden" name="_subject" value="大友発電所 見学申込">
-                <input type="hidden" name="_replyto" value="">
+                <input type="hidden" name="emailAddress" value="">
+                <input type="hidden" name="entry.874274742_year" value="">
+                <input type="hidden" name="entry.874274742_month" value="">
+                <input type="hidden" name="entry.874274742_day" value="">
+                <input type="hidden" name="entry.2000348798" value="">
                 <button class="button" type="submit">申込内容を送信</button>
             </form>
+            <iframe name="hidden_iframe" class="hidden-iframe" title="送信結果"></iframe>
         </section>
     </main>
 </div>
@@ -121,6 +125,16 @@ document.addEventListener("DOMContentLoaded", () => {
         mediaQuery.addListener(handleDeviceThemeChange);
     }
 
+    let submitted = false;
+    const hiddenIframe = document.querySelector('iframe[name="hidden_iframe"]');
+    hiddenIframe.addEventListener("load", () => {
+        if (submitted) {
+            submitted = false;
+            alert("見学申込を送信しました。Googleフォームに回答が記録されます。");
+            form.reset();
+        }
+    });
+
     themeToggle.addEventListener("click", () => {
         const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
         manualTheme = nextTheme;
@@ -128,12 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     form.addEventListener("submit", (event) => {
-        const emailField = form.querySelector('input[name="email"]');
-        const replyToField = form.querySelector('input[name="_replyto"]');
-        if (emailField && replyToField) {
-            replyToField.value = emailField.value.trim();
-        }
-
         const requiredFields = [...form.querySelectorAll("[required]")];
         const emptyField = requiredFields.find((field) => !field.value.trim());
 
@@ -143,3 +151,31 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("未入力の必須項目があります。お名前、メールアドレス、希望日、人数をご確認ください。");
             return;
         }
+
+        const dateField = form.querySelector('input[name="visit_date"]');
+        const dateParts = dateField.value.trim().match(/^(\d{4})[\/\-\.年 ]+(\d{1,2})[\/\-\.月 ]+(\d{1,2})日?$/);
+        if (!dateParts) {
+            event.preventDefault();
+            dateField.focus();
+            alert("希望日は 2026/05/10 のように、年/月/日の形で入力してください。");
+            return;
+        }
+
+        const [, year, month, day] = dateParts;
+        form.querySelector('input[name="entry.874274742_year"]').value = year;
+        form.querySelector('input[name="entry.874274742_month"]').value = String(Number(month));
+        form.querySelector('input[name="entry.874274742_day"]').value = String(Number(day));
+
+        const partySize = Number(form.querySelector('input[name="party_size_visible"]').value);
+        form.querySelector('input[name="entry.2000348798"]').value = partySize <= 1 ? "1人" : "2人以上";
+
+        const emailField = form.querySelector('input[name="entry.886856694"]');
+        form.querySelector('input[name="emailAddress"]').value = emailField.value.trim();
+
+        submitted = true;
+    });
+
+    form.addEventListener("formdata", (event) => {
+        event.formData.delete("visit_date");
+        event.formData.delete("party_size_visible");
+    });
