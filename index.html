@@ -169,23 +169,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const themeToggle = document.getElementById("theme-toggle");
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const savedTheme = localStorage.getItem("theme");
+    let manualTheme = null;
 
     function applyTheme(theme) {
         document.body.classList.toggle("dark-theme", theme === "dark");
     }
 
-    applyTheme(savedTheme || (mediaQuery.matches ? "dark" : "light"));
+    function deviceTheme() {
+        return mediaQuery.matches ? "dark" : "light";
+    }
 
-    mediaQuery.addEventListener("change", (event) => {
-        if (!localStorage.getItem("theme")) {
+    applyTheme(deviceTheme());
+
+    function handleDeviceThemeChange(event) {
+        if (!manualTheme) {
             applyTheme(event.matches ? "dark" : "light");
         }
-    });
+    }
+
+    if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener("change", handleDeviceThemeChange);
+    } else {
+        mediaQuery.addListener(handleDeviceThemeChange);
+    }
 
     themeToggle.addEventListener("click", () => {
         const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
-        localStorage.setItem("theme", nextTheme);
+        manualTheme = nextTheme;
         applyTheme(nextTheme);
     });
 
@@ -195,13 +205,3 @@ document.addEventListener("DOMContentLoaded", () => {
         const end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
         const diff = Math.max(0, end - now);
         const days = Math.floor(diff / 86400000);
-        const hours = Math.floor((diff % 86400000) / 3600000);
-        countdown.textContent = `あと${days}日${hours}時間`;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 60000);
-});
-</script>
-</body>
-</html>
