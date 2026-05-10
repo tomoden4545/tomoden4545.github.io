@@ -40,11 +40,11 @@ a {
 }
 
 .top-strip a:hover {
-    color: #e60012;
+    color: #f08a00;
 }
 
 .top-strip .quick-link {
-    background: #e60012;
+    background: linear-gradient(135deg, #f08a00, #ffd34d);
     color: #fff;
     font-weight: 700;
 }
@@ -58,49 +58,21 @@ a {
 .site-header {
     min-height: 118px;
     display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 26px;
+    grid-template-columns: 360px 1fr;
+    gap: 30px;
     align-items: center;
     padding: 22px 42px 18px;
 }
 
 .brand {
-    display: grid;
-    grid-template-columns: 68px 1fr;
-    gap: 13px;
-    align-items: center;
+    display: block;
     text-decoration: none;
 }
 
-.brand-mark {
-    width: 64px;
-    height: 64px;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 50%;
-    border: 3px solid #e60012;
-    background: #fff;
-}
-
-.brand-mark img {
+.brand img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.brand small {
     display: block;
-    margin-bottom: 3px;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.brand strong {
-    display: block;
-    color: #111;
-    font-size: 24px;
-    line-height: 1.1;
+    height: auto;
 }
 
 .primary-nav {
@@ -122,14 +94,15 @@ a {
 }
 
 .primary-nav a:hover {
-    color: #e60012;
+    color: #f08a00;
 }
 
 .notice-bar {
     padding: 28px 42px 32px;
-    background: #fff0f0;
+    background: linear-gradient(90deg, #fff9de, #fff1bf);
     font-size: 13px;
     line-height: 1.8;
+    border-top: 4px solid #ffd34d;
 }
 
 .notice-bar strong,
@@ -212,7 +185,7 @@ a {
 }
 
 .dot.is-active {
-    background: #e60012;
+    background: #f08a00;
 }
 
 .pause-mark {
@@ -230,13 +203,13 @@ a {
     background: #fff;
 }
 
-.emergency-row {
+.fortune-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: #e60012;
+    background: linear-gradient(135deg, #f08a00, #ffd34d);
 }
 
-.emergency-row a {
+.fortune-row a {
     min-height: 122px;
     display: grid;
     place-items: center;
@@ -246,10 +219,19 @@ a {
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
+    text-shadow: 0 1px 2px rgba(103, 54, 0, 0.28);
 }
 
-.emergency-row a + a {
+.fortune-row a + a {
     border-left: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.fortune-row small {
+    display: block;
+    color: #3a2400;
+    font-size: 20px;
+    font-weight: 800;
+    text-shadow: none;
 }
 
 .icon {
@@ -345,11 +327,11 @@ a {
     font-weight: 700;
     text-decoration: none;
     background: #cbd8ee;
-    border-bottom: 2px solid #e60012;
+    border-bottom: 2px solid #f08a00;
 }
 
 .tab.is-active {
-    background: #d33a24;
+    background: linear-gradient(135deg, #f08a00, #ffbd23);
 }
 
 .customer-grid {
@@ -375,7 +357,7 @@ a {
 }
 
 .customer-grid span {
-    color: #e60012;
+    color: #f08a00;
     font-size: 22px;
 }
 
@@ -394,7 +376,7 @@ a {
 
 .content-grid article {
     padding: 28px;
-    border-top: 4px solid #e60012;
+    border-top: 4px solid #f08a00;
     background: #fff;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 }
@@ -482,17 +464,12 @@ a {
 }
 
 @media (max-width: 560px) {
+    .site-header {
+        grid-template-columns: 1fr;
+    }
+
     .brand {
-        grid-template-columns: 54px 1fr;
-    }
-
-    .brand-mark {
-        width: 52px;
-        height: 52px;
-    }
-
-    .brand strong {
-        font-size: 21px;
+        max-width: 320px;
     }
 
     .primary-nav {
@@ -518,14 +495,14 @@ a {
         font-size: 17px;
     }
 
-    .emergency-row,
+    .fortune-row,
     .link-row,
     .tabs {
         grid-template-columns: 1fr;
     }
 
     .link-row a + a,
-    .emergency-row a + a {
+    .fortune-row a + a {
         border-left: 0;
         border-top: 1px solid #e5e5e5;
     }
