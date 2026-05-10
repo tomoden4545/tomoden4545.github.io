@@ -169,7 +169,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const themeToggle = document.getElementById("theme-toggle");
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    let manualTheme = null;
+    const themeStorageKey = "tomoden-theme";
+    let manualTheme = localStorage.getItem(themeStorageKey);
 
     function applyTheme(theme) {
         document.body.classList.toggle("dark-theme", theme === "dark");
@@ -180,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return mediaQuery.matches ? "dark" : "light";
     }
 
-    applyTheme(deviceTheme());
+    applyTheme(manualTheme || deviceTheme());
 
     function handleDeviceThemeChange(event) {
         if (!manualTheme) {
@@ -197,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle.addEventListener("click", () => {
         const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
         manualTheme = nextTheme;
+        localStorage.setItem(themeStorageKey, nextTheme);
         applyTheme(nextTheme);
     });
 
@@ -204,5 +206,3 @@ document.addEventListener("DOMContentLoaded", () => {
         const countdown = document.getElementById("year-countdown");
         const now = new Date();
         const end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
-        const diff = Math.max(0, end - now);
-        const days = Math.floor(diff / 86400000);
