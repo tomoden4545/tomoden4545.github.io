@@ -621,15 +621,18 @@ body.dark-theme .orientation-message blockquote {
     padding: 28px;
     border: 1px solid #e1e1e1;
     background: #fff;
+    overflow: visible;
 }
 
 .visit-form {
+    min-width: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px;
 }
 
 .visit-form label {
+    min-width: 0;
     display: grid;
     gap: 8px;
     font-size: 14px;
@@ -639,6 +642,7 @@ body.dark-theme .orientation-message blockquote {
 .visit-form input,
 .visit-form textarea {
     width: 100%;
+    min-width: 0;
     min-height: 44px;
     padding: 10px 12px;
     border: 1px solid #cfcfcf;
@@ -728,3 +732,94 @@ body.dark-theme .visit-form textarea {
     }
 
     .slide-caption {
+        padding: 22px 24px 70px;
+    }
+
+    .carousel-controls {
+        right: 20px;
+        bottom: 28px;
+    }
+
+    .customer-tabs,
+    .content-grid,
+    .form-page {
+        width: calc(100% - 32px);
+    }
+
+    .customer-grid,
+    .content-grid,
+    .visit-form-panel,
+    .visit-form {
+        grid-template-columns: 1fr;
+    }
+
+    .visit-form-panel {
+        padding: 20px;
+    }
+
+    .full-field {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .site-header {
+        grid-template-columns: 1fr;
+    }
+
+    .brand {
+        max-width: 320px;
+    }
+
+    .primary-nav {
+        grid-template-columns: 1fr;
+        gap: 0;
+        border-top: 1px solid #eee;
+    }
+
+    .primary-nav a {
+        min-height: 42px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .carousel {
+        min-height: 438px;
+    }
+
+    .slide img {
+        height: 260px;
+    }
+
+    .slide-caption strong {
+        font-size: 17px;
+    }
+
+    .fortune-row,
+    .link-row,
+    .tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .link-row a + a,
+    .fortune-row a + a {
+        border-left: 0;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .customer-grid {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .form-page {
+        width: calc(100% - 20px);
+        padding-top: 28px;
+    }
+
+    .visit-form-panel {
+        padding: 14px;
+    }
+
+    .visit-form input,
+    .visit-form textarea {
+        font-size: 16px;
