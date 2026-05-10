@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>友電 公式HP!</title>
+    <title>大友電力パワーグリッド 大友発電所</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+    <span class="theme-sun" aria-hidden="true">☀</span>
+    <span class="theme-moon" aria-hidden="true">☾</span>
+</button>
+
 <header class="top-strip">
     <div class="top-strip-inner">
         <a href="#fortune">今日の運勢</a>
@@ -98,6 +103,11 @@
                     <p><time>2026年05月10日</time> 黄色いものを食べると発電効率が上がる気がします。</p>
                 </section>
 
+                <section class="side-news countdown-card">
+                    <h2>年末まで</h2>
+                    <p><strong id="year-countdown">計算中...</strong></p>
+                </section>
+
                 <section class="side-news" id="press">
                     <h2>お知らせ <a href="#news">一覧</a></h2>
                     <p><time>2026年04月28日</time> 友電食品館・発電所見学の受付状況を更新しました。</p>
@@ -108,7 +118,7 @@
         <section class="customer-tabs" id="personal">
             <div class="tabs">
                 <a class="tab is-active" href="#personal">個人のお客さま向け</a>
-                <a class="tab" href="#contact">お問い合わせ</a>
+                <a class="tab" href="recruit.html">見学申込</a>
             </div>
             <div class="customer-grid">
                 <a href="#outage">
@@ -130,7 +140,7 @@
             <article id="tour">
                 <h2>見学のお申し込み</h2>
                 <p>個人・団体問わず、随時受け付けております。以下のボタンよりお申し込みください。</p>
-                <a class="button" href="#contact">見学を申し込む</a>
+                <a class="button" href="recruit.html">見学を申し込む</a>
             </article>
             <article id="food">
                 <h2>友電 社員食堂はこちら</h2>
@@ -156,6 +166,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setInterval(() => showSlide(current + 1), 4500);
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const savedTheme = localStorage.getItem("theme");
+
+    function applyTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+    }
+
+    applyTheme(savedTheme || (mediaQuery.matches ? "dark" : "light"));
+
+    mediaQuery.addEventListener("change", (event) => {
+        if (!localStorage.getItem("theme")) {
+            applyTheme(event.matches ? "dark" : "light");
+        }
+    });
+
+    themeToggle.addEventListener("click", () => {
+        const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
+        localStorage.setItem("theme", nextTheme);
+        applyTheme(nextTheme);
+    });
+
+    function updateCountdown() {
+        const countdown = document.getElementById("year-countdown");
+        const now = new Date();
+        const end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
+        const diff = Math.max(0, end - now);
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        countdown.textContent = `あと${days}日${hours}時間`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
 });
 </script>
 </body>
