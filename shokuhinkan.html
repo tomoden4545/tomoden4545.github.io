@@ -3,87 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>友電 食品館</title>
+    <title>社員食堂 - 大友発電所</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-
-<button type="button" id="theme-toggle" class="theme-toggle" aria-label="theme toggle">
-    <span class="theme-icon theme-sun">&#9728;</span>
-    <span class="theme-icon theme-moon">&#9790;</span>
-</button>
-
-<div class="layout">
-    <div class="main-visual">
-        <div class="title-row">
-            <a href="index.html" class="back-btn">← トップページに戻る</a>
-
-            <a href="shokuhinkan.html" class="title">
-                <span>S</span>
-                <span>H</span>
-                <span>O</span>
-                <span>K</span>
-                <span>U</span>
-                <span>H</span>
-                <span>I</span>
-                <span>N</span>
-            </a>
-
-            <h1 class="food-title">友電 食品館</h1>
-        </div>
-    </div>
-
-    <div class="content food-list">
-        <section class="ramen">
-            <h2>友電のトモメン ザーメン味</h2>
-
-            <a href="https://tomoden4545.booth.pm/items/8296054" target="_blank">
-                <img src="ramen.jpg" alt="自作カップラーメン">
-            </a>
-
-            <p>
-                2026年1月、急遽落ちてきた<br>
-                伝説のカップ麺、トモメン。
-            </p>
+<body class="sub-page">
+<div class="site-shell">
+    <header class="site-header">
+        <a href="index.html" class="brand"><img src="logov2.png" alt="大友発電所"></a>
+        <nav class="primary-nav">
+            <a href="index.html">ホーム</a>
+            <a href="food.html">食品館</a>
+            <a href="news.html">ニュース</a>
+            <a href="faq.html">FAQ</a>
+            <a href="recruit.html">見学申込</a>
+        </nav>
+    </header>
+    <main class="form-page">
+        <section class="form-hero cafeteria-hero">
+            <p class="eyebrow">Cafeteria</p>
+            <h1>大友発電所 社員食堂</h1>
+            <p>発電所見学のあとに確認したい、社員食堂メニューです。食品館とは別の食堂メニューとして掲載しています。</p>
         </section>
-
-        <section class="ramen jakamen">
-            <h2>香原のジャカメン 潮味</h2>
-
-            <a href="https://tomoden4545.booth.pm/items/8296565" target="_blank">
-                <img src="jakamen.png" alt="自作カップラーメン ジャカメン">
-            </a>
-
-            <p>
-                さっぱりなのに馬鹿うまい！？<br>
-                2026年2月, ジャカメン爆誕
-            </p>
+        <section class="cafeteria-board">
+            <img src="assets/cafeteria/menu-board.png" alt="大友発電所 社員食堂 メニュー看板">
         </section>
-    </div>
+        <section class="menu-grid cafeteria-menu">
+            <article class="menu-card"><img src="assets/cafeteria/ramen.png" alt="ラーメン"><div><h2>Modern Ramen</h2><p>600円 / 原価200円。見学前後のボルテージ補給に。</p></div></article>
+            <article class="menu-card"><img src="assets/cafeteria/katudon.png" alt="ソースカツ丼"><div><h2>ソースカツ丼</h2><p>800円。午後の発電効率を支える丼物。</p></div></article>
+            <article class="menu-card"><img src="assets/cafeteria/curry.png" alt="カレー"><div><h2>カレー</h2><p>700円 / 原価300円。安定供給型の定番メニュー。</p></div></article>
+            <article class="menu-card"><img src="assets/cafeteria/udon.png" alt="カレーうどん"><div><h2>カレーうどん</h2><p>600円 / 原価250円。やさしい出力で温まります。</p></div></article>
+            <article class="menu-card"><img src="assets/cafeteria/sakana.png" alt="焼き魚定食"><div><h2>焼き魚定食</h2><p>700円。堅実にいきたい日の定食です。</p></div></article>
+        </section>
+    </main>
+    <footer class="site-disclaimer">この会社はフィクションです。</footer>
 </div>
-
-<script>
-function setupThemeToggle() {
-    const button = document.getElementById("theme-toggle");
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
-
-    function applyTheme(theme) {
-        document.body.classList.toggle("light-theme", theme === "light");
-    }
-
-    const savedTheme = localStorage.getItem("theme");
-    applyTheme(savedTheme || (mediaQuery.matches ? "light" : "dark"));
-
-    button.addEventListener("click", () => {
-        const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
-        applyTheme(nextTheme);
-        localStorage.setItem("theme", nextTheme);
-    });
-}
-
-document.addEventListener("DOMContentLoaded", setupThemeToggle);
-</script>
-
 </body>
 </html>
