@@ -30,12 +30,34 @@
         <section class="form-hero">
             <p class="eyebrow">大友発電所</p>
             <h1>発電所見学のお申し込み</h1>
-            <p>個人・団体問わず、随時受け付けております。</p>
+            <p>個人・団体問わず、随時受け付けております。送信先はFormspreeのフォームIDを入れるだけで切り替えられます。</p>
             <div class="countdown-inline">年末まで <strong id="year-countdown">計算中...</strong></div>
         </section>
 
+        <section class="orientation-message">
+            <div class="message-label">見学オリエンテーション</div>
+            <h2>大友発電所福島本部からのごあいさつ</h2>
+            <p>
+                みなさんこんにちは。大友電力パワーグリッド、大友発電所福島本部の大友です。
+                本日はお忙しい中、この企業見学にお集まりいただき、誠にありがとうございます。
+            </p>
+            <p>
+                弊社では、社員一人ひとりを尊重し、それぞれのプレイスタイルに合わせた最適な電力供給をコーチングしています。
+                わたくし自らが10年かけて作った発電データベースをもとに、快適な電力を供給するため、24時間365日、常に発電のことを考えています。
+            </p>
+            <blockquote>
+                昨年度、弊社がどのようにして日本一の発電量を誇る発電所になったのか。
+                その答えは、独自開発の「手コキ発電機」にあります。
+            </blockquote>
+            <p>
+                この発電機は、開発に約3年、実運用までにさらに1年を要した大友発電所だけの設備です。
+                今回の見学では、その仕組みとボルテージ上昇の秘密を、現地でじっくりご案内します。
+            </p>
+            <p class="message-closing">それでは今日1日、よろしくお願いします。準備ができましたら、見学ルートへ移動しましょう。</p>
+        </section>
+
         <section class="visit-form-panel">
-            <form class="visit-form" action="https://formspree.io/f/mqengyaq" method="POST">
+            <form class="visit-form" action="https://formspree.io/f/FORM_ID_HERE" method="POST">
                 <label>
                     お名前
                     <input type="text" name="name" autocomplete="name" required>
@@ -64,12 +86,6 @@
                 <input type="hidden" name="_subject" value="大友発電所 見学申込">
                 <button class="button" type="submit">申込内容を送信</button>
             </form>
-
-            <aside class="form-note">
-                <h2>405の原因</h2>
-                <p>我々大友電力グループは、社員一人一人に合わせた的確な発電方法を
-                    教えています。</p>
-            </aside>
         </section>
     </main>
 </div>
@@ -102,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (event) => {
         if (form.action.includes("FORM_ID_HERE")) {
             event.preventDefault();
-            alert("必ず必要箇所は入力してください。");
+            alert("必要個所の入力はおこ取らないでください。");
         }
     });
 
