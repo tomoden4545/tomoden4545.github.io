@@ -84,6 +84,7 @@
                 </label>
 
                 <input type="hidden" name="_subject" value="大友発電所 見学申込">
+                <input type="hidden" name="_replyto" value="">
                 <button class="button" type="submit">申込内容を送信</button>
             </form>
         </section>
@@ -99,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function applyTheme(theme) {
         document.body.classList.toggle("dark-theme", theme === "dark");
+        document.body.classList.toggle("light-theme", theme === "light");
     }
 
     function deviceTheme() {
@@ -126,6 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     form.addEventListener("submit", (event) => {
+        const emailField = form.querySelector('input[name="email"]');
+        const replyToField = form.querySelector('input[name="_replyto"]');
+        if (emailField && replyToField) {
+            replyToField.value = emailField.value.trim();
+        }
+
         const requiredFields = [...form.querySelectorAll("[required]")];
         const emptyField = requiredFields.find((field) => !field.value.trim());
 
@@ -135,11 +143,3 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("未入力の必須項目があります。お名前、メールアドレス、希望日、人数をご確認ください。");
             return;
         }
-
-        if (form.action.includes("FORM_ID_HERE")) {
-            event.preventDefault();
-        }
-    });
-
-    function updateCountdown() {
-        const countdown = document.getElementById("year-countdown");
