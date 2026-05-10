@@ -820,6 +820,51 @@ body.dark-theme .visit-form textarea {
         width: calc(100% - 32px);
     }
 
+    @media (max-width: 900px) {
+    .form-page {
+        width: calc(100% - 32px);
+    }
+
     .customer-grid,
     .content-grid,
     .visit-form-panel,
+    .visit-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .visit-form-panel {
+        display: block;
+        width: 100%;
+        padding: 14px;
+    }
+
+    .visit-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
+.visit-form label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .visit-form input,
+    .visit-form textarea,
+    .visit-form button {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .full-field {
+        grid-column: auto;
+    }
+}
+
