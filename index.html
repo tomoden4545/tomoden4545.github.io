@@ -19,7 +19,14 @@
         <a href="food.html">食品館ニュース</a>
         <a href="faq.html">よくあるご質問</a>
         <a href="news.html">ニュース</a>
-        <a href="#language">LANGUAGE</a>
+        <div class="language-menu">
+            <button type="button" id="language-toggle" class="language-toggle" aria-expanded="false">LANGUAGE <span>∨</span></button>
+            <div class="language-dropdown" id="language-dropdown" hidden>
+                <button type="button" data-lang="ja">日本語</button>
+                <button type="button" data-lang="en">English</button>
+                <button type="button" data-lang="zh">中文</button>
+            </div>
+        </div>
         <a class="quick-link" href="#quick">クイックリンク</a>
     </div>
 </header>
@@ -32,10 +39,10 @@
 
         <nav class="primary-nav" aria-label="主要メニュー">
             <a href="about.html">企業情報</a>
-            <a href="#personal">一般のお客さま</a>
-            <a href="#business">発電事業者さま</a>
-            <a href="#contractor">電気工事店さま</a>
-            <a href="#guide">お手続き・ご案内</a>
+            <a href="personal.html">一般のお客さま</a>
+            <a href="business.html">発電事業者さま</a>
+            <a href="contractor.html">電気工事店さま</a>
+            <a href="guide.html">お手続き・ご案内</a>
         </nav>
     </header>
 
@@ -194,22 +201,6 @@
             </div>
         </section>
 
-        <section class="info-section language-section" id="language">
-            <div class="section-heading">
-                <p>Language</p>
-                <h2>LANGUAGE</h2>
-            </div>
-            <div class="language-buttons" role="tablist" aria-label="言語切替">
-                <button type="button" class="language-button is-active" data-lang="ja">日本語</button>
-                <button type="button" class="language-button" data-lang="en">English</button>
-                <button type="button" class="language-button" data-lang="tm">友電語</button>
-            </div>
-            <div class="language-panel" id="language-panel">
-                <h3>大友発電所へようこそ</h3>
-                <p>見学、食品館、ニュース、よくある質問をこのページから確認できます。</p>
-            </div>
-        </section>
-
         <section class="info-section" id="business">
             <div class="section-heading">
                 <p>Guide</p>
@@ -319,28 +310,34 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("fortune-result").textContent = fortune.text;
     });
 
-    const languageCopy = {
-        ja: {
-            title: "大友発電所へようこそ",
-            text: "見学、食品館、ニュース、よくある質問をこのページから確認できます。"
-        },
-        en: {
-            title: "Welcome to Otomo Power Station",
-            text: "Tour requests, cafeteria news, updates, and FAQ are available on this page."
-        },
-        tm: {
-            title: "友電ボルテージ案内",
-            text: "見学ヨシ、麺ヨシ、発電ヨシ。必要な情報はこのページでチャージできます。"
-        }
+    const languageToggle = document.getElementById("language-toggle");
+    const languageDropdown = document.getElementById("language-dropdown");
+    const languageMessages = {
+        ja: "日本語表示です。",
+        en: "English mode is selected. Main pages remain playful Japanese content.",
+        zh: "已选择中文。主要页面内容以日语为主。"
     };
 
-    document.querySelectorAll(".language-button").forEach((button) => {
+    languageToggle.addEventListener("click", () => {
+        const isOpen = !languageDropdown.hidden;
+        languageDropdown.hidden = isOpen;
+        languageToggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    languageDropdown.querySelectorAll("button").forEach((button) => {
         button.addEventListener("click", () => {
-            document.querySelectorAll(".language-button").forEach((item) => item.classList.remove("is-active"));
-            button.classList.add("is-active");
-            const copy = languageCopy[button.dataset.lang];
-            document.getElementById("language-panel").innerHTML = `<h3>${copy.title}</h3><p>${copy.text}</p>`;
+            languageDropdown.hidden = true;
+            languageToggle.setAttribute("aria-expanded", "false");
+            languageToggle.firstChild.textContent = button.textContent + " ";
+            alert(languageMessages[button.dataset.lang]);
         });
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".language-menu")) {
+            languageDropdown.hidden = true;
+            languageToggle.setAttribute("aria-expanded", "false");
+        }
     });
 });
 </script>
