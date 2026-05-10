@@ -1249,13 +1249,6 @@ body {
 @media (max-width: 600px) {
     .damage-grid { grid-template-columns: 1fr; }
 }
-/* ロゴのサイズを固定し、以前のバランスを復元 */
-.brand img, .mobile-logo img {
-    height: 55px !important; 
-    width: auto !important;
-    max-width: 280px; /* 横に広がりすぎないよう制限 */
-    object-fit: contain;
-}
 /* メニューボタンの配置を確定 */
 .mobile-actions {
     display: flex;
@@ -1270,11 +1263,6 @@ body {
     overflow: hidden;
 }
 
-.mobile-logo img, .brand img {
-    height: 55px !important; 
-    width: auto !important;
-    flex-shrink: 0; /* 圧縮されないように固定 */
-}
 
 /* 2. コンテンツが左に寄るのを防ぐ（横幅を100%に戻す） */
 .site-shell, main, .hero-grid, .notice-bar {
