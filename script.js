@@ -41,4 +41,12 @@ btn.addEventListener("click", () => {
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('theme', next); // 次回からこれを優先する
 });
+
+const mobileBtn = document.getElementById("mobile-menu-btn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+mobileBtn.onclick = () => {
+    mobileMenu.classList.toggle("active");
+};
+
 </script>
