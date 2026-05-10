@@ -1151,18 +1151,39 @@ body {
         box-shadow: -5px 0 15px rgba(0,0,0,0.5);
     }
 }
+/* コンテンツがヘッダーの下に潜り込むのを防ぐ */
+body {
+    padding-top: 75px; /* ヘッダーの高さ分、全体を下げる */
+}
+
+/* メニューボタンを見えるようにする */
+#mobile-menu-btn {
+    background: transparent;
+    border: 1px solid #d4a017;
+    color: #d4a017;
+    font-size: 24px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
 
 /* 以前のメディアクエリ内にある「display:none」などは削除してください */
 @media (max-width: 768px) {
     .top-strip { display: none; }
     /* .mobile-top { display: flex; } ←これは上に書いたので不要 */
 }
-/* 緊急お知らせバー */
 .emergency-alert {
-    background: #ff0000; /* 警告の赤 */
-    color: #ffffff;
-    padding: 20px 42px;
+    background: #ff0000 !important; /* 強制的に赤 */
+    color: #ffffff !important;
+    padding: 20px;
+    text-align: center;
     border-bottom: 4px solid #b30000;
+    width: 100%;
+}
+
+.emergency-alert p, .emergency-alert strong {
+    color: #ffffff !important;
+    margin: 5px 0;
 }
 
 .alert-inner {
@@ -1227,4 +1248,11 @@ body {
 
 @media (max-width: 600px) {
     .damage-grid { grid-template-columns: 1fr; }
+}
+/* ロゴ暴走を止める */
+.mobile-logo img, .site-logo img {
+    height: 55px !important; /* 高さを固定 */
+    width: auto !important;   /* 横幅は比率維持 */
+    max-width: 100%;
+    display: block;
 }
