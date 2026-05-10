@@ -30,8 +30,8 @@
         <section class="form-hero">
             <p class="eyebrow">大友発電所</p>
             <h1>発電所見学のお申し込み</h1>
-            <p>個人・団体問わず、随時受け付けております。送信先はFormspreeのフォームIDを入れるだけで切り替えられます。</p>
-            <div class="countdown-inline">年末まで <strong id="year-countdown">計算中...</strong></div>
+            <p>個人・団体問わず、随時受け付けております。</p>
+            <div class="countdown-inline">年末まで <strong id="year-countdown"></strong></div>
         </section>
 
         <section class="orientation-message">
@@ -57,7 +57,7 @@
         </section>
 
         <section class="visit-form-panel">
-            <form class="visit-form" action="https://formspree.io/f/FORM_ID_HERE" method="POST">
+            <form class="visit-form" action="https://formspree.io/f/mqengyaq" method="POST">
                 <label>
                     お名前
                     <input type="text" name="name" autocomplete="name" required>
@@ -86,11 +86,6 @@
                 <input type="hidden" name="_subject" value="大友発電所 見学申込">
                 <button class="button" type="submit">申込内容を送信</button>
             </form>
-
-            <aside class="form-note">
-                <h2>405の原因</h2>
-                <p>GitHub Pagesなどの静的サイトは、サイト自身ではPOSTを受け取れません。Formspreeでフォームを作成し、上の <code>FORM_ID_HERE</code> を実際のIDに差し替えると、申込内容はFormspree側のログイン画面から確認できます。</p>
-            </aside>
         </section>
     </main>
 </div>
@@ -133,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (form.action.includes("FORM_ID_HERE")) {
             event.preventDefault();
-            alert("FormspreeのフォームIDを設定すると送信できます。405対策として、静的サイト自身にはPOSTしない設計にしています。");
         }
     });
 
