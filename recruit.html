@@ -47,7 +47,7 @@
             </p>
             <blockquote>
                 昨年度、弊社がどのようにして日本一の発電量を誇る発電所になったのか。
-                その答えは、独自開発の「手コキ発電機」にあります。
+                その答えは、独自開発の「高効率特殊発電機」にあります。
             </blockquote>
             <p>
                 この発電機は、開発に約3年、実運用までにさらに1年を要した大友発電所だけの設備です。
@@ -70,7 +70,7 @@
 
                 <label>
                     希望日
-                    <input type="date" name="date" required>
+                    <input type="text" name="date" inputmode="numeric" autocomplete="off" placeholder="例: 2026/05/10" required>
                 </label>
 
                 <label>
@@ -86,6 +86,11 @@
                 <input type="hidden" name="_subject" value="大友発電所 見学申込">
                 <button class="button" type="submit">申込内容を送信</button>
             </form>
+
+            <aside class="form-note">
+                <h2>405の原因</h2>
+                <p>GitHub Pagesなどの静的サイトは、サイト自身ではPOSTを受け取れません。Formspreeでフォームを作成し、上の <code>FORM_ID_HERE</code> を実際のIDに差し替えると、申込内容はFormspree側のログイン画面から確認できます。</p>
+            </aside>
         </section>
     </main>
 </div>
@@ -116,9 +121,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     form.addEventListener("submit", (event) => {
+        const requiredFields = [...form.querySelectorAll("[required]")];
+        const emptyField = requiredFields.find((field) => !field.value.trim());
+
+        if (emptyField) {
+            event.preventDefault();
+            emptyField.focus();
+            alert("未入力の必須項目があります。お名前、メールアドレス、希望日、人数をご確認ください。");
+            return;
+        }
+
         if (form.action.includes("FORM_ID_HERE")) {
             event.preventDefault();
-            alert("必要個所の入力はおこ取らないでください。");
+            alert("FormspreeのフォームIDを設定すると送信できます。405対策として、静的サイト自身にはPOSTしない設計にしています。");
         }
     });
 
@@ -128,13 +143,3 @@ document.addEventListener("DOMContentLoaded", () => {
         const end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
         const diff = Math.max(0, end - now);
         const days = Math.floor(diff / 86400000);
-        const hours = Math.floor((diff % 86400000) / 3600000);
-        countdown.textContent = `あと${days}日${hours}時間`;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 60000);
-});
-</script>
-</body>
-</html>
