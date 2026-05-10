@@ -1249,10 +1249,28 @@ body {
 @media (max-width: 600px) {
     .damage-grid { grid-template-columns: 1fr; }
 }
-/* ロゴ暴走を止める */
-.mobile-logo img, .site-logo img {
-    height: 55px !important; /* 高さを固定 */
-    width: auto !important;   /* 横幅は比率維持 */
-    max-width: 100%;
-    display: block;
+/* ロゴのサイズを固定し、以前のバランスを復元 */
+.brand img, .mobile-logo img {
+    height: 55px !important; 
+    width: auto !important;
+    max-width: 280px; /* 横に広がりすぎないよう制限 */
+    object-fit: contain;
+}
+/* メニューボタンの配置を確定 */
+.mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#mobile-menu-btn {
+    display: block !important; /* 強制表示 */
+    background: #d4a017;      /* ボタンを以前のゴールド系に */
+    color: #000;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 10001;
 }
