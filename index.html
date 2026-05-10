@@ -8,141 +8,155 @@
 </head>
 
 <body>
+<header class="top-strip">
+    <div class="top-strip-inner">
+        <a href="#fortune">今日の運勢</a>
+        <a href="#food">食品館ニュース</a>
+        <a href="#faq">よくあるご質問</a>
+        <a href="#press">プレスリリース・お知らせ</a>
+        <a href="#language">LANGUAGE</a>
+        <a class="quick-link" href="#quick">クイックリンク</a>
+    </div>
+</header>
 
-<!-- ダークモード切り替えボタン -->
-<button type="button" id="theme-toggle" class="theme-toggle" aria-label="theme toggle">
-    <span class="theme-icon theme-sun">&#9728;</span>
-    <span class="theme-icon theme-moon">&#9790;</span>
-</button>
-
-<div class="page-shell">
+<div class="site-shell">
     <header class="site-header">
-       <!-- 【修正後】ロゴ画像1枚にまとめる -->
-<a href="index.html" class="site-logo">
-    <img src="logov2.png" alt="大友電力パワーグリッド 大友発電所" class="header-logo-img"><!-- 【修正後】ロゴと社長をセットで配置 -->
-    <img src="shacho.png" alt="大友社長" class="header-shacho-img">
-</a>
+        <a href="index.html" class="brand" aria-label="大友発電所 ホーム">
+            <img src="logov2.png" alt="大友電力パワーグリッド 大友発電所">
+        </a>
 
-        <div class="header-links">
-            <a href="index.html">ホーム</a>
-            <a href="#news">お知らせ</a>
-            <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">お問い合わせ</a>
-        </div>
+        <nav class="primary-nav" aria-label="主要メニュー">
+            <a href="#company">企業情報</a>
+            <a href="#personal">一般のお客さま</a>
+            <a href="#business">発電事業者さま・小売電気事業者さま</a>
+            <a href="#contractor">電気工事店さま・電気主任技術者さま</a>
+            <a href="#guide">その他お手続き・ご案内</a>
+        </nav>
     </header>
 
-    <nav class="main-nav" aria-label="主要メニュー">
-        <a href="#clock-area">時刻表</a>
-        <a href="#food">食品館</a>
-        <a href="recruit.html">新卒採用</a>
-        <a href="#tour">発電所見学</a>
-    </nav>
-
-    <section class="hero">
-        <img src="ramen.jpg" alt="友電食品館のトモメン">
-        <div class="hero-copy">
-            <span>友電公式ホームページ</span>
-            <strong>発電、採用、食品館まで。</strong>
-            <a>大友発電所からのお知らせ</a>
-        </div>
+    <section class="notice-bar">
+        <strong>■ 大友発電所における食品館販売について ■</strong>
+        <p>大友発電所の見学、採用、食品館に関する最新情報はこちらの特設ページをご確認ください。</p>
     </section>
 
-<!-- index.html の中 -->
-<section id="tour-info">
-    <h2>見学のお申し込み</h2>
-    <p>個人・団体問わず、随時受け付けております。以下のボタンよりお申し込みください。</p>
-    
-    <!-- 申し込みページへのリンクボタン -->
-    <a href="apply.html" class="apply-button">見学を申し込む</a>
-</section>
+    <main>
+        <section class="hero-grid" aria-label="注目情報">
+            <div class="carousel" aria-roledescription="carousel">
+                <div class="slide is-active">
+                    <img src="ramen.jpg" alt="友電食品館のトモメン">
+                    <div class="slide-caption">
+                        <span>【ブランドメッセージ】</span>
+                        <strong>発電、採用、食品館まで。大友発電所からのお知らせ</strong>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="jakamen.png" alt="ジャカメン情報">
+                    <div class="slide-caption">
+                        <span>【食品館】</span>
+                        <strong>トモメン・ジャカメン販売中！</strong>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="shacho.png" alt="新卒採用">
+                    <div class="slide-caption">
+                        <span>【採用情報】</span>
+                        <strong>大友発電所の新卒採用ページはこちら</strong>
+                    </div>
+                </div>
 
-<style>
-/* ボタンを少し目立たせる例 */
-.apply-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #0056b3;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.apply-button:hover {
-    background-color: #004494;
-    transform: translateY(-2px);
-}
-</style>
-    
-    <div class="portal-layout">
-        <aside class="side-menu" aria-label="サイドメニュー">
-            <a href="recruit.html" class="side-banner">
-                <img src="shacho.png" alt="">
-                <span>新卒採用</span>
-            </a>
-            <a href="#food" class="side-banner">
-                <img src="ramen.jpg" alt="">
-                <span>友電 食品館</span>
-            </a>
-            <a href="#food" class="side-banner">
-                <img src="jakamen.png" alt="">
-                <span>ジャカメン情報</span>
-            </a>
-            <a href="#tour" class="side-banner plain-banner">
-                <span>発電所見学</span>
-                <small>受付準備中</small>
-            </a>
-            <a href="https://x.com/pqUBnTUdVJ48094" target="_blank" class="side-banner twitter-banner">
-                <img src="twitter.png" alt="">
-                <span>公式Twitter</span>
-            </a>
-        </aside>
+                <div class="carousel-controls" aria-hidden="true">
+                    <span class="dot is-active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="pause-mark">||</span>
+                    <span class="arrow">‹</span>
+                    <span class="arrow">›</span>
+                </div>
+            </div>
 
-        <!-- 社員食堂ポップ -->
-<a href="shokudo.html" class="cafeteria-popup">
-    <div class="cafeteria-popup-text">
-        <span class="small">社員食堂 OPEN</span>
-        <h2>友電 社員食堂はこちら</h2>
-        <p>定食・ラーメン・ジャカメン販売中！</p>
-    </div>
-</a>
+            <aside class="quick-panel" id="quick">
+                <div class="fortune-row" id="fortune">
+                    <a href="#fortune">
+                        <span class="icon">★</span>
+                        <strong>今日の運勢</strong>
+                        <small>大吉</small>
+                    </a>
+                    <a href="#food">
+                        <span class="icon">◎</span>
+                        <strong>ラッキー麺</strong>
+                        <small>ジャカメン</small>
+                    </a>
+                </div>
+                <div class="link-row">
+                    <a href="#tour">事業所一覧</a>
+                    <a href="#contractor">電気工事店のみなさま</a>
+                </div>
+                <a class="wide-link" href="#food">再生可能エネルギー固定価格買取制度の手続き</a>
 
-        <main class="portal-main">
-            <section class="feature-banner recruit-feature">
-                <a href="recruit.html">
-                    <span>大友発電所</span>
-                    <strong>新卒採用ページはこちら</strong>
+                <section class="side-news fortune-card">
+                    <h2>今日のひとこと <a href="#fortune">更新</a></h2>
+                    <p><time>2026年05月10日</time> 黄色いものを食べると発電効率が上がる気がします。</p>
+                </section>
+
+                <section class="side-news" id="press">
+                    <h2>お知らせ <a href="#news">一覧</a></h2>
+                    <p><time>2026年04月28日</time> 友電食品館・発電所見学の受付状況を更新しました。</p>
+                </section>
+            </aside>
+        </section>
+
+        <section class="customer-tabs" id="personal">
+            <div class="tabs">
+                <a class="tab is-active" href="#personal">個人のお客さま向け</a>
+                <a class="tab" href="#contact">お問い合わせ</a>
+            </div>
+            <div class="customer-grid">
+                <a href="#outage">
+                    <span>●</span>
+                    <strong>急に電気が消えたとき</strong>
                 </a>
-            </section>
-            
-            <section class="feature-banner food-feature" id="food">
-                <a href="https://tomoden4545.booth.pm/items/8296054" target="_blank">
-                    <span>友電 食品館</span>
-                    <strong>トモメン・ジャカメン販売中</strong>
+                <a href="#safety">
+                    <span>◆</span>
+                    <strong>電気の防災情報</strong>
                 </a>
-            </section>
+                <a href="#saving">
+                    <span>■</span>
+                    <strong>電気の省エネ情報</strong>
+                </a>
+            </div>
+        </section>
 
-            <section class="notice-box" id="news">
-                <h2>お知らせ</h2>
-                <ul>
-                    <li><time>5月4日</time> 正式にページが完成致しました。</li>
-                    <li><time>5月3日</time> サイトのメンテナンス中です。</li>
-                    <!-- 省略 -->
-                </ul>
-            </section>
-        </main>
-    </div>
+        <section class="content-grid">
+            <article id="tour">
+                <h2>見学のお申し込み</h2>
+                <p>個人・団体問わず、随時受け付けております。以下のボタンよりお申し込みください。</p>
+                <a class="button" href="#contact">見学を申し込む</a>
+            </article>
+            <article id="food">
+                <h2>友電 社員食堂はこちら</h2>
+                <p>定食・ラーメン・ジャカメン販売中！ 食品館の最新情報をお届けします。</p>
+                <a class="button ghost" href="https://tomoden4545.booth.pm/items/8296054" target="_blank">食品館を見る</a>
+            </article>
+        </section>
+    </main>
 </div>
 
 <script>
-    // 1. 保存された設定があるか、なければデバイスがダークモードか判定
-    const savedTheme = localStorage.getItem('theme');
-    const deviceMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = [...document.querySelectorAll(".slide")];
+    const dots = [...document.querySelectorAll(".dot")];
+    let current = 0;
 
-    // 2. ダークモードにすべき条件なら、bodyが表示される前にクラスを付与
-    if (savedTheme === 'dark' || (!savedTheme && deviceMode)) {
-      document.documentElement.classList.add('dark-theme');
+    function showSlide(index) {
+        slides[current].classList.remove("is-active");
+        dots[current].classList.remove("is-active");
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add("is-active");
+        dots[current].classList.add("is-active");
     }
-  </script>
 
+    setInterval(() => showSlide(current + 1), 4500);
+});
+</script>
 </body>
 </html>
