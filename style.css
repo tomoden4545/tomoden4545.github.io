@@ -1123,3 +1123,57 @@ body.dark-theme .visit-form textarea {
     }
 
 }
+/* モバイル用メニューの開閉アニメーションとスタイル */
+@media (max-width: 768px) {
+    /* メニュー本体のスタイル */
+    .mobile-menu {
+        display: none; /* 初期状態は隠す */
+        position: fixed;
+        top: 75px; /* ヘッダーの高さに合わせる */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 75px);
+        background: #1a1a1a; /* ダークな背景 */
+        z-index: 9998;
+        overflow-y: auto;
+        padding: 20px;
+    }
+
+    /* JavaScriptで 'is-open' クラスがついたら表示 */
+    .mobile-menu.is-open {
+        display: block;
+    }
+
+    /* メニュー内のリンクを縦に並べる */
+    .mobile-menu a {
+        display: block;
+        padding: 15px;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid #333;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .mobile-menu hr {
+        border: 0;
+        border-top: 1px solid #d4a017;
+        margin: 15px 0;
+    }
+
+    /* 三本線ボタンの見た目 */
+    #mobile-menu-btn {
+        background: transparent;
+        border: 1px solid #d4a017;
+        color: #fff;
+        font-size: 24px;
+        padding: 5px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* 元々あったPC用のロゴやナビをモバイルでは完全に消す */
+    .site-header {
+        display: none !important;
+    }
+}
