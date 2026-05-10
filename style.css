@@ -966,7 +966,7 @@ body.dark-theme .visit-form textarea {
         z-index:10000;
     }
 
-    /* ===== メニュー一覧 ===== */
+/* ===== メニュー一覧 ===== */
 
 .menu-grid{
     display:grid;
@@ -1122,6 +1122,7 @@ body.dark-theme .visit-form textarea {
         font-size:22px;
     }
 
+}
 }
 /* --- モバイル・PC共通ヘッダーのスタイル --- */
 .mobile-top {
