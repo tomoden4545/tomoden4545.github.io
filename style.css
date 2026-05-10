@@ -565,6 +565,18 @@ body.dark-theme .wide-link {
     color: #8a4d00;
 }
 
+.site-disclaimer {
+    padding: 22px 24px 30px;
+    color: #8b8b8b;
+    font-size: 11px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+body.dark-theme .site-disclaimer {
+    color: #777;
+}
+
 .sub-page .site-shell {
     min-height: 100vh;
 }
@@ -820,51 +832,81 @@ body.dark-theme .visit-form textarea {
         width: calc(100% - 32px);
     }
 
-    @media (max-width: 900px) {
-    .form-page {
-        width: calc(100% - 32px);
-    }
-
     .customer-grid,
     .content-grid,
     .visit-form-panel,
     .visit-form {
         grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 560px) {
     .visit-form-panel {
-        display: block;
-        width: 100%;
-        padding: 14px;
-    }
-
-    .visit-form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 16px;
-    }
-.visit-form label {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        min-width: 0;
-    }
-
-    .visit-form input,
-    .visit-form textarea,
-    .visit-form button {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
-        font-size: 16px;
+        padding: 20px;
     }
 
     .full-field {
         grid-column: auto;
     }
 }
-}
+
+@media (max-width: 560px) {
+    .site-header {
+        grid-template-columns: 1fr;
+    }
+
+    .brand {
+        max-width: 320px;
+    }
+
+    .primary-nav {
+        grid-template-columns: 1fr;
+        gap: 0;
+        border-top: 1px solid #eee;
+    }
+
+    .primary-nav a {
+        min-height: 42px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .carousel {
+        min-height: 438px;
+    }
+
+    .slide img {
+        height: 260px;
+    }
+
+    .slide-caption strong {
+        font-size: 17px;
+    }
+
+    .fortune-row,
+    .link-row,
+    .tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .link-row a + a,
+    .fortune-row a + a {
+        border-left: 0;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .customer-grid {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .form-page {
+        width: calc(100% - 20px);
+        padding-top: 28px;
+    }
+
+    .visit-form-panel {
+        padding: 14px;
+    }
+
+    .visit-form input,
+    .visit-form textarea {
+        font-size: 16px;
+    }}
