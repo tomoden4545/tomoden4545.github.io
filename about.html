@@ -2,13 +2,132 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>About TOMODEN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業情報 - 大友発電所</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="sub-page">
+<button type="button" id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+    <span class="theme-sun" aria-hidden="true">☀</span>
+    <span class="theme-moon" aria-hidden="true">☾</span>
+</button>
 
-<h1>これは別ページです</h1>
-<p>→2027年度 新卒採用について</p>
+<div class="site-shell">
+    <header class="site-header">
+        <a href="index.html" class="brand" aria-label="大友発電所 ホーム">
+            <img src="logov2.png" alt="大友電力パワーグリッド 大友発電所">
+        </a>
 
+        <nav class="primary-nav" aria-label="主要メニュー">
+            <a href="index.html">ホーム</a>
+            <a href="about.html">企業情報</a>
+            <a href="index.html#news">ニュース</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="recruit.html">見学申込</a>
+        </nav>
+    </header>
+
+    <main class="form-page">
+        <section class="form-hero">
+            <p class="eyebrow">Company</p>
+            <h1>企業情報</h1>
+            <p>大友電力パワーグリッド 大友発電所の概要、事業内容、見学受付についてご案内します。</p>
+        </section>
+
+        <section class="about-grid">
+            <article>
+                <h2>会社概要</h2>
+                <dl class="company-table">
+                    <div>
+                        <dt>名称</dt>
+                        <dd>大友電力パワーグリッド 大友発電所</dd>
+                    </div>
+                    <div>
+                        <dt>本部</dt>
+                        <dd>大友発電所 福島本部</dd>
+                    </div>
+                    <div>
+                        <dt>事業内容</dt>
+                        <dd>発電所見学、食品館運営、発電データベース研究</dd>
+                    </div>
+                    <div>
+                        <dt>創業</dt>
+                        <dd>創業18周年</dd>
+                    </div>
+                </dl>
+            </article>
+
+            <article>
+                <h2>大友発電所の方針</h2>
+                <p>社員一人ひとりのプレイスタイルを尊重し、快適な電力供給を目指して日々発電のことを考えています。</p>
+                <p>見学では、発電設備、食品館、各種ニュースをまとめてご案内します。</p>
+            </article>
+        </section>
+
+        <section class="info-section">
+            <div class="section-heading">
+                <p>Access</p>
+                <h2>関連リンク</h2>
+            </div>
+            <div class="guide-grid">
+                <a href="recruit.html">
+                    <strong>見学申込</strong>
+                    <span>企業見学の申込ページへ</span>
+                </a>
+                <a href="index.html#food">
+                    <strong>食品館</strong>
+                    <span>食品館ニュースを見る</span>
+                </a>
+                <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">
+                    <strong>公式X</strong>
+                    <span>最新のお知らせを見る</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-disclaimer">
+        この会社はフィクションです。
+    </footer>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("theme-toggle");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const themeStorageKey = "tomoden-theme";
+    let manualTheme = localStorage.getItem(themeStorageKey);
+
+    function applyTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+        document.body.classList.toggle("light-theme", theme === "light");
+    }
+
+    function deviceTheme() {
+        return mediaQuery.matches ? "dark" : "light";
+    }
+
+    applyTheme(manualTheme || deviceTheme());
+
+    function handleDeviceThemeChange(event) {
+        if (!manualTheme) {
+            applyTheme(event.matches ? "dark" : "light");
+        }
+    }
+
+    if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener("change", handleDeviceThemeChange);
+    } else {
+        mediaQuery.addListener(handleDeviceThemeChange);
+    }
+
+    themeToggle.addEventListener("click", () => {
+        const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
+        manualTheme = nextTheme;
+        localStorage.setItem(themeStorageKey, nextTheme);
+        applyTheme(nextTheme);
+    });
+});
+</script>
 </body>
 </html>
