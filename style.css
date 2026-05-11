@@ -1318,3 +1318,52 @@ header {
   padding: 10px 20px;
   background-color: #fff;
 }
+
+/* =========================================
+   スマホ・PC共通：金色のメニューボタン（三本線）
+========================================= */
+#mobile-menu-btn {
+    /* 1. 見た目：豪華な金色のグラデーション */
+    background: linear-gradient(135deg, #d4a017 0%, #ffd34d 100%) !important;
+    
+    /* 2. 文字：黒で読みやすく、太字に */
+    color: #111 !important; 
+    font-weight: bold !important;
+    font-size: 14px !important;
+    text-transform: uppercase; /* MENUを大文字に */
+    letter-spacing: 1px; /* 少し文字間隔を広げる */
+
+    /* 3. 配置：適正なサイズ感 */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; /* 文字と三本線の間隔 */
+    padding: 8px 16px !important;
+    min-height: 38px;
+    
+    /* 4. 装飾：丸みと枠線 */
+    border: 1px solid #c09010 !important; /* 少し濃い金の枠線 */
+    border-radius: 4px !important;
+    cursor: pointer;
+    white-space: nowrap; /* 改行させない */
+    
+    /* 5. 影：少し浮いているように見せる */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.2s ease; /* ホバー時の動き */
+}
+
+/* ホバー（マウスを乗せた時）またはクリック時のエフェクト */
+#mobile-menu-btn:hover {
+    background: linear-gradient(135deg, #e5b020 0%, #ffe060 100%) !important; /* 少し明るく */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    transform: translateY(-1px); /* 少し上に浮かせる */
+}
+
+/* =========================================
+   （参考）三本線アイコンの調整
+========================================= */
+/* もしHTMLで MENU ☰ と書いている場合、その☰の部分 */
+#mobile-menu-btn .menu-icon {
+    font-size: 18px;
+    line-height: 1;
+}
