@@ -355,23 +355,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-// スクリプトの最後の方にあるメニュー開閉部分を修正
 const menuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobileMenu");
 
-if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-        // classListを使うと状態管理が楽になります
-        mobileMenu.classList.toggle("is-open");
-        
-        // スタイルを直接いじる場合の予備
-        if (mobileMenu.style.display === "block") {
-            mobileMenu.style.display = "none";
-        } else {
-            mobileMenu.style.display = "block";
-        }
-    });
-}
+menuBtn.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("is-open");
+    
+    // ボタンの文字を切り替え
+    if (isOpen) {
+        menuBtn.innerHTML = "✕ CLOSE";
+        menuBtn.style.background = "#ff0000"; /* 閉じるボタンを赤にする（東電風） */
+        document.body.style.overflow = "hidden"; /* 背後のスクロールを止める */
+    } else {
+        menuBtn.innerHTML = "MENU ☰";
+        menuBtn.style.background = "linear-gradient(135deg, #d4a017 0%, #ffd34d 100%)"; /* 元の金に戻す */
+        document.body.style.overflow = ""; /* スクロール再開 */
+    }
+});
 </script>
 </body>
 </html>
