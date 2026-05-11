@@ -1279,12 +1279,6 @@ body {
     transform: none !important;
 }
 
-/* 2. ロゴのサイズを以前の適正サイズに強制固定 */
-.mobile-logo img, .brand img {
-    height: 50px !important;
-    width: 50% !important;
-    max-width: 70% !important;
-}
 
 /* 3. ヘッダーを「黒背景・金枠」の以前のデザインに統一 */
 .mobile-top {
@@ -1310,4 +1304,17 @@ body {
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
+}
+
+.logo-img {
+  height: 50px;    /* 高さを固定するとスッキリします */
+  width: auto;     /* 横幅は自動計算させて比率を維持 */
+  max-width: 100%; 
+}
+header {
+  display: flex;
+  align-items: center;      /* 上下の中央を揃える */
+  justify-content: space-between; /* ロゴは左、メニューは右に寄せる */
+  padding: 10px 20px;
+  background-color: #fff;
 }
