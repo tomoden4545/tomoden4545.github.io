@@ -12,12 +12,22 @@
     <span class="theme-sun" aria-hidden="true">☀</span>
     <span class="theme-moon" aria-hidden="true">☾</span>
 </button>
-
-<header class="site-header">
+<header class="mobile-top">
     <a href="index.html" class="site-logo">
-        <img src="assets/common/logov2.png" alt="大友発電所">
+        <img src="assets/common/logov2.png" alt="大友発電所" class="logo-img">
     </a>
-    </header>
+
+    <div class="mobile-actions">
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+            <span class="theme-sun" aria-hidden="true">☀</span>
+            <span class="theme-moon" aria-hidden="true">☾</span>
+        </button>
+
+        <button type="button" id="mobile-menu-btn" aria-label="メニュー開閉">
+            MENU ☰
+        </button>
+    </div>
+</header>
     
 
 <nav class="mobile-menu" id="mobileMenu">
@@ -345,18 +355,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-// モバイルメニュー開閉のスクリプト
+// スクリプトの最後の方にあるメニュー開閉部分を修正
 const menuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobileMenu");
 
-menuBtn.addEventListener("click", () => {
-    // 現在の表示状態を切り替える
-    if (mobileMenu.style.display === "block") {
-        mobileMenu.style.display = "none";
-    } else {
-        mobileMenu.style.display = "block";
-    }
-});
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+        // classListを使うと状態管理が楽になります
+        mobileMenu.classList.toggle("is-open");
+        
+        // スタイルを直接いじる場合の予備
+        if (mobileMenu.style.display === "block") {
+            mobileMenu.style.display = "none";
+        } else {
+            mobileMenu.style.display = "block";
+        }
+    });
+}
 </script>
 </body>
 </html>
