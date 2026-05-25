@@ -328,10 +328,13 @@ body.dark-theme .portrait-slide img {
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #aaa;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #aaa;
+    cursor: pointer;
 }
 
 .dot.is-active {
@@ -345,8 +348,13 @@ body.dark-theme .portrait-slide img {
 }
 
 .arrow {
-  font-size: 42px;
-  line-height: 1;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 42px;
+    line-height: 1;
+    cursor: pointer;
 }
 
 .quick-panel {
@@ -1138,7 +1146,72 @@ body.dark-theme .visit-form textarea {
     .menu-pop {
       font-size: 22px;
     }
-  }
+}
+
+/* Cafeteria page final overrides */
+body.cafeteria-page,
+body.dark-theme.cafeteria-page,
+body.light-theme.cafeteria-page {
+    color: #fff;
+    background:
+        linear-gradient(180deg, rgba(4, 8, 12, 0.14), rgba(4, 8, 12, 0.72)),
+        url("assets/cafeteria/menu-bg.png") center / cover fixed no-repeat !important;
+}
+
+.cafeteria-page .site-shell,
+body.dark-theme.cafeteria-page .site-shell,
+body.light-theme.cafeteria-page .site-shell,
+.cafeteria-page main,
+.cafeteria-page .form-page {
+    background: transparent !important;
+}
+
+.cafeteria-page .site-header,
+body.dark-theme.cafeteria-page .site-header,
+body.light-theme.cafeteria-page .site-header {
+    background: rgba(5, 8, 12, 0.72) !important;
+    color: #fff !important;
+}
+
+.cafeteria-page .primary-nav a,
+body.dark-theme.cafeteria-page .primary-nav a,
+body.light-theme.cafeteria-page .primary-nav a,
+.cafeteria-page .form-hero,
+.cafeteria-page .form-hero p,
+.cafeteria-page .form-hero h1,
+.cafeteria-page .menu-content h3,
+.cafeteria-page .menu-desc,
+.cafeteria-page .site-disclaimer {
+    color: #fff !important;
+}
+
+.cafeteria-page .cafeteria-hero {
+    background: rgba(5, 8, 12, 0.52) !important;
+}
+
+.cafeteria-page .menu-card {
+    background: rgba(8, 12, 17, 0.76) !important;
+}
+
+.cafeteria-page .page-theme-toggle {
+    position: fixed !important;
+    top: 92px;
+    right: 18px;
+    z-index: 100000;
+}
+
+@media (max-width: 768px) {
+    body.cafeteria-page,
+    body.dark-theme.cafeteria-page,
+    body.light-theme.cafeteria-page {
+        background-attachment: scroll !important;
+    }
+
+    .cafeteria-page .page-theme-toggle {
+        top: 76px;
+        right: 12px;
+    }
+}
 
   .cafeteria-page {
     min-height: 100vh;
