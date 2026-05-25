@@ -1,52 +1,55 @@
-<script>
-// --- 1. 時計の機能 ---
-function updateClock() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
+document.addEventListener("DOMContentLoaded", () => {
+    const themeStorageKey = "tomoden-theme";
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    const formatted = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
-    
-    // HTML側に id="clock" という要素があるか確認してください
+    function applyTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+        document.body.classList.toggle("light-theme", theme === "light");
+    }
+
+    function preferredTheme() {
+        return localStorage.getItem(themeStorageKey) || (mediaQuery.matches ? "dark" : "light");
+    }
+
+    function ensureThemeToggle() {
+        let toggle = document.getElementById("theme-toggle");
+        if (toggle) {
+            return toggle;
+        }
+
+        toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.id = "theme-toggle";
+        toggle.className = "theme-toggle page-theme-toggle";
+        toggle.setAttribute("aria-label", "テーマ切り替え");
+        toggle.innerHTML = '<span class="theme-sun" aria-hidden="true">☀</span><span class="theme-moon" aria-hidden="true">☾</span>';
+        document.body.append(toggle);
+        return toggle;
+    }
+
+    applyTheme(preferredTheme());
+
+    mediaQuery.addEventListener("change", (event) => {
+        if (!localStorage.getItem(themeStorageKey)) {
+            applyTheme(event.matches ? "dark" : "light");
+        }
+    });
+
+    ensureThemeToggle().addEventListener("click", () => {
+        const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
+        localStorage.setItem(themeStorageKey, nextTheme);
+        applyTheme(nextTheme);
+    });
+
     const clockEl = document.getElementById("clock");
     if (clockEl) {
-        clockEl.textContent = formatted;
+        function updateClock() {
+            const now = new Date();
+            const pad = (value) => String(value).padStart(2, "0");
+            clockEl.textContent = `${now.getFullYear()}/${pad(now.getMonth() + 1)}/${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
     }
-}
-setInterval(updateClock, 1000);
-updateClock();
-
-// --- 2. ダークモード切り替え機能（ここを追加！） ---
-const themeBtn = document.getElementById('theme-toggle');
-
-if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-        // bodyにdark-modeクラスを付け外しする
-        document.body.classList.toggle('dark-mode');
-        
-        // 切り替わったか確認用（ブラウザのコンソールで見れます）
-        console.log("Mode Toggled: ", document.body.classList.contains('dark-mode'));
-    });
-}
-    const btn = document.querySelector("#theme-button");
-
-btn.addEventListener("click", () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next); // 次回からこれを優先する
 });
-
-const mobileBtn = document.getElementById("mobile-menu-btn");
-const mobileMenu = document.getElementById("mobileMenu");
-
-mobileBtn.onclick = () => {
-    mobileMenu.classList.toggle("active");
-};
-
-</script>
