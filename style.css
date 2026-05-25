@@ -1472,3 +1472,267 @@ header {
         min-width: 0;
     }
 }
+
+.site-logo {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-top .theme-toggle {
+    position: static !important;
+    flex: 0 0 auto;
+    min-width: 42px;
+    min-height: 34px;
+    box-shadow: none;
+}
+
+.mobile-actions {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 64px;
+    }
+
+    .mobile-top {
+        height: 64px !important;
+        padding: 0 12px !important;
+        gap: 10px;
+        overflow: visible !important;
+    }
+
+    .site-logo {
+        flex: 1 1 auto;
+        max-width: calc(100vw - 154px);
+    }
+
+    .logo-img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 42px;
+        object-fit: contain;
+    }
+
+    .mobile-actions {
+        display: flex;
+        gap: 8px;
+    }
+
+    .mobile-top .theme-toggle {
+        top: auto;
+        right: auto;
+        padding: 6px 8px;
+    }
+
+    #mobile-menu-btn {
+        min-height: 34px;
+        padding: 7px 10px !important;
+        font-size: 12px !important;
+        letter-spacing: 0;
+    }
+}
+
+.support-body {
+    padding-top: 0;
+    background: #f3f5f7;
+}
+
+.support-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+    padding: 12px 28px;
+    background: #111;
+    border-bottom: 3px solid #d4a017;
+}
+
+.support-logo img {
+    width: min(260px, 54vw);
+    height: auto;
+    display: block;
+}
+
+.support-back {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    border: 1px solid #d4a017;
+    border-radius: 4px;
+    color: #ffd34d;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.support-page {
+    width: min(1040px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 40px 0 72px;
+}
+
+.support-hero {
+    padding: 42px 0 34px;
+    border-bottom: 1px solid #d8dde3;
+}
+
+.support-kicker {
+    margin: 0 0 10px;
+    color: #9a6500;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.support-hero h1 {
+    margin: 0 0 18px;
+    color: #111;
+    font-size: clamp(34px, 6vw, 60px);
+    line-height: 1.08;
+}
+
+.support-hero p {
+    max-width: 760px;
+    margin: 0;
+    color: #30343a;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.support-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.support-primary {
+    border: 0;
+    background: #111;
+    color: #ffd34d;
+}
+
+.support-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0 42px;
+}
+
+.support-summary article {
+    padding: 20px;
+    border: 1px solid #d8dde3;
+    border-top: 4px solid #d4a017;
+    background: #fff;
+}
+
+.support-summary span {
+    color: #9a6500;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.support-summary strong {
+    display: block;
+    margin-top: 8px;
+    color: #111;
+    font-size: 24px;
+}
+
+.support-summary p,
+.status-card p,
+.donation-box p {
+    color: #40454d;
+    line-height: 1.75;
+}
+
+.support-section-heading {
+    margin-bottom: 18px;
+    border-top: 4px solid #d4a017;
+    padding-top: 14px;
+}
+
+.support-section-heading p {
+    margin: 0 0 4px;
+    color: #9a6500;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.support-section-heading h2,
+.donation-box h2 {
+    margin: 0;
+    color: #111;
+    font-size: 30px;
+}
+
+.support-page .damage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.support-page .status-card {
+    border: 1px solid #d8dde3;
+    border-radius: 0;
+    background: #fff;
+}
+
+.support-page .status-card h3 {
+    margin: 0 0 12px;
+    font-size: 22px;
+}
+
+.support-page .status.error {
+    width: fit-content;
+    margin: 0 0 14px;
+    padding: 4px 10px;
+    background: #fff1f1;
+    color: #b30000;
+    font-size: 14px;
+}
+
+.support-page .donation-box {
+    margin-top: 42px;
+    padding: 30px;
+    border: 1px solid #d4a017;
+    border-radius: 0;
+    background: #fff9de;
+    text-align: left;
+}
+
+.donation-box .button {
+    margin-top: 10px;
+}
+
+@media (max-width: 720px) {
+    .support-top {
+        min-height: 64px;
+        padding: 10px 14px;
+    }
+
+    .support-page {
+        width: calc(100% - 28px);
+        padding-top: 26px;
+    }
+
+    .support-summary,
+    .support-page .damage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .support-actions {
+        display: grid;
+    }
+
+    .support-actions .button,
+    .donation-box .button {
+        width: 100%;
+    }
+}
