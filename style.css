@@ -282,6 +282,13 @@ body.dark-theme .notice-bar {
     object-fit: cover;
 }
 
+.portrait-slide img {
+    object-fit: contain;
+    object-position: center;
+    padding: 14px;
+    background: #eef2f4;
+}
+
 .slide-caption {
     min-height: 136px;
     display: grid;
@@ -293,6 +300,10 @@ body.dark-theme .notice-bar {
 
 body.dark-theme .slide-caption {
     background: #202020;
+}
+
+body.dark-theme .portrait-slide img {
+    background: #151515;
 }
 
 .slide-caption span {
@@ -455,7 +466,29 @@ body.dark-theme .wide-link {
     padding-top: 20px;
 }
 
+.weather-card {
+    padding-top: 18px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.weather-card span {
+    display: block;
+    margin-top: 7px;
+    color: #555;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+body.dark-theme .weather-card {
+    border-color: #333;
+}
+
+body.dark-theme .weather-card span {
+    color: #c9c0a8;
+}
+
 .countdown-card strong,
+.weather-card strong,
 .countdown-inline strong {
     color: #f08a00;
     font-size: 22px;
@@ -1403,4 +1436,39 @@ header {
     content: "∨";
     font-size: 12px;
     color: #999;
+}
+
+@media (min-width: 901px) {
+    .site-shell {
+        width: min(1536px, 100%) !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    .notice-bar {
+        padding: 28px 42px 32px !important;
+    }
+
+    main {
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    .hero-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 374px;
+        width: min(1152px, calc(100% - 64px)) !important;
+        max-width: calc(100% - 64px) !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .quick-panel {
+        min-width: 0;
+    }
 }
