@@ -1,32 +1,73 @@
-<main class="support-page">
-    <header class="support-header">
-        <h1>宝箱タービン復興支援特設ページ</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宝箱タービン復旧支援 | 大友発電所</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sub-page support-body">
+    <header class="support-top">
+        <a href="index.html" class="support-logo">
+            <img src="assets/common/logov2.png" alt="大友発電所">
+        </a>
+        <a class="support-back" href="index.html">トップへ戻る</a>
     </header>
 
-    <section class="damage-report">
-        <h2>被害状況について</h2>
-        <div class="damage-grid">
-            <div class="status-card">
-                <h3>第1タービン</h3>
-                <p class="status error">停止中 (致命的損傷)</p>
-                <p>原因：ラーメンの汁、香水等の不純物混入</p>
+    <main class="support-page">
+        <section class="support-hero">
+            <p class="support-kicker">Emergency Recovery Program</p>
+            <h1>宝箱タービン復旧支援</h1>
+            <p>停止中の宝箱タービンについて、復旧状況と支援窓口をまとめています。大友発電所は安全確認を優先しながら、設備の点検、清掃、再起動準備を進めています。</p>
+            <div class="support-actions">
+                <a class="button support-primary" href="https://x.com/pqUBnTUdVJ48094" target="_blank" rel="noopener">募金する</a>
+                <a class="button ghost" href="#status">被害状況を見る</a>
             </div>
-            <div class="status-card">
-                <h3>第2タービン</h3>
-                <p class="status error">停止中 (二次被害)</p>
-                <p>原因：有害排気ガスによるシステムダウン</p>
+        </section>
+
+        <section class="support-summary" aria-label="復旧サマリー">
+            <article>
+                <span>第1</span>
+                <strong>停止中</strong>
+                <p>異物混入による内部洗浄を実施中</p>
+            </article>
+            <article>
+                <span>第2</span>
+                <strong>停止中</strong>
+                <p>排気系統の保護停止を継続中</p>
+            </article>
+            <article>
+                <span>支援</span>
+                <strong>Xで受付</strong>
+                <p>公式アカウントで最新案内を公開</p>
+            </article>
+        </section>
+
+        <section class="damage-report" id="status">
+            <div class="support-section-heading">
+                <p>Status</p>
+                <h2>被害状況</h2>
             </div>
-        </div>
-    </section>
+            <div class="damage-grid">
+                <article class="status-card">
+                    <h3>第1タービン</h3>
+                    <p class="status error">停止中</p>
+                    <p>ラーメン汁や香水等の異物混入を想定し、洗浄と絶縁確認を進めています。</p>
+                </article>
+                <article class="status-card">
+                    <h3>第2タービン</h3>
+                    <p class="status error">停止中</p>
+                    <p>有害排気ガスによる保護停止を受け、換気・センサー確認を実施しています。</p>
+                </article>
+            </div>
+        </section>
 
-    <section class="donation-box">
-        <h2>復興支援募金のお願い</h2>
-        <p>皆さまの温かいご支援が、大友発電所のエネルギーを取り戻す力になります。お預かりした募金は全額、タービンの洗浄および環境改善、被害を受けた方々への支援に充てられます。</p>
-        
-        <div class="payment-methods">
-            <button class="button">クレジットカードで支援</button>
-            <button class="button ghost">銀行振込口座を表示</button>
-        </div>
-    </section>
-</main>
-
+        <section class="donation-box">
+            <p class="support-kicker">Support</p>
+            <h2>復旧支援のお願い</h2>
+            <p>支援に関する案内は公式Xで受け付けています。ボタンを押すと公式アカウントへ移動します。</p>
+            <a class="button support-primary" href="https://x.com/pqUBnTUdVJ48094" target="_blank" rel="noopener">募金する</a>
+        </section>
+    </main>
+</body>
+</html>
