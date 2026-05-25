@@ -1,508 +1,614 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>大友電力パワーグリッド 大友発電所</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-<header class="mobile-top">
-    <a href="index.html" class="site-logo">
-        <img src="assets/common/logov2.png" alt="大友発電所" class="logo-img">
-    </a>
+  <body>
+    <header class="mobile-top">
+      <a href="index.html" class="site-logo">
+        <img src="assets/common/logov2.png" alt="大友発電所" class="logo-img" />
+      </a>
 
-    <div class="mobile-actions">
-        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
-            <span class="theme-sun" aria-hidden="true">☀</span>
-            <span class="theme-moon" aria-hidden="true">☾</span>
+      <div class="mobile-actions">
+        <button
+          type="button"
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="テーマ切り替え"
+        >
+          <span class="theme-sun" aria-hidden="true">☀</span>
+          <span class="theme-moon" aria-hidden="true">☾</span>
         </button>
 
         <button type="button" id="mobile-menu-btn" aria-label="メニュー開閉">
-            MENU ☰
+          MENU ☰
         </button>
-    </div>
-</header>
-    
+      </div>
+    </header>
 
-<nav class="mobile-menu" id="mobileMenu">
-    <div class="menu-group">
+    <nav class="mobile-menu" id="mobileMenu">
+      <div class="menu-group">
         <a href="#fortune">今日の運勢</a>
         <a href="food.html">食品館ニュース</a>
         <a href="faq.html">よくあるご質問</a>
         <a href="news.html">ニュース</a>
-    </div>
-    <hr> <div class="menu-group">
+      </div>
+      <hr />
+      <div class="menu-group">
         <a href="about.html">企業情報</a>
         <a href="personal.html">一般のお客さま</a>
         <a href="business.html">発電事業者さま</a>
         <a href="contractor.html">電気工事店さま</a>
         <a href="guide.html">お手続き・ご案内</a>
-    </div>
-    <div class="menu-sns" style="padding: 20px; display: flex; gap: 15px;">
-        <a href="#" style="border:none;">𝕏</a>
-        <a href="#" style="border:none;">FB</a>
-    </div>
-</nav>
+      </div>
+      <div class="menu-sns" style="padding: 20px; display: flex; gap: 15px">
+        <a href="#" style="border: none">𝕏</a>
+        <a href="#" style="border: none">FB</a>
+      </div>
+    </nav>
 
-<section class="emergency-alert">
-    <div class="alert-inner">
+    <section class="emergency-alert">
+      <div class="alert-inner">
         <strong>■ 大友発電所 宝箱タービン損傷による重要なお知らせ ■</strong>
-        <p>第1・第2タービンが不法投棄および排気ガス等の影響により損傷・停止しております。被害に遭われた皆さまへの支援と、復旧に向けた募金を受け付けております。</p>
-        <a href="takarabako.html" class="alert-link">詳細・支援ページはこちら</a>
-    </div>
-</section>
-
-<div class="site-shell">
-    <header class="site-header">
-        </header>
-
-    <section class="notice-bar">
-        <strong>■ 大友発電所における見学受付と食品館販売について ■</strong>
-        <p>見学申込、採用、食品館、ニュース、よくある質問をこのページから確認できます。最新情報はお知らせ欄をご覧ください。</p>
+        <p>
+          第1・第2タービンが不法投棄および排気ガス等の影響により損傷・停止しております。被害に遭われた皆さまへの支援と、復旧に向けた募金を受け付けております。
+        </p>
+        <a href="takarabako.html" class="alert-link"
+          >詳細・支援ページはこちら</a
+        >
+      </div>
     </section>
 
-    <main>
-        <section class="hero-grid" aria-label="注目情報">
-            <div class="carousel" aria-roledescription="carousel">
-                <div class="slide is-active">
-                    <img src="assets/common/ramen.jpg" alt="友電食品館のトモメン">
-                    <div class="slide-caption">
-                        <span>【ブランドメッセージ】</span>
-                        <strong>社員から愛される日本一の電力会社。だから、飲食も充実！</strong>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="assets/common/jakamen.png" alt="ジャカメン情報">
-                    <div class="slide-caption">
-                        <span>【食品館】</span>
-                        <strong>トモメン・ジャカメン販売中！</strong>
-                    </div>
-                </div>
-                <div class="slide portrait-slide">
-                    <img src="assets/common/shacho.png" alt="新卒採用">
-                    <div class="slide-caption">
-                        <span>【見学情報】</span>
-                        <strong>大友発電所の見学申込ページはこちら</strong>
-                    </div>
-                </div>
+    <div class="site-shell">
+      <section class="notice-bar">
+        <strong>■ 大友発電所における見学受付と食品館販売について ■</strong>
+        <p>
+          見学申込、採用、食品館、ニュース、よくある質問をこのページから確認できます。最新情報はお知らせ欄をご覧ください。
+        </p>
+      </section>
 
-                <div class="carousel-controls" aria-hidden="true">
-                    <span class="dot is-active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="pause-mark">||</span>
-                    <span class="arrow">‹</span>
-                    <span class="arrow">›</span>
-                </div>
+      <main>
+        <section class="hero-grid" aria-label="注目情報">
+          <div class="carousel" aria-roledescription="carousel">
+            <div class="slide is-active">
+              <img src="assets/common/ramen.jpg" alt="友電食品館のトモメン" />
+              <div class="slide-caption">
+                <span>【ブランドメッセージ】</span>
+                <strong
+                  >社員から愛される日本一の電力会社。だから、飲食も充実！</strong
+                >
+              </div>
+            </div>
+            <div class="slide">
+              <img src="assets/common/jakamen.png" alt="ジャカメン情報" />
+              <div class="slide-caption">
+                <span>【食品館】</span>
+                <strong>トモメン・ジャカメン販売中！</strong>
+              </div>
+            </div>
+            <div class="slide portrait-slide">
+              <img src="assets/common/shacho.png" alt="新卒採用" />
+              <div class="slide-caption">
+                <span>【見学情報】</span>
+                <strong>大友発電所の見学申込ページはこちら</strong>
+              </div>
             </div>
 
-            <aside class="quick-panel" id="quick">
-                <div class="fortune-row" id="fortune">
-                    <button type="button" id="fortune-button" class="fortune-action">
-                        <span class="icon">★</span>
-                        <strong>今日の運勢</strong>
-                        <small id="fortune-rank">大吉</small>
-                    </button>
-                    <a href="#food">
-                        <span class="icon">◎</span>
-                        <strong>ラッキー麺</strong>
-                        <small id="lucky-noodle">ジャカメン</small>
-                    </a>
-                </div>
-                <p class="fortune-result" id="fortune-result">ボタンを押すと、今日の発電運を占います。</p>
-                <div class="link-row">
-                    <a href="about.html">会社情報</a>
-                    <a href="shokuhinkan.html">社員食堂</a>
-                </div>
-                <a class="wide-link" href="https://x.com/pqUBnTUdVJ48094" target="_blank">公式X（Twitter）を見る</a>
+            <div class="carousel-controls" aria-hidden="true">
+              <span class="dot is-active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="pause-mark">||</span>
+              <span class="arrow">‹</span>
+              <span class="arrow">›</span>
+            </div>
+          </div>
 
-                <section class="side-news countdown-card">
-                    <h2>年末まで</h2>
-                    <p><strong id="year-countdown">計算中...</strong></p>
-                </section>
+          <aside class="quick-panel" id="quick">
+            <div class="fortune-row" id="fortune">
+              <button type="button" id="fortune-button" class="fortune-action">
+                <span class="icon">★</span>
+                <strong>今日の運勢</strong>
+                <small id="fortune-rank">大吉</small>
+              </button>
+              <a href="#food">
+                <span class="icon">◎</span>
+                <strong>ラッキー麺</strong>
+                <small id="lucky-noodle">ジャカメン</small>
+              </a>
+            </div>
+            <p class="fortune-result" id="fortune-result">
+              ボタンを押すと、今日の発電運を占います。
+            </p>
+            <div class="link-row">
+              <a href="about.html">会社情報</a>
+              <a href="shokuhinkan.html">社員食堂</a>
+            </div>
+            <a
+              class="wide-link"
+              href="https://x.com/pqUBnTUdVJ48094"
+              target="_blank"
+              >公式X（Twitter）を見る</a
+            >
 
-                <section class="side-news weather-card" aria-live="polite">
-                    <h2>本部周辺の温度</h2>
-                    <p>
-                        <strong id="weather-now">受信中...</strong>
-                        <span id="weather-detail">福島駅西口周辺の気象庁データを取得しています。</span>
-                        <span id="weather-extra"></span>
-                        <span id="weather-alert">警報注意報を確認中...</span>
-                    </p>
-                </section>
+            <section class="side-news countdown-card">
+              <h2>年末まで</h2>
+              <p><strong id="year-countdown">計算中...</strong></p>
+            </section>
 
-                <section class="side-news" id="press">
-                    <h2>お知らせ <a href="#news">一覧</a></h2>
-                    <p><time>2026年05月10日</time> 見学申込フォームをGoogleフォーム連携に更新しました。</p>
-                </section>
-            </aside>
+            <section class="side-news weather-card" aria-live="polite">
+              <h2>本部周辺の温度</h2>
+              <p>
+                <strong id="weather-now">受信中...</strong>
+                <span id="weather-detail"
+                  >福島駅西口周辺の気象庁データを取得しています。</span
+                >
+                <span id="weather-extra"></span>
+                <span id="weather-alert">警報注意報を確認中...</span>
+              </p>
+            </section>
+
+            <section class="side-news" id="press">
+              <h2>お知らせ <a href="#news">一覧</a></h2>
+              <p>
+                <time>2026年05月10日</time>
+                見学申込フォームをGoogleフォーム連携に更新しました。
+              </p>
+            </section>
+          </aside>
         </section>
 
         <section class="customer-tabs" id="personal">
-            <div class="tabs">
-                <a class="tab is-active" href="#personal">個人のお客さま向け</a>
-                <a class="tab" href="recruit.html">見学申込</a>
-            </div>
-            <div class="customer-grid">
-                <a href="#fortune">
-                    <span>★</span>
-                    <strong>今日の運勢を占う</strong>
-                </a>
-                <a href="#faq">
-                    <span>?</span>
-                    <strong>よくあるご質問</strong>
-                </a>
-                <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">
-                    <span>X</span>
-                    <strong>公式Xを見る</strong>
-                </a>
-            </div>
+          <div class="tabs">
+            <a class="tab is-active" href="#personal">個人のお客さま向け</a>
+            <a class="tab" href="recruit.html">見学申込</a>
+          </div>
+          <div class="customer-grid">
+            <a href="#fortune">
+              <span>★</span>
+              <strong>今日の運勢を占う</strong>
+            </a>
+            <a href="#faq">
+              <span>?</span>
+              <strong>よくあるご質問</strong>
+            </a>
+            <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">
+              <span>X</span>
+              <strong>公式Xを見る</strong>
+            </a>
+          </div>
         </section>
 
         <section class="content-grid">
-            <article id="tour">
-                <h2>見学のお申し込み</h2>
-                <p>個人・団体問わず、随時受け付けております。以下のボタンよりお申し込みください。</p>
-                <a class="button" href="recruit.html">見学を申し込む</a>
-            </article>
-            <article id="food">
-                <h2>大友発電所 社員食堂はこちら</h2>
-                <p>ラーメン、ソースカツ丼、カレー、うどん、焼き魚定食を掲載しています。</p>
-                <a class="button ghost" href="shokuhinkan.html">社員食堂を見る</a>
-            </article>
+          <article id="tour">
+            <h2>見学のお申し込み</h2>
+            <p>
+              個人・団体問わず、随時受け付けております。以下のボタンよりお申し込みください。
+            </p>
+            <a class="button" href="recruit.html">見学を申し込む</a>
+          </article>
+          <article id="food">
+            <h2>大友発電所 社員食堂はこちら</h2>
+            <p>
+              ラーメン、ソースカツ丼、カレー、うどん、焼き魚定食を掲載しています。
+            </p>
+            <a class="button ghost" href="shokuhinkan.html">社員食堂を見る</a>
+          </article>
         </section>
 
         <section class="info-section" id="news">
-            <div class="section-heading">
-                <p>News</p>
-                <h2>ニュース・お知らせ</h2>
-            </div>
-            <div class="news-list">
-                <article>
-                    <time>2026年05月11日</time>
-                    <h3>今後のカップ麺販売について</h3>
-                    <p>BOOTHでの販売非公が続いているため、申し訳ありません。。</p>
-                </article>
-                <article>
-                    <time>2026年05月10日</time>
-                    <h3>見学申込ページを更新しました</h3>
-                    <p>Googleフォーム連携により、申込内容をスプレッドシートで管理できるようになりました。</p>
-                </article>
-                <article>
-                    <time>2026年05月08日</time>
-                    <h3>今日の運勢サービスを試験公開</h3>
-                    <p>発電所のボルテージ、麺運、見学運を総合して表示します。</p>
-                </article>
-                <article>
-                    <time>2026年04月28日</time>
-                    <h3>食品館の販売情報を更新</h3>
-                    <p>トモメン、ジャカメンの販売が停止されました。</p>
-                </article>
-            </div>
+          <div class="section-heading">
+            <p>News</p>
+            <h2>ニュース・お知らせ</h2>
+          </div>
+          <div class="news-list">
+            <article>
+              <time>2026年05月11日</time>
+              <h3>今後のカップ麺販売について</h3>
+              <p>BOOTHでの販売非公が続いているため、申し訳ありません。。</p>
+            </article>
+            <article>
+              <time>2026年05月10日</time>
+              <h3>見学申込ページを更新しました</h3>
+              <p>
+                Googleフォーム連携により、申込内容をスプレッドシートで管理できるようになりました。
+              </p>
+            </article>
+            <article>
+              <time>2026年05月08日</time>
+              <h3>今日の運勢サービスを試験公開</h3>
+              <p>発電所のボルテージ、麺運、見学運を総合して表示します。</p>
+            </article>
+            <article>
+              <time>2026年04月28日</time>
+              <h3>食品館の販売情報を更新</h3>
+              <p>トモメン、ジャカメンの販売が停止されました。</p>
+            </article>
+          </div>
         </section>
 
         <section class="info-section" id="faq">
-            <div class="section-heading">
-                <p>FAQ</p>
-                <h2>よくあるご質問</h2>
-            </div>
-            <div class="faq-list">
-                <details>
-                    <summary>見学は誰でも申し込めますか？</summary>
-                    <p>個人・団体問わず申し込めます。希望日と人数を入力して送信してください。</p>
-                </details>
-                <details>
-                    <summary>返信メールは届きますか？</summary>
-                    <p>Googleフォーム側で「回答者に回答のコピーを送信」を有効にしている場合、入力したメールアドレスに回答コピーが届きます。</p>
-                </details>
-                <details>
-                    <summary>食品館の商品はどこで見られますか？</summary>
-                    <p>食品館リンクからBOOTHの商品ページを確認できます。</p>
-                </details>
-                <details>
-                    <summary>この会社は実在しますか？</summary>
-                    <p>この会社はフィクションです。実在の団体・企業とは関係ありません。</p>
-                </details>
-            </div>
+          <div class="section-heading">
+            <p>FAQ</p>
+            <h2>よくあるご質問</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>見学は誰でも申し込めますか？</summary>
+              <p>
+                個人・団体問わず申し込めます。希望日と人数を入力して送信してください。
+              </p>
+            </details>
+            <details>
+              <summary>返信メールは届きますか？</summary>
+              <p>
+                Googleフォーム側で「回答者に回答のコピーを送信」を有効にしている場合、入力したメールアドレスに回答コピーが届きます。
+              </p>
+            </details>
+            <details>
+              <summary>食品館の商品はどこで見られますか？</summary>
+              <p>食品館リンクからBOOTHの商品ページを確認できます。</p>
+            </details>
+            <details>
+              <summary>この会社は実在しますか？</summary>
+              <p>
+                この会社はフィクションです。実在の団体・企業とは関係ありません。
+              </p>
+            </details>
+          </div>
         </section>
 
         <section class="info-section" id="business">
-            <div class="section-heading">
-                <p>Guide</p>
-                <h2>お手続き・ご案内</h2>
-            </div>
-            <div class="guide-grid" id="contractor">
-                <a href="about.html">
-                    <strong>企業情報</strong>
-                    <span>大友発電所の概要を見る</span>
-                </a>
-                <a href="recruit.html">
-                    <strong>見学申込</strong>
-                    <span>企業見学の申込フォームへ</span>
-                </a>
-                <a href="shokuhinkan.html">
-                    <strong>社員食堂</strong>
-                    <span>食堂メニューを見る</span>
-                </a>
-                <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">
-                    <strong>お問い合わせ</strong>
-                    <span>公式Xで最新情報を見る</span>
-                </a>
-            </div>
+          <div class="section-heading">
+            <p>Guide</p>
+            <h2>お手続き・ご案内</h2>
+          </div>
+          <div class="guide-grid" id="contractor">
+            <a href="about.html">
+              <strong>企業情報</strong>
+              <span>大友発電所の概要を見る</span>
+            </a>
+            <a href="recruit.html">
+              <strong>見学申込</strong>
+              <span>企業見学の申込フォームへ</span>
+            </a>
+            <a href="shokuhinkan.html">
+              <strong>社員食堂</strong>
+              <span>食堂メニューを見る</span>
+            </a>
+            <a href="https://x.com/pqUBnTUdVJ48094" target="_blank">
+              <strong>お問い合わせ</strong>
+              <span>公式Xで最新情報を見る</span>
+            </a>
+          </div>
         </section>
-    </main>
+      </main>
 
-    <footer class="site-disclaimer">
-        この会社はフィクションです。
-    </footer>
-</div>
+      <footer class="site-disclaimer">この会社はフィクションです。</footer>
+    </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = [...document.querySelectorAll(".slide")];
-    const dots = [...document.querySelectorAll(".dot")];
-    let current = 0;
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slides = [...document.querySelectorAll(".slide")];
+        const dots = [...document.querySelectorAll(".dot")];
+        let current = 0;
 
-    function showSlide(index) {
-        slides[current].classList.remove("is-active");
-        dots[current].classList.remove("is-active");
-        current = (index + slides.length) % slides.length;
-        slides[current].classList.add("is-active");
-        dots[current].classList.add("is-active");
-    }
+        function showSlide(index) {
+          slides[current].classList.remove("is-active");
+          dots[current].classList.remove("is-active");
+          current = (index + slides.length) % slides.length;
+          slides[current].classList.add("is-active");
+          dots[current].classList.add("is-active");
+        }
 
-    setInterval(() => showSlide(current + 1), 4500);
+        setInterval(() => showSlide(current + 1), 4500);
 
-    const themeToggle = document.getElementById("theme-toggle");
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const themeStorageKey = "tomoden-theme";
-    let manualTheme = localStorage.getItem(themeStorageKey);
+        const themeToggle = document.getElementById("theme-toggle");
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const themeStorageKey = "tomoden-theme";
+        let manualTheme = localStorage.getItem(themeStorageKey);
 
-    function applyTheme(theme) {
-        document.body.classList.toggle("dark-theme", theme === "dark");
-        document.body.classList.toggle("light-theme", theme === "light");
-    }
+        function applyTheme(theme) {
+          document.body.classList.toggle("dark-theme", theme === "dark");
+          document.body.classList.toggle("light-theme", theme === "light");
+        }
 
-    function deviceTheme() {
-        return mediaQuery.matches ? "dark" : "light";
-    }
+        function deviceTheme() {
+          return mediaQuery.matches ? "dark" : "light";
+        }
 
-    applyTheme(manualTheme || deviceTheme());
+        applyTheme(manualTheme || deviceTheme());
 
-    function handleDeviceThemeChange(event) {
-        if (!manualTheme) {
+        function handleDeviceThemeChange(event) {
+          if (!manualTheme) {
             applyTheme(event.matches ? "dark" : "light");
+          }
         }
-    }
 
-    if (mediaQuery.addEventListener) {
-        mediaQuery.addEventListener("change", handleDeviceThemeChange);
-    } else {
-        mediaQuery.addListener(handleDeviceThemeChange);
-    }
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener("change", handleDeviceThemeChange);
+        } else {
+          mediaQuery.addListener(handleDeviceThemeChange);
+        }
 
-    themeToggle.addEventListener("click", () => {
-        const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
-        manualTheme = nextTheme;
-        localStorage.setItem(themeStorageKey, nextTheme);
-        applyTheme(nextTheme);
-    });
+        themeToggle.addEventListener("click", () => {
+          const nextTheme = document.body.classList.contains("dark-theme")
+            ? "light"
+            : "dark";
+          manualTheme = nextTheme;
+          localStorage.setItem(themeStorageKey, nextTheme);
+          applyTheme(nextTheme);
+        });
 
-    function updateCountdown() {
-        const countdown = document.getElementById("year-countdown");
-        const now = new Date();
-        const end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
-        const diff = Math.max(0, end - now);
-        const days = Math.floor(diff / 86400000);
-        const hours = Math.floor((diff % 86400000) / 3600000);
-        countdown.textContent = `あと${days}日${hours}時間`;
-    }
+        function updateCountdown() {
+          const countdown = document.getElementById("year-countdown");
+          const now = new Date();
+          const end = new Date(now.getFullYear(), 11, 31, 23, 59, 59);
+          const diff = Math.max(0, end - now);
+          const days = Math.floor(diff / 86400000);
+          const hours = Math.floor((diff % 86400000) / 3600000);
+          countdown.textContent = `あと${days}日${hours}時間`;
+        }
 
-    updateCountdown();
-    setInterval(updateCountdown, 60000);
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
 
-    const weatherLabel = document.getElementById("weather-now");
-    const weatherDetail = document.getElementById("weather-detail");
-    const weatherExtra = document.getElementById("weather-extra");
-    const weatherAlert = document.getElementById("weather-alert");
-    const weatherWarningNames = {
-        "02": "暴風雪警報",
-        "03": "大雨警報",
-        "04": "洪水警報",
-        "05": "暴風警報",
-        "06": "大雪警報",
-        "07": "波浪警報",
-        "08": "高潮警報",
-        "10": "大雨注意報",
-        "12": "大雪注意報",
-        "13": "風雪注意報",
-        "14": "雷注意報",
-        "15": "強風注意報",
-        "16": "波浪注意報",
-        "17": "融雪注意報",
-        "18": "洪水注意報",
-        "19": "高潮注意報",
-        "20": "濃霧注意報",
-        "21": "乾燥注意報",
-        "22": "なだれ注意報",
-        "23": "低温注意報",
-        "24": "霜注意報",
-        "25": "着氷注意報",
-        "26": "着雪注意報",
-        "32": "暴風雪特別警報",
-        "33": "大雨特別警報",
-        "35": "暴風特別警報",
-        "36": "大雪特別警報",
-        "37": "波浪特別警報",
-        "38": "高潮特別警報"
-    };
+        const weatherLabel = document.getElementById("weather-now");
+        const weatherDetail = document.getElementById("weather-detail");
+        const weatherExtra = document.getElementById("weather-extra");
+        const weatherAlert = document.getElementById("weather-alert");
+        const weatherWarningNames = {
+          "02": "暴風雪警報",
+          "03": "大雨警報",
+          "04": "洪水警報",
+          "05": "暴風警報",
+          "06": "大雪警報",
+          "07": "波浪警報",
+          "08": "高潮警報",
+          10: "大雨注意報",
+          12: "大雪注意報",
+          13: "風雪注意報",
+          14: "雷注意報",
+          15: "強風注意報",
+          16: "波浪注意報",
+          17: "融雪注意報",
+          18: "洪水注意報",
+          19: "高潮注意報",
+          20: "濃霧注意報",
+          21: "乾燥注意報",
+          22: "なだれ注意報",
+          23: "低温注意報",
+          24: "霜注意報",
+          25: "着氷注意報",
+          26: "着雪注意報",
+          32: "暴風雪特別警報",
+          33: "大雨特別警報",
+          35: "暴風特別警報",
+          36: "大雪特別警報",
+          37: "波浪特別警報",
+          38: "高潮特別警報",
+        };
 
-    function jmaTimestamp(date) {
-        const pad = (value) => String(value).padStart(2, "0");
-        return `${date.getFullYear()}${pad(date.getMonth() + 1)}${pad(date.getDate())}${pad(date.getHours())}${pad(date.getMinutes())}${pad(date.getSeconds())}`;
-    }
+        function jmaTimestamp(date) {
+          const pad = (value) => String(value).padStart(2, "0");
+          return `${date.getFullYear()}${pad(date.getMonth() + 1)}${pad(date.getDate())}${pad(date.getHours())}${pad(date.getMinutes())}${pad(date.getSeconds())}`;
+        }
 
-    function isFullMoon(date) {
-        const lunarCycle = 29.530588853;
-        const knownFullMoon = Date.UTC(2026, 4, 31, 17, 45);
-        const days = (date.getTime() - knownFullMoon) / 86400000;
-        const phase = ((days % lunarCycle) + lunarCycle) % lunarCycle;
-        return phase < 1.2 || phase > lunarCycle - 1.2;
-    }
+        function isFullMoon(date) {
+          const lunarCycle = 29.530588853;
+          const knownFullMoon = Date.UTC(2026, 4, 31, 17, 45);
+          const days = (date.getTime() - knownFullMoon) / 86400000;
+          const phase = ((days % lunarCycle) + lunarCycle) % lunarCycle;
+          return phase < 1.2 || phase > lunarCycle - 1.2;
+        }
 
-    function weatherIcon(code, weatherText, date) {
-        const text = weatherText || "";
-        const hour = date.getHours();
-        const isNight = hour >= 18 || hour < 5;
+        function weatherIcon(code, weatherText, date) {
+          const text = weatherText || "";
+          const hour = date.getHours();
+          const isNight = hour >= 18 || hour < 5;
 
-        if (text.includes("大雨") || text.includes("激しい雨") || text.includes("強い雨")) {
+          if (
+            text.includes("大雨") ||
+            text.includes("激しい雨") ||
+            text.includes("強い雨")
+          ) {
             return "☔";
-        }
-        if (text.includes("雨") || String(code).startsWith("3")) {
+          }
+          if (text.includes("雨") || String(code).startsWith("3")) {
             return "☂";
-        }
-        if (text.includes("くもり") || String(code).startsWith("2")) {
+          }
+          if (text.includes("くもり") || String(code).startsWith("2")) {
             return "⛅";
-        }
-        if (isNight && (text.includes("晴") || String(code).startsWith("1"))) {
+          }
+          if (
+            isNight &&
+            (text.includes("晴") || String(code).startsWith("1"))
+          ) {
             return isFullMoon(date) ? "🌕" : "🌙";
-        }
-        if (text.includes("晴") || String(code).startsWith("1")) {
+          }
+          if (text.includes("晴") || String(code).startsWith("1")) {
             return "☀";
+          }
+          return "⛅";
         }
-        return "⛅";
-    }
 
-    async function updateWeather() {
-        try {
-            const latestText = await fetch("https://www.jma.go.jp/bosai/amedas/data/latest_time.txt").then((response) => response.text());
+        async function updateWeather() {
+          try {
+            const latestText = await fetch(
+              "https://www.jma.go.jp/bosai/amedas/data/latest_time.txt",
+            ).then((response) => response.text());
             const latestDate = new Date(latestText.trim());
             const [amedas, forecast, warnings] = await Promise.all([
-                fetch(`https://www.jma.go.jp/bosai/amedas/data/map/${jmaTimestamp(latestDate)}.json`).then((response) => response.json()),
-                fetch("https://www.jma.go.jp/bosai/forecast/data/forecast/070000.json").then((response) => response.json()),
-                fetch("https://www.jma.go.jp/bosai/warning/data/warning/070000.json").then((response) => response.json())
+              fetch(
+                `https://www.jma.go.jp/bosai/amedas/data/map/${jmaTimestamp(latestDate)}.json`,
+              ).then((response) => response.json()),
+              fetch(
+                "https://www.jma.go.jp/bosai/forecast/data/forecast/070000.json",
+              ).then((response) => response.json()),
+              fetch(
+                "https://www.jma.go.jp/bosai/warning/data/warning/070000.json",
+              ).then((response) => response.json()),
             ]);
 
             const observed = amedas["36127"];
-            const todayArea = forecast[0].timeSeries[0].areas.find((area) => area.area.code === "070010");
-            const todayTemps = forecast[0].timeSeries[2].areas.find((area) => area.area.code === "36127");
-            const weekTemps = forecast[1].timeSeries[1].areas.find((area) => area.area.code === "36127");
-            const popArea = forecast[0].timeSeries[1].areas.find((area) => area.area.code === "070010");
-            const weeklyPopArea = forecast[1].timeSeries[0].areas.find((area) => area.area.code === "070100");
+            const todayArea = forecast[0].timeSeries[0].areas.find(
+              (area) => area.area.code === "070010",
+            );
+            const todayTemps = forecast[0].timeSeries[2].areas.find(
+              (area) => area.area.code === "36127",
+            );
+            const weekTemps = forecast[1].timeSeries[1].areas.find(
+              (area) => area.area.code === "36127",
+            );
+            const popArea = forecast[0].timeSeries[1].areas.find(
+              (area) => area.area.code === "070010",
+            );
+            const weeklyPopArea = forecast[1].timeSeries[0].areas.find(
+              (area) => area.area.code === "070100",
+            );
             const weatherText = todayArea.weathers[0].replace(/\s+/g, " ");
-            const icon = weatherIcon(todayArea.weatherCodes[0], weatherText, new Date());
+            const icon = weatherIcon(
+              todayArea.weatherCodes[0],
+              weatherText,
+              new Date(),
+            );
             const currentTemp = observed?.temp?.[0];
-            const minTemp = todayTemps?.temps?.[0] || weekTemps?.tempsMin?.find(Boolean) || "--";
-            const maxTemp = todayTemps?.temps?.[1] || weekTemps?.tempsMax?.find(Boolean) || "--";
-            const pop = popArea?.pops?.find((value) => value !== "") || weeklyPopArea?.pops?.find((value) => value !== "") || "--";
-            const warningArea = warnings.areaTypes?.[1]?.areas?.find((area) => area.code === "0720100")
-                || warnings.areaTypes?.[0]?.areas?.find((area) => area.code === "070010");
+            const minTemp =
+              todayTemps?.temps?.[0] ||
+              weekTemps?.tempsMin?.find(Boolean) ||
+              "--";
+            const maxTemp =
+              todayTemps?.temps?.[1] ||
+              weekTemps?.tempsMax?.find(Boolean) ||
+              "--";
+            const pop =
+              popArea?.pops?.find((value) => value !== "") ||
+              weeklyPopArea?.pops?.find((value) => value !== "") ||
+              "--";
+            const warningArea =
+              warnings.areaTypes?.[1]?.areas?.find(
+                (area) => area.code === "0720100",
+              ) ||
+              warnings.areaTypes?.[0]?.areas?.find(
+                (area) => area.code === "070010",
+              );
             const activeWarnings = (warningArea?.warnings || [])
-                .filter((warning) => warning.code && warning.status !== "解除")
-                .map((warning) => weatherWarningNames[warning.code] || `気象注意報(${warning.code})`);
+              .filter((warning) => warning.code && warning.status !== "解除")
+              .map(
+                (warning) =>
+                  weatherWarningNames[warning.code] ||
+                  `気象注意報(${warning.code})`,
+              );
 
             weatherLabel.textContent = `${icon} ${currentTemp ?? "--"}℃`;
             weatherDetail.textContent = `福島駅西口周辺・${weatherText}`;
             weatherExtra.textContent = `最高 ${maxTemp}℃ / 最低 ${minTemp}℃・降水確率 ${pop}%・${latestDate.getHours()}:${String(latestDate.getMinutes()).padStart(2, "0")} 更新`;
-            weatherAlert.textContent = activeWarnings.length > 0
+            weatherAlert.textContent =
+              activeWarnings.length > 0
                 ? `発表中: ${activeWarnings.join("、")}`
                 : "警報注意報なし";
-        } catch (error) {
+          } catch (error) {
             weatherLabel.textContent = "受信できません";
             weatherDetail.textContent = "気象庁データを確認できませんでした。";
             weatherExtra.textContent = "30秒後に再取得します。";
             weatherAlert.textContent = "";
+          }
         }
-    }
 
-    updateWeather();
-    setInterval(updateWeather, 30000);
+        updateWeather();
+        setInterval(updateWeather, 30000);
 
-    const fortunes = [
-        { rank: "大吉", noodle: "ジャカメン", text: "発電効率が高め。早めの申し込みと黄色い食べ物が吉。" },
-        { rank: "中吉", noodle: "トモメン", text: "ボルテージ安定。見学前にFAQを読むとさらに運気上昇。" },
-        { rank: "小吉", noodle: "ラーメン", text: "配線確認の日。落ち着いてフォームを送れば問題なし。" },
-        { rank: "発電吉", noodle: "替え玉", text: "ひらめきが強い日。ニュース欄にヒントがあります。" }
-    ];
+        const fortunes = [
+          {
+            rank: "大吉",
+            noodle: "ジャカメン",
+            text: "発電効率が高め。早めの申し込みと黄色い食べ物が吉。",
+          },
+          {
+            rank: "中吉",
+            noodle: "トモメン",
+            text: "ボルテージ安定。見学前にFAQを読むとさらに運気上昇。",
+          },
+          {
+            rank: "小吉",
+            noodle: "ラーメン",
+            text: "配線確認の日。落ち着いてフォームを送れば問題なし。",
+          },
+          {
+            rank: "発電吉",
+            noodle: "替え玉",
+            text: "ひらめきが強い日。ニュース欄にヒントがあります。",
+          },
+        ];
 
-    document.getElementById("fortune-button").addEventListener("click", () => {
-        const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-        document.getElementById("fortune-rank").textContent = fortune.rank;
-        document.getElementById("lucky-noodle").textContent = fortune.noodle;
-        document.getElementById("fortune-result").textContent = fortune.text;
-    });
+        document
+          .getElementById("fortune-button")
+          .addEventListener("click", () => {
+            const fortune =
+              fortunes[Math.floor(Math.random() * fortunes.length)];
+            document.getElementById("fortune-rank").textContent = fortune.rank;
+            document.getElementById("lucky-noodle").textContent =
+              fortune.noodle;
+            document.getElementById("fortune-result").textContent =
+              fortune.text;
+          });
 
-    const languageToggle = document.getElementById("language-toggle");
-    const languageDropdown = document.getElementById("language-dropdown");
-    const languageMessages = {
-        ja: "日本語表示です。",
-        en: "English mode is selected. Main pages remain playful Japanese content.",
-        zh: "已选择中文。主要页面内容以日语为主。"
-    };
+        const languageToggle = document.getElementById("language-toggle");
+        const languageDropdown = document.getElementById("language-dropdown");
+        const languageMessages = {
+          ja: "日本語表示です。",
+          en: "English mode is selected. Main pages remain playful Japanese content.",
+          zh: "已选择中文。主要页面内容以日语为主。",
+        };
 
-    if (languageToggle && languageDropdown) {
-        languageToggle.addEventListener("click", () => {
+        if (languageToggle && languageDropdown) {
+          languageToggle.addEventListener("click", () => {
             const isOpen = !languageDropdown.hidden;
             languageDropdown.hidden = isOpen;
             languageToggle.setAttribute("aria-expanded", String(!isOpen));
-        });
+          });
 
-        languageDropdown.querySelectorAll("button").forEach((button) => {
+          languageDropdown.querySelectorAll("button").forEach((button) => {
             button.addEventListener("click", () => {
-                languageDropdown.hidden = true;
-                languageToggle.setAttribute("aria-expanded", "false");
-                languageToggle.firstChild.textContent = button.textContent + " ";
-                alert(languageMessages[button.dataset.lang]);
+              languageDropdown.hidden = true;
+              languageToggle.setAttribute("aria-expanded", "false");
+              languageToggle.firstChild.textContent = button.textContent + " ";
+              alert(languageMessages[button.dataset.lang]);
             });
-        });
+          });
 
-        document.addEventListener("click", (event) => {
+          document.addEventListener("click", (event) => {
             if (!event.target.closest(".language-menu")) {
-                languageDropdown.hidden = true;
-                languageToggle.setAttribute("aria-expanded", "false");
+              languageDropdown.hidden = true;
+              languageToggle.setAttribute("aria-expanded", "false");
             }
-        });
-    }
-});
-const menuBtn = document.getElementById("mobile-menu-btn");
-const mobileMenu = document.getElementById("mobileMenu");
+          });
+        }
+      });
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-menuBtn.addEventListener("click", () => {
-    const isOpen = mobileMenu.classList.toggle("is-open");
-    
-    // ボタンの文字を切り替え
-    if (isOpen) {
-        menuBtn.innerHTML = "✕ CLOSE";
-        menuBtn.style.background = "#ff0000"; /* 閉じるボタンを赤にする（東電風） */
-        document.body.style.overflow = "hidden"; /* 背後のスクロールを止める */
-    } else {
-        menuBtn.innerHTML = "MENU ☰";
-        menuBtn.style.background = "linear-gradient(135deg, #d4a017 0%, #ffd34d 100%)"; /* 元の金に戻す */
-        document.body.style.overflow = ""; /* スクロール再開 */
-    }
-});
-</script>
-</body>
+      menuBtn.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("is-open");
+
+        // ボタンの文字を切り替え
+        if (isOpen) {
+          menuBtn.innerHTML = "✕ CLOSE";
+          menuBtn.style.background =
+            "#ff0000"; /* 閉じるボタンを赤にする（東電風） */
+          document.body.style.overflow =
+            "hidden"; /* 背後のスクロールを止める */
+        } else {
+          menuBtn.innerHTML = "MENU ☰";
+          menuBtn.style.background =
+            "linear-gradient(135deg, #d4a017 0%, #ffd34d 100%)"; /* 元の金に戻す */
+          document.body.style.overflow = ""; /* スクロール再開 */
+        }
+      });
+    </script>
+  </body>
 </html>
