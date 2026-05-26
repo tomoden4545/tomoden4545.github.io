@@ -2045,6 +2045,21 @@ body.dark-theme .theme-toggle .theme-moon {
   font-size: 18px;
 }
 
+.cafeteria-page .menu-desc,
+.cafeteria-page .menu-bottom,
+.cafeteria-page .price {
+  color: #fff !important;
+}
+
+.cafeteria-page .price {
+  color: #ffd34d !important;
+}
+
+.cafeteria-page .tag {
+  background: #d4a017;
+  color: #111 !important;
+}
+
 .sub-page .menu-bottom {
   display: flex;
 }
