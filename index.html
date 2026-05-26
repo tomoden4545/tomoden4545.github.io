@@ -587,7 +587,7 @@
               );
 
             weatherLabel.textContent = `${icon} ${currentTemp ?? "--"}℃`;
-            weatherDetail.textContent = `福島駅西口周辺・${weatherText}`;
+            weatherDetail.textContent = `本部西口周辺・${weatherText}`;
             weatherExtra.textContent = `最高 ${maxTemp}℃ / 最低 ${minTemp}℃・降水確率 ${pop}%・${latestDate.getHours()}:${String(latestDate.getMinutes()).padStart(2, "0")} 更新`;
             weatherAlert.textContent =
               activeWarnings.length > 0
