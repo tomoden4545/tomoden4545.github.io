@@ -92,6 +92,11 @@
     </section>
 
     <section class="alert-audio" aria-label="友電テーマ1">
+      <img
+        class="alert-audio-thumb"
+        src="assets/common/tomoden-theme-thumb.png"
+        alt="友電テーマ1のサムネイル"
+      />
       <span class="alert-audio-title">友電テーマ1</span>
       <audio id="tomoden-theme-audio" controls preload="metadata" loop>
         <source src="assets/common/tomoden-theme1.mp3" type="audio/mpeg" />
@@ -114,6 +119,47 @@
           <output id="tomoden-theme-volume-value">70%</output>
         </label>
       </div>
+      <details class="alert-audio-lyrics">
+        <summary>歌詞を表示</summary>
+        <div class="lyrics-body">
+          <p>
+            大友発電所 略して 友電<br />
+            今日もパンツ破いて 発電始めるぜ<br />
+            大友発電所 略して 友電<br />
+            ティッシュ山積みで 射精するまでやめねえ！
+          </p>
+          <p>
+            朝起きたら 即 発電機ムラムラくる<br />
+            熱く脈打って 先走り垂らして待機中<br />
+            右手でガッと掴んで ゆっくり回し始めて<br />
+            腰の動き合わせて 深く刻んでくぜ
+          </p>
+          <p>
+            速度上げりゃ上げるほど 頭真っ白になって<br />
+            カリを擦り上げて 快感が脳天ぶち抜いて<br />
+            限界まで来たら 発電機ビクビク震えて<br />
+            ティッシュ構えた瞬間 ドクドク射精ぶちかます！
+          </p>
+          <p>
+            大友発電所 略して 友電<br />
+            今日もパンツ破いて 発電始めるぜ<br />
+            大友発電所 略して 友電<br />
+            この発電 永遠に回し続けるぜ！
+          </p>
+          <p>
+            夜中にまた疼いて 二回目即始動<br />
+            暗闇の中で 発電機暴走<br />
+            角度変えて激しく 回転数マックスまで<br />
+            二回目の射精 量多くて飛び散るぜ
+          </p>
+          <p>
+            毎日毎日 この発電所フル稼働<br />
+            ティッシュの山エベレスト パンツはボロボロ<br />
+            欲情来たら即 止まらねえこのループ<br />
+            さぁ 何度でもイッてやるぜ
+          </p>
+        </div>
+      </details>
     </section>
 
     <div class="site-shell">
@@ -672,9 +718,56 @@
         );
 
         if (themeAudio && themeLoop && themeVolume && themeVolumeValue) {
+          let audioContext;
+          let gainNode;
+          let sourceNode;
+
+          function setupAudioGain() {
+            if (gainNode) {
+              return true;
+            }
+
+            const AudioContext =
+              window.AudioContext || window.webkitAudioContext;
+
+            if (!AudioContext) {
+              return false;
+            }
+
+            try {
+              audioContext = new AudioContext();
+              sourceNode = audioContext.createMediaElementSource(themeAudio);
+              gainNode = audioContext.createGain();
+              sourceNode.connect(gainNode);
+              gainNode.connect(audioContext.destination);
+              return true;
+            } catch (error) {
+              return false;
+            }
+          }
+
+          async function unlockAudioGain() {
+            if (!setupAudioGain() || !audioContext) {
+              return;
+            }
+
+            if (audioContext.state === "suspended") {
+              await audioContext.resume();
+            }
+          }
+
           function syncVolume() {
             const volume = Number(themeVolume.value);
-            themeAudio.volume = volume;
+            if (gainNode) {
+              gainNode.gain.value = volume;
+            }
+
+            try {
+              themeAudio.volume = volume;
+            } catch (error) {
+              // Some mobile browsers ignore direct media volume changes.
+            }
+
             themeVolumeValue.textContent = `${Math.round(volume * 100)}%`;
           }
 
@@ -682,7 +775,18 @@
             themeAudio.loop = themeLoop.checked;
           });
 
-          themeVolume.addEventListener("input", syncVolume);
+          themeAudio.addEventListener("play", async () => {
+            await unlockAudioGain();
+            syncVolume();
+          });
+
+          themeVolume.addEventListener("pointerdown", unlockAudioGain);
+          themeVolume.addEventListener("touchstart", unlockAudioGain);
+          themeVolume.addEventListener("input", async () => {
+            await unlockAudioGain();
+            syncVolume();
+          });
+
           themeAudio.loop = themeLoop.checked;
           syncVolume();
         }
