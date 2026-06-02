@@ -1389,6 +1389,80 @@ body {
   font-weight: bold;
 }
 
+.alert-audio {
+  width: min(1080px, calc(100% - 32px));
+  margin: 18px auto 28px;
+  padding: 26px;
+  border: 4px solid #fff;
+  border-radius: 8px;
+  background: #fff;
+  color: #b30000;
+  text-align: center;
+  box-shadow: 0 12px 0 rgba(179, 0, 0, 0.18);
+}
+
+.alert-audio-title {
+  display: block;
+  margin-bottom: 14px;
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.alert-audio audio {
+  display: block;
+  width: 100%;
+  min-height: 54px;
+}
+
+.alert-audio-controls {
+  display: grid;
+  grid-template-columns: max-content minmax(240px, 1fr);
+  gap: 18px 24px;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.alert-audio-loop,
+.alert-audio-volume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.alert-audio-loop input {
+  width: 24px;
+  height: 24px;
+  accent-color: #b30000;
+}
+
+.alert-audio-volume input {
+  width: min(420px, 100%);
+  accent-color: #b30000;
+}
+
+.alert-audio-volume output {
+  min-width: 48px;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .alert-audio {
+    padding: 20px;
+  }
+
+  .alert-audio-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .alert-audio-volume {
+    flex-wrap: wrap;
+  }
+}
+
 /* 支援ページ用スタイル */
 .support-page {
   width: min(900px, 100%);
