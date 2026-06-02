@@ -91,6 +91,31 @@
       </div>
     </section>
 
+    <section class="alert-audio" aria-label="友電テーマ1">
+      <span class="alert-audio-title">友電テーマ1</span>
+      <audio id="tomoden-theme-audio" controls preload="metadata" loop>
+        <source src="assets/common/tomoden-theme1.mp3" type="audio/mpeg" />
+      </audio>
+      <div class="alert-audio-controls">
+        <label class="alert-audio-loop">
+          <input id="tomoden-theme-loop" type="checkbox" checked />
+          <span>ループ再生</span>
+        </label>
+        <label class="alert-audio-volume">
+          <span>音量</span>
+          <input
+            id="tomoden-theme-volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.7"
+          />
+          <output id="tomoden-theme-volume-value">70%</output>
+        </label>
+      </div>
+    </section>
+
     <div class="site-shell">
       <section class="notice-bar">
         <strong>■ 大友発電所における見学受付と食品館販売について ■</strong>
@@ -638,6 +663,29 @@
             document.getElementById("fortune-result").textContent =
               fortune.text;
           });
+
+        const themeAudio = document.getElementById("tomoden-theme-audio");
+        const themeLoop = document.getElementById("tomoden-theme-loop");
+        const themeVolume = document.getElementById("tomoden-theme-volume");
+        const themeVolumeValue = document.getElementById(
+          "tomoden-theme-volume-value"
+        );
+
+        if (themeAudio && themeLoop && themeVolume && themeVolumeValue) {
+          function syncVolume() {
+            const volume = Number(themeVolume.value);
+            themeAudio.volume = volume;
+            themeVolumeValue.textContent = `${Math.round(volume * 100)}%`;
+          }
+
+          themeLoop.addEventListener("change", () => {
+            themeAudio.loop = themeLoop.checked;
+          });
+
+          themeVolume.addEventListener("input", syncVolume);
+          themeAudio.loop = themeLoop.checked;
+          syncVolume();
+        }
 
         const languageToggle = document.getElementById("language-toggle");
         const languageDropdown = document.getElementById("language-dropdown");
