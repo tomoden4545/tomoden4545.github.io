@@ -718,54 +718,12 @@
         );
 
         if (themeAudio && themeLoop && themeVolume && themeVolumeValue) {
-          let audioContext;
-          let gainNode;
-          let sourceNode;
-
-          function setupAudioGain() {
-            if (gainNode) {
-              return true;
-            }
-
-            const AudioContext =
-              window.AudioContext || window.webkitAudioContext;
-
-            if (!AudioContext) {
-              return false;
-            }
-
-            try {
-              audioContext = new AudioContext();
-              sourceNode = audioContext.createMediaElementSource(themeAudio);
-              gainNode = audioContext.createGain();
-              sourceNode.connect(gainNode);
-              gainNode.connect(audioContext.destination);
-              return true;
-            } catch (error) {
-              return false;
-            }
-          }
-
-          async function unlockAudioGain() {
-            if (!setupAudioGain() || !audioContext) {
-              return;
-            }
-
-            if (audioContext.state === "suspended") {
-              await audioContext.resume();
-            }
-          }
-
           function syncVolume() {
             const volume = Number(themeVolume.value);
-            if (gainNode) {
-              gainNode.gain.value = volume;
-            }
-
             try {
               themeAudio.volume = volume;
             } catch (error) {
-              // Some mobile browsers ignore direct media volume changes.
+              // Mobile browsers may leave volume to the device controls.
             }
 
             themeVolumeValue.textContent = `${Math.round(volume * 100)}%`;
@@ -775,15 +733,7 @@
             themeAudio.loop = themeLoop.checked;
           });
 
-          themeAudio.addEventListener("play", async () => {
-            await unlockAudioGain();
-            syncVolume();
-          });
-
-          themeVolume.addEventListener("pointerdown", unlockAudioGain);
-          themeVolume.addEventListener("touchstart", unlockAudioGain);
-          themeVolume.addEventListener("input", async () => {
-            await unlockAudioGain();
+          themeVolume.addEventListener("input", () => {
             syncVolume();
           });
 
