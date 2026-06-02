@@ -1448,8 +1448,7 @@ body {
   font-weight: 800;
 }
 
-.alert-audio-loop,
-.alert-audio-volume {
+.alert-audio-loop {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1460,16 +1459,6 @@ body {
   width: 20px;
   height: 20px;
   accent-color: #b30000;
-}
-
-.alert-audio-volume input {
-  width: 160px;
-  accent-color: #b30000;
-}
-
-.alert-audio-volume output {
-  min-width: 48px;
-  text-align: right;
 }
 
 .alert-audio-lyrics {
@@ -1528,10 +1517,6 @@ body {
     justify-self: stretch;
     gap: 8px 12px;
     font-size: 14px;
-  }
-
-  .alert-audio-volume {
-    flex-wrap: wrap;
   }
 
   .alert-audio-lyrics {
