@@ -1371,8 +1371,8 @@ body {
 }
 
 .emergency-alert2 {
-  background: #ff0055 !important; 
-  color: #ff9945 !important;
+  background: #ff9945 !important; 
+  color: #ffffff !important;
   padding: 20px;
   text-align: center;
   border-bottom: 4px solid #b30000;
@@ -1381,7 +1381,7 @@ body {
 
 .emergency-alert2 p,
 .emergency-alert2 strong {
-  color: #ff9945 !important;
+  color: #ffffff !important;
   margin: 5px 0;
 }
 
