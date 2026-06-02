@@ -322,7 +322,7 @@
             <article>
               <time>2026年05月11日</time>
               <h3>今後のカップ麺販売について</h3>
-              <p>今後は社員のみのご提供となります。長い間、お世話になりました。</p>
+              <p>BOOTHでの販売非公開が続いているため、申し訳ありません。。</p>
             </article>
             <article>
               <time>2026年05月10日</time>
@@ -712,34 +712,102 @@
 
         const themeAudio = document.getElementById("tomoden-theme-audio");
         const themeLoop = document.getElementById("tomoden-theme-loop");
-        const themeVolume = document.getElementById("tomoden-theme-volume");
-        const themeVolumeValue = document.getElementById(
-          "tomoden-theme-volume-value"
-        );
 
-        if (themeAudio && themeLoop && themeVolume && themeVolumeValue) {
-          function syncVolume() {
-            const volume = Number(themeVolume.value);
-            try {
-              themeAudio.volume = volume;
-            } catch (error) {
-              // Mobile browsers may leave volume to the device controls.
-            }
-
-            themeVolumeValue.textContent = `${Math.round(volume * 100)}%`;
-          }
-
+        if (themeAudio && themeLoop) {
           themeLoop.addEventListener("change", () => {
             themeAudio.loop = themeLoop.checked;
           });
 
-          themeVolume.addEventListener("input", () => {
-            syncVolume();
-          });
-
           themeAudio.loop = themeLoop.checked;
-          syncVolume();
         }
+
+        let currentShell = document.querySelector(".site-shell");
+        const persistentAudio = document.querySelector(".alert-audio");
+        const initialPath = location.pathname;
+
+        function pageKey(url) {
+          const path = url.pathname.split("/").pop();
+          return path || "index.html";
+        }
+
+        function syncPageClass(nextBody) {
+          const themeClasses = ["dark-theme", "light-theme"].filter((name) =>
+            document.body.classList.contains(name)
+          );
+          document.body.className = nextBody.className;
+          themeClasses.forEach((name) => document.body.classList.add(name));
+        }
+
+        async function loadInternalPage(url, shouldPush = true) {
+          const response = await fetch(url.href);
+
+          if (!response.ok) {
+            location.href = url.href;
+            return;
+          }
+
+          const html = await response.text();
+          const nextDoc = new DOMParser().parseFromString(html, "text/html");
+          const nextShell = nextDoc.querySelector(".site-shell");
+
+          if (!nextShell || !currentShell || !persistentAudio) {
+            location.href = url.href;
+            return;
+          }
+
+          currentShell.replaceWith(nextShell);
+          currentShell = nextShell;
+          syncPageClass(nextDoc.body);
+          document.title = nextDoc.title;
+
+          if (shouldPush) {
+            history.pushState({ tomodenPage: pageKey(url) }, "", url.href);
+          }
+
+          window.scrollTo({ top: 0, behavior: "instant" });
+        }
+
+        document.addEventListener("click", (event) => {
+          const link = event.target.closest("a[href]");
+
+          if (!link) {
+            return;
+          }
+
+          const url = new URL(link.href, location.href);
+          const isSameOrigin = url.origin === location.origin;
+          const isPageLink =
+            url.pathname.endsWith(".html") || url.pathname.endsWith("/");
+          const isHashOnly =
+            url.pathname === location.pathname && url.hash && !url.search;
+
+          if (
+            !isSameOrigin ||
+            !isPageLink ||
+            isHashOnly ||
+            link.target ||
+            link.hasAttribute("download")
+          ) {
+            return;
+          }
+
+          event.preventDefault();
+          loadInternalPage(url).catch(() => {
+            location.href = url.href;
+          });
+        });
+
+        window.addEventListener("popstate", () => {
+          loadInternalPage(new URL(location.href), false).catch(() => {
+            location.reload();
+          });
+        });
+
+        history.replaceState(
+          { tomodenPage: pageKey(new URL(location.href)) },
+          "",
+          location.href || initialPath
+        );
 
         const languageToggle = document.getElementById("language-toggle");
         const languageDropdown = document.getElementById("language-dropdown");
